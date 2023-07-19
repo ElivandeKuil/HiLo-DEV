@@ -1,0 +1,161 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 1', ' out of 30. modelID=USDCAD;hap403079; Train loss = 0.384 (f1: 0.025), Validation loss = 0.364 (f1: 0.02, Prec: 0.73, Rec: 0.01, AR: [0.20695364]% => [15] predictions)')
+('Finished epoch 2', ' out of 30. modelID=USDCAD;nkv293036; Train loss = 0.367 (f1: 0.056), Validation loss = 0.363 (f1: 0.064, Prec: 0.61, Rec: 0.03, AR: [0.81401766]% => [59] predictions)')
+('Finished epoch 22', ' out of 30. modelID=USDCAD;fwk212464; Train loss = 0.362 (f1: 0.145), Validation loss = 0.36 (f1: 0.144, Prec: 0.61, Rec: 0.08, AR: [1.97295806]% => [143] predictions)')
+('Finished epoch 23', ' out of 30. modelID=USDCAD;kbv112412; Train loss = 0.362 (f1: 0.15), Validation loss = 0.367 (f1: 0.103, Prec: 0.63, Rec: 0.06, AR: [1.3107064]% => [95] predictions)')
+('Finished epoch 28', ' out of 30. modelID=USDCAD;cwh982271; Train loss = 0.362 (f1: 0.156), Validation loss = 0.362 (f1: 0.109, Prec: 0.63, Rec: 0.06, AR: [1.40728477]% => [102] predictions)')
+('Finished epoch 29', ' out of 30. modelID=USDCAD;tnr848715; Train loss = 0.362 (f1: 0.146), Validation loss = 0.36 (f1: 0.121, Prec: 0.61, Rec: 0.07, AR: [1.64183223]% => [119] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=USDCAD;qxc18125; Train loss = 0.366 (f1: 0.033), Validation loss = 0.369 (f1: 0.076, Prec: 0.61, Rec: 0.04, AR: [0.96578366]% => [70] predictions)')
+('Finished epoch 3', ' out of 30. modelID=USDCAD;ihr817369; Train loss = 0.365 (f1: 0.096), Validation loss = 0.365 (f1: 0.049, Prec: 0.61, Rec: 0.03, AR: [0.60706402]% => [44] predictions)')
+('Finished epoch 6', ' out of 30. modelID=USDCAD;twg890327; Train loss = 0.364 (f1: 0.132), Validation loss = 0.362 (f1: 0.059, Prec: 0.65, Rec: 0.03, AR: [0.70364238]% => [51] predictions)')
+('Finished epoch 9', ' out of 30. modelID=USDCAD;xhs772220; Train loss = 0.363 (f1: 0.139), Validation loss = 0.363 (f1: 0.11, Prec: 0.6, Rec: 0.06, AR: [1.49006623]% => [108] predictions)')
+('Finished epoch 15', ' out of 30. modelID=USDCAD;fdo38713; Train loss = 0.362 (f1: 0.141), Validation loss = 0.363 (f1: 0.118, Prec: 0.6, Rec: 0.07, AR: [1.6004415]% => [116] predictions)')
+('Finished epoch 20', ' out of 30. modelID=USDCAD;yop681908; Train loss = 0.362 (f1: 0.144), Validation loss = 0.364 (f1: 0.129, Prec: 0.61, Rec: 0.07, AR: [1.7384106]% => [126] predictions)')
+('Finished epoch 28', ' out of 30. modelID=USDCAD;hvc851943; Train loss = 0.362 (f1: 0.146), Validation loss = 0.361 (f1: 0.109, Prec: 0.62, Rec: 0.06, AR: [1.43487859]% => [104] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=USDCAD;qhw523052; Train loss = 0.365 (f1: 0.045), Validation loss = 0.363 (f1: 0.044, Prec: 0.69, Rec: 0.02, AR: [0.48289183]% => [35] predictions)')
+('Finished epoch 8', ' out of 30. modelID=USDCAD;myv395790; Train loss = 0.363 (f1: 0.129), Validation loss = 0.362 (f1: 0.1, Prec: 0.62, Rec: 0.05, AR: [1.28311258]% => [93] predictions)')
+('Finished epoch 9', ' out of 30. modelID=USDCAD;mxa483683; Train loss = 0.363 (f1: 0.134), Validation loss = 0.362 (f1: 0.092, Prec: 0.64, Rec: 0.05, AR: [1.14514349]% => [83] predictions)')
+('Finished epoch 14', ' out of 30. modelID=USDCAD;hhu506783; Train loss = 0.363 (f1: 0.144), Validation loss = 0.362 (f1: 0.081, Prec: 0.67, Rec: 0.04, AR: [0.95198675]% => [69] predictions)')
+('Finished epoch 16', ' out of 30. modelID=USDCAD;cos497784; Train loss = 0.362 (f1: 0.138), Validation loss = 0.36 (f1: 0.123, Prec: 0.6, Rec: 0.07, AR: [1.66942605]% => [121] predictions)')
+('Finished epoch 18', ' out of 30. modelID=USDCAD;rku6814; Train loss = 0.362 (f1: 0.141), Validation loss = 0.361 (f1: 0.114, Prec: 0.64, Rec: 0.06, AR: [1.43487859]% => [104] predictions)')
+('Finished epoch 25', ' out of 30. modelID=USDCAD;eqh549996; Train loss = 0.362 (f1: 0.144), Validation loss = 0.362 (f1: 0.095, Prec: 0.64, Rec: 0.05, AR: [1.18653422]% => [86] predictions)')
+('Finished epoch 26', ' out of 30. modelID=USDCAD;nzi465098; Train loss = 0.362 (f1: 0.142), Validation loss = 0.36 (f1: 0.136, Prec: 0.6, Rec: 0.08, AR: [1.87637969]% => [136] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 7', ' out of 30. modelID=USDCAD;eem494611; Train loss = 0.363 (f1: 0.129), Validation loss = 0.361 (f1: 0.095, Prec: 0.62, Rec: 0.05, AR: [1.22792494]% => [89] predictions)')
+('Finished epoch 10', ' out of 30. modelID=USDCAD;qjl386225; Train loss = 0.363 (f1: 0.138), Validation loss = 0.364 (f1: 0.082, Prec: 0.64, Rec: 0.04, AR: [1.0209713]% => [74] predictions)')
+('Finished epoch 17', ' out of 30. modelID=USDCAD;tij139314; Train loss = 0.362 (f1: 0.142), Validation loss = 0.361 (f1: 0.086, Prec: 0.65, Rec: 0.05, AR: [1.03476821]% => [75] predictions)')
+('Finished epoch 24', ' out of 30. modelID=USDCAD;ddz923904; Train loss = 0.361 (f1: 0.149), Validation loss = 0.366 (f1: 0.068, Prec: 0.72, Rec: 0.04, AR: [0.7312362]% => [53] predictions)')
+('Finished epoch 25', ' out of 30. modelID=USDCAD;akb763665; Train loss = 0.362 (f1: 0.145), Validation loss = 0.36 (f1: 0.114, Prec: 0.64, Rec: 0.06, AR: [1.4486755]% => [105] predictions)')
+No profitable model was found this run
+('Finished epoch 25', ' out of 30. modelID=USDCAD;hzv901057; Train loss = 0.364 (f1: 0.107), Validation loss = 0.363 (f1: 0.052, Prec: 0.64, Rec: 0.03, AR: [0.62086093]% => [45] predictions)')
+('Finished epoch 26', ' out of 30. modelID=USDCAD;arp860508; Train loss = 0.364 (f1: 0.1), Validation loss = 0.361 (f1: 0.062, Prec: 0.61, Rec: 0.03, AR: [0.78642384]% => [57] predictions)')
+('Finished epoch 30', ' out of 30. modelID=USDCAD;wni862153; Train loss = 0.363 (f1: 0.121), Validation loss = 0.364 (f1: 0.069, Prec: 0.65, Rec: 0.04, AR: [0.82781457]% => [60] predictions)')
+('Finished epoch 8', ' out of 30. modelID=USDCAD;ova59448; Train loss = 0.363 (f1: 0.119), Validation loss = 0.361 (f1: 0.089, Prec: 0.66, Rec: 0.05, AR: [1.06236203]% => [77] predictions)')
+('Finished epoch 9', ' out of 30. modelID=USDCAD;ylw950692; Train loss = 0.363 (f1: 0.118), Validation loss = 0.361 (f1: 0.054, Prec: 0.68, Rec: 0.03, AR: [0.60706402]% => [44] predictions)')
+('Finished epoch 11', ' out of 30. modelID=USDCAD;zss7335; Train loss = 0.362 (f1: 0.131), Validation loss = 0.361 (f1: 0.095, Prec: 0.63, Rec: 0.05, AR: [1.20033113]% => [87] predictions)')
+('Finished epoch 16', ' out of 30. modelID=USDCAD;ond59541; Train loss = 0.362 (f1: 0.132), Validation loss = 0.364 (f1: 0.089, Prec: 0.61, Rec: 0.05, AR: [1.1589404]% => [84] predictions)')
+('Finished epoch 19', ' out of 30. modelID=USDCAD;aac259903; Train loss = 0.362 (f1: 0.143), Validation loss = 0.363 (f1: 0.115, Prec: 0.61, Rec: 0.06, AR: [1.54525386]% => [112] predictions)')
+('Finished epoch 20', ' out of 30. modelID=USDCAD;imx212594; Train loss = 0.363 (f1: 0.131), Validation loss = 0.366 (f1: 0.099, Prec: 0.64, Rec: 0.05, AR: [1.22792494]% => [89] predictions)')
+('Finished epoch 25', ' out of 30. modelID=USDCAD;fmn67675; Train loss = 0.362 (f1: 0.139), Validation loss = 0.36 (f1: 0.102, Prec: 0.65, Rec: 0.06, AR: [1.25551876]% => [91] predictions)')
+('Finished epoch 27', ' out of 30. modelID=USDCAD;mjv966502; Train loss = 0.362 (f1: 0.148), Validation loss = 0.361 (f1: 0.079, Prec: 0.66, Rec: 0.04, AR: [0.93818985]% => [68] predictions)')
+('Finished epoch 30', ' out of 30. modelID=USDCAD;xpp107397; Train loss = 0.362 (f1: 0.14), Validation loss = 0.361 (f1: 0.103, Prec: 0.61, Rec: 0.06, AR: [1.36589404]% => [99] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 6', ' out of 30. modelID=USDCAD;ndo466103; Train loss = 0.363 (f1: 0.131), Validation loss = 0.364 (f1: 0.082, Prec: 0.62, Rec: 0.04, AR: [1.04856512]% => [76] predictions)')
+('Finished epoch 15', ' out of 30. modelID=USDCAD;pei715151; Train loss = 0.362 (f1: 0.142), Validation loss = 0.361 (f1: 0.082, Prec: 0.63, Rec: 0.04, AR: [1.03476821]% => [75] predictions)')
+('Finished epoch 16', ' out of 30. modelID=USDCAD;erp727516; Train loss = 0.363 (f1: 0.137), Validation loss = 0.36 (f1: 0.082, Prec: 0.64, Rec: 0.04, AR: [1.0209713]% => [74] predictions)')
+('Finished epoch 27', ' out of 30. modelID=USDCAD;upr84164; Train loss = 0.362 (f1: 0.15), Validation loss = 0.362 (f1: 0.067, Prec: 0.67, Rec: 0.04, AR: [0.78642384]% => [57] predictions)')
+('Finished epoch 28', ' out of 30. modelID=USDCAD;ike92401; Train loss = 0.362 (f1: 0.14), Validation loss = 0.363 (f1: 0.091, Prec: 0.66, Rec: 0.05, AR: [1.08995585]% => [79] predictions)')
+('Finished epoch 30', ' out of 30. modelID=USDCAD;wqt478480; Train loss = 0.362 (f1: 0.151), Validation loss = 0.363 (f1: 0.076, Prec: 0.68, Rec: 0.04, AR: [0.8692053]% => [63] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=USDCAD;jgl779652; Train loss = 0.368 (f1: 0.0), Validation loss = 0.369 (f1: 0.013, Prec: 0.7, Rec: 0.01, AR: [0.13796909]% => [10] predictions)')
+('Finished epoch 4', ' out of 30. modelID=USDCAD;cjy119838; Train loss = 0.364 (f1: 0.049), Validation loss = 0.364 (f1: 0.054, Prec: 0.61, Rec: 0.03, AR: [0.67604857]% => [49] predictions)')
+('Finished epoch 18', ' out of 30. modelID=USDCAD;tkh591543; Train loss = 0.362 (f1: 0.141), Validation loss = 0.36 (f1: 0.112, Prec: 0.61, Rec: 0.06, AR: [1.49006623]% => [108] predictions)')
+('Finished epoch 22', ' out of 30. modelID=USDCAD;pgo266480; Train loss = 0.362 (f1: 0.139), Validation loss = 0.363 (f1: 0.115, Prec: 0.6, Rec: 0.06, AR: [1.55905077]% => [113] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=USDCAD;vmf569939; Train loss = 0.367 (f1: 0.041), Validation loss = 0.364 (f1: 0.043, Prec: 0.67, Rec: 0.02, AR: [0.49668874]% => [36] predictions)')
+('Finished epoch 9', ' out of 30. modelID=USDCAD;oaf110414; Train loss = 0.363 (f1: 0.126), Validation loss = 0.361 (f1: 0.084, Prec: 0.62, Rec: 0.04, AR: [1.07615894]% => [78] predictions)')
+('Finished epoch 11', ' out of 30. modelID=USDCAD;zsa472836; Train loss = 0.363 (f1: 0.128), Validation loss = 0.361 (f1: 0.101, Prec: 0.62, Rec: 0.06, AR: [1.3107064]% => [95] predictions)')
+('Finished epoch 21', ' out of 30. modelID=USDCAD;lao876015; Train loss = 0.362 (f1: 0.141), Validation loss = 0.36 (f1: 0.124, Prec: 0.61, Rec: 0.07, AR: [1.68322296]% => [122] predictions)')
+('Finished epoch 23', ' out of 30. modelID=USDCAD;yty925962; Train loss = 0.363 (f1: 0.139), Validation loss = 0.363 (f1: 0.092, Prec: 0.65, Rec: 0.05, AR: [1.13134658]% => [82] predictions)')
+('Finished epoch 27', ' out of 30. modelID=USDCAD;lvz336658; Train loss = 0.362 (f1: 0.134), Validation loss = 0.361 (f1: 0.145, Prec: 0.61, Rec: 0.08, AR: [1.98675497]% => [144] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=USDCAD;jad80324; Train loss = 0.366 (f1: 0.012), Validation loss = 0.363 (f1: 0.007, Prec: 0.8, Rec: 0.0, AR: [0.06898455]% => [5] predictions)')
+('Finished epoch 5', ' out of 30. modelID=USDCAD;bio5037; Train loss = 0.365 (f1: 0.053), Validation loss = 0.361 (f1: 0.047, Prec: 0.62, Rec: 0.02, AR: [0.5794702]% => [42] predictions)')
+('Finished epoch 6', ' out of 30. modelID=USDCAD;gqx722146; Train loss = 0.364 (f1: 0.1), Validation loss = 0.362 (f1: 0.047, Prec: 0.63, Rec: 0.02, AR: [0.56567329]% => [41] predictions)')
+('Finished epoch 8', ' out of 30. modelID=USDCAD;mam646640; Train loss = 0.364 (f1: 0.117), Validation loss = 0.362 (f1: 0.079, Prec: 0.63, Rec: 0.04, AR: [0.97958057]% => [71] predictions)')
+('Finished epoch 9', ' out of 30. modelID=USDCAD;eaz362592; Train loss = 0.363 (f1: 0.125), Validation loss = 0.362 (f1: 0.073, Prec: 0.65, Rec: 0.04, AR: [0.8692053]% => [63] predictions)')
+('Finished epoch 10', ' out of 30. modelID=USDCAD;xca250363; Train loss = 0.363 (f1: 0.131), Validation loss = 0.371 (f1: 0.047, Prec: 0.68, Rec: 0.02, AR: [0.52428256]% => [38] predictions)')
+('Finished epoch 13', ' out of 30. modelID=USDCAD;rpk318620; Train loss = 0.363 (f1: 0.129), Validation loss = 0.366 (f1: 0.074, Prec: 0.66, Rec: 0.04, AR: [0.88300221]% => [64] predictions)')
+('Finished epoch 14', ' out of 30. modelID=USDCAD;uwt521136; Train loss = 0.363 (f1: 0.139), Validation loss = 0.36 (f1: 0.086, Prec: 0.64, Rec: 0.05, AR: [1.06236203]% => [77] predictions)')
+('Finished epoch 15', ' out of 30. modelID=USDCAD;zjp301749; Train loss = 0.363 (f1: 0.138), Validation loss = 0.363 (f1: 0.059, Prec: 0.62, Rec: 0.03, AR: [0.7312362]% => [53] predictions)')
+('Finished epoch 25', ' out of 30. modelID=USDCAD;pfj571157; Train loss = 0.362 (f1: 0.144), Validation loss = 0.36 (f1: 0.084, Prec: 0.66, Rec: 0.04, AR: [1.00717439]% => [73] predictions)')
+('Finished epoch 26', ' out of 30. modelID=USDCAD;oog449632; Train loss = 0.362 (f1: 0.141), Validation loss = 0.362 (f1: 0.101, Prec: 0.61, Rec: 0.06, AR: [1.33830022]% => [97] predictions)')
+('Finished epoch 30', ' out of 30. modelID=USDCAD;afa310671; Train loss = 0.362 (f1: 0.147), Validation loss = 0.363 (f1: 0.071, Prec: 0.62, Rec: 0.04, AR: [0.88300221]% => [64] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run

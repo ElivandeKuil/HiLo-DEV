@@ -1,0 +1,4 @@
+('Finished epoch 2', ' out of 30. modelID=EURUSD;eiy737265; Train loss = 0.393 (f1: 0.07), Validation loss = 0.397 (f1: 0.076, Prec: 0.69, Rec: 0.04, AR: [0.99206349]% => [65] predictions)')
+on 0: Training epoch 3...                                                       
+|████████████████████████████████████████⚠︎ (!) 2460/2461 [100%] in 15.5s (158.20
+('Finished epoch 3', ' out of 30. modelID=EURUSD;zjc479827; Train loss = 0.39 (f1: 0.167), Validation loss = 0.388 (f1: 0.134, Prec: 0.6, Rec: 0.08, AR: [2.15201465]% => [141] predictions)')

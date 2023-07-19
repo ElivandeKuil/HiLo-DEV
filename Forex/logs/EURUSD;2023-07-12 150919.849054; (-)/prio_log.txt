@@ -1,0 +1,35 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 5', ' out of 30. modelID=EURUSD;vgc896877; Train loss = 0.39 (f1: 0.098), Validation loss = 0.388 (f1: 0.069, Prec: 0.66, Rec: 0.04, AR: [0.94627595]% => [62] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURUSD;xsk891515; Train loss = 0.389 (f1: 0.17), Validation loss = 0.387 (f1: 0.091, Prec: 0.66, Rec: 0.05, AR: [1.26678877]% => [83] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURUSD;zpq779070; Train loss = 0.388 (f1: 0.195), Validation loss = 0.386 (f1: 0.131, Prec: 0.64, Rec: 0.07, AR: [1.95360195]% => [128] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURUSD;atf460086; Train loss = 0.388 (f1: 0.196), Validation loss = 0.386 (f1: 0.134, Prec: 0.64, Rec: 0.07, AR: [1.9993895]% => [131] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURUSD;pzm113639; Train loss = 0.387 (f1: 0.206), Validation loss = 0.386 (f1: 0.139, Prec: 0.62, Rec: 0.08, AR: [2.16727717]% => [142] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURUSD;tsa935465; Train loss = 0.387 (f1: 0.197), Validation loss = 0.398 (f1: 0.068, Prec: 0.66, Rec: 0.04, AR: [0.93101343]% => [61] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURUSD;jrv231284; Train loss = 0.387 (f1: 0.192), Validation loss = 0.392 (f1: 0.085, Prec: 0.61, Rec: 0.05, AR: [1.26678877]% => [83] predictions)')
+No profitable model was found this run

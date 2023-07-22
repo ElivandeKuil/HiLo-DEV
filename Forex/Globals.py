@@ -1,5 +1,6 @@
-from prod_test_resources.dataframe_classes import tp_df, log_df, order_df
+from resources.dataframe_classes import tp_df, log_df, order_df
 from Logger import Logger
+import os
 
 logger = Logger(True)
 
@@ -14,9 +15,12 @@ number_layers = 0
 balance_data = False
 val_split = 0
 test_split = 0
+sys_log_mode = 3  # 3 = all
 
 label_mode = 'high' # or 'low'
 
-tp_df = tp_df("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_resources")
-log_df = log_df("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_resources")
-order_df = order_df("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_resources")
+df_folder_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "resources")
+
+tp_df = tp_df(df_folder_path)
+log_df = log_df(df_folder_path)
+order_df = order_df(df_folder_path)

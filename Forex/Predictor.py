@@ -13,7 +13,6 @@ class Predictor():
         
         self.predictors_list = self.get_ticker_predictors(ticker_predictors_path)
         
-        
     def get_ticker_predictors(self, path):
         
         ticker_predictors = []
@@ -36,9 +35,16 @@ class Predictor():
                     
                     formatted_data = self.format_data(ticker_data)
                     
+                    """
+                    if Globals.sys_log_mode > 2:
+                        string = '\n'.join([str(item) for item in formatted_data])
+                        
+                        Globals.log_df.add_log(datetime.now(), "Predictor", "Predictor", "predict",
+                                           "formatted data: \n" + string, tickerpredictor.ticker)
+                    """
                     if len(formatted_data) > 0:
                         formatted_data = formatted_data[0]
-                        order = tickerpredictor.predict(time.time(), formatted_data, True)
+                        order = tickerpredictor.predict(time.time(), formatted_data)
                         if len(order) > 0:
                             orders.append(order[0])
                 else:
@@ -51,7 +57,6 @@ class Predictor():
 
     def format_data(self, raw_data):
     
-      #  dic = list(raw_data.values())
         data = list(raw_data.items())
     
         time_frames = []
@@ -60,7 +65,6 @@ class Predictor():
     
         processed_data= []
         current_day = time_frames[0].ID[0:10]
-        
         
         for u in range(0, len(time_frames)):
             if time_frames[u].ID[0:10] == current_day:
@@ -76,10 +80,7 @@ class Predictor():
             else:
                 current_day = time_frames[u].ID[0:10]
             
-    
         return processed_data
-
-
 
 class time_frame():
     

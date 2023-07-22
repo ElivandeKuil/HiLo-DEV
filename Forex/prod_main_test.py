@@ -82,10 +82,10 @@ class program():
     def simulate(self):
         MT4_files_dir = 'C:/Users/eli_s/AppData/Roaming/MetaQuotes/Terminal/16D9C17040576AD13C62C316983027D5/MQL5/Files/'
         self.processor = tick_processor(MT4_files_dir)
-        self.predictor = Predictor("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_tickerpredictors")
+        self.predictor = Predictor(os.path.join(os.path.dirname(os.path.realpath(__file__)), "tickerpredictors"))
         sleep(3)
         
-        for u in range(1, 110):
+        for u in range(1, 124):
             for v in range(0, 4):
                 open_market = True
                 if open_market:
@@ -95,24 +95,13 @@ class program():
                     if len(orders) > 0:
                         self.place_orders(orders, account_info, market_data)
         
-        Globals.log_df.export_df("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/analysis docs")                
+        Globals.log_df.export_df("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs")                
         
-        for u in range(1, 110):
-            for v in range(0, 4):
-                open_market = True
-                if open_market:
-                    self.update_tp_status()
-                    market_data, historic_data, account_info = self.get_data(Globals.tp_df.get_active_tickers_in_list(), [u + 168, v])
-                    orders = self.get_orders(historic_data, market_data)
-                    if len(orders) > 0:
-                        self.place_orders(orders, account_info, market_data)
                         
-                        
-        Globals.log_df.export_df("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/analysis docs")
     def run(self, debug=False):
         MT4_files_dir = 'C:/Users/eli_s/AppData/Roaming/MetaQuotes/Terminal/16D9C17040576AD13C62C316983027D5/MQL5/Files/'
         self.processor = tick_processor(MT4_files_dir)
-        self.predictor = Predictor("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_tickerpredictors")
+        self.predictor = Predictor(os.path.join(os.path.dirname(os.path.realpath(__file__)), "tickerpredictors"))
         sleep(3)
         
         open_market = False
@@ -249,7 +238,7 @@ class program():
                
             else:
                 
-                if datatable.loc[datatable['Ticker'] == key, 'Max_spread'].tolist()[0] == 1:
+                if datatable.loc[datatable['Ticker'] == key, 'Status'].tolist()[0] == 1:
                     
                     do = "nothing"
                     
@@ -327,19 +316,16 @@ class program():
         
         order.status = 2
         
-        Globals.order_df.add_new_order(magicID, order.creator, datetime.now(), order.ticker, ordertype)
+        Globals.order_df.add_new_order(magicID, order.creator, datetime.now(), order.ticker, ordertype, order.comment)
         
-        Globals.log_df.add_log(datetime.now(), "main", "program", "place_orders", "Send (" + order.label_mode + ") order to MT5 for ticker: " +
+        if Globals.sys_log_mode > 0:
+            Globals.log_df.add_log(datetime.now(), "main", "program", "place_orders", "Send (" + order.label_mode + ") order to MT5 for ticker: " +
                                order.ticker + "; current_bid= " + str(bid) + ", current_ask=" + str(ask) + ", current_spread=" + str(round(self.get_spread(bid, ask),4)) + "%, lot=" + str(lot) + 
                                ", sl=" + str(sl) + ", tp=" + str(tp) + ", magicID= " + str(magicID), order.ticker)
     
         stopwatchend = time.time()
         ordertime = stopwatchend - stopwatchstart
         
-        if len(orders) > 0:
-            print("Placing order took " + str(ordertime) + "s")
-            Globals.log_df.add_log(datetime.now(), "main", "program", "place_orders" , 
-                                   "Placing order took " + str(ordertime) + "s" , None)
         if ordertime >= 1:
             Globals.log_df.add_warning(datetime.now(), "main", "program", "place_orders", "Placing orders took over 1 seconds, namely " + str(ordertime), order.ticker, 2)
     
@@ -369,15 +355,14 @@ class program():
         
         
         """
-        start = "3/Jul/2023:01:00:00 UTC +0100" 
-        end = "3/Jul/2023:02:59:51 UTC +0100"
+        start = "17/Jul/2023:01:00:00 UTC +0100" 
+        end = "17/Jul/2023:02:59:51 UTC +0100"
         
         start_dt_format = datetime.strptime(start, '%d/%b/%Y:%H:%M:%S %Z %z') + timedelta(hours=1 * time_delta[0], minutes=15 * time_delta[1])
         end_dt_format = datetime.strptime(end, '%d/%b/%Y:%H:%M:%S %Z %z') + timedelta(hours=1 * time_delta[0], minutes=15 * time_delta[1])
        
         start_timestamp = start_dt_format.timestamp()
         end_timestamp = end_dt_format.timestamp()
-        
         
         
         self.processor.dwx.subscribe_symbols(open_symbols)
@@ -407,10 +392,6 @@ class program():
         if getdatatime >= 10:
             Globals.log_df.add_warning(datetime.now(), "main", "program", "get_data", "Retrieving data took over 10 seconds, namely " + str(getdatatime), None, 2)
     
-        
-        Globals.log_df.add_log(datetime.now(), "main", "program", "get_data" , 
-                               "Data retrieval took " + str(getdatatime) + "s" , None)
-        
         if len(open_symbols) != len(historic_data):
             
             print("Did not retrieve all symbol data, asked for " + str(len(open_symbols)) + ", and got " + str(len(historic_data)))
@@ -422,7 +403,6 @@ class program():
             print("Did not retrieve all market data, asked for " + str(len(open_symbols)) + ", and got " + str(len(market_data)))
             Globals.log_df.add_warning(datetime.now(), "main", "program", "get_data", 
                                        "Did not retrieve all market data, asked for " + str(len(open_symbols)) + ", and got " + str(len(market_data)), None, 2)
-    
     
         return market_data, historic_data, account_info
     
@@ -445,8 +425,6 @@ class program():
         if len(orders) == 0:
             print("no orders were made")
             
-        dummy = Order('dummy', None, 'high', 'EURUSD', datetime.now(), 'eli')
-        orders.append(dummy)
         return orders
 
 prog = program()

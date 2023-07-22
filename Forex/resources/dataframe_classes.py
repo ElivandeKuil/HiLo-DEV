@@ -105,14 +105,14 @@ class order_df():
         else:
             columns = ['ID', 'Status', 'Creator', 'OpenDate', 'CloseDate' 'Ticker', 'LabelMode',
                        'PurchasePrice', 'SellPrice', 'ClosedPercentage', 'TotalWinLoss', 'Spread', 
-                       'TotalSpreadCost', 'MadeProfit', 'Message']
+                       'TotalSpreadCost', 'MadeProfit', 'Comment']
             
             
             self.df = pd.DataFrame(columns=columns)
     
     
-    def add_new_order(self, Id, creator, date, ticker, labelmode):
-        new_row = {'ID':Id, 'Status':1, 'Creator':creator, 'OpenDate':date, 'Ticker':ticker, 'Labelmode':labelmode}
+    def add_new_order(self, Id, creator, date, ticker, labelmode, comment=""):
+        new_row = {'ID':Id, 'Status':1, 'Creator':creator, 'OpenDate':date, 'Ticker':ticker, 'Labelmode':labelmode, 'Comment':comment}
         self.df = self.df.append(new_row, ignore_index=True)
         self.save_df()
     

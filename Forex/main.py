@@ -19,7 +19,7 @@ def run():
     counter = 0
     
     for var_num_layers in [1, 2]:
-        for var_hidden_size in [4, 8, 12]:
+        for var_hidden_size in [4, 12]:
             
             counter += 1
             
@@ -42,7 +42,7 @@ def run():
                 
                 start_time= time.time()
                 
-                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 5")
+                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 3"g5j89)
                 
                 traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
                 
@@ -163,11 +163,13 @@ def generate_ticket_predictors():
 
 #generate_ticket_predictors()
 
+
+Globals.ticker = "XAGUSD"
+dual_label_mode_run()
+Globals.ticker = "XAGUSD"
+dual_label_mode_run()
+
 """
-Globals.ticker = "USDHKD"
-dual_label_mode_run()
-Globals.ticker = "USDCAD"
-dual_label_mode_run()
 Globals.ticker = "USDCNH"
 dual_label_mode_run()
 Globals.ticker = "USDCHF"

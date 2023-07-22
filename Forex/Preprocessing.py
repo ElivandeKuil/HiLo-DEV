@@ -145,8 +145,8 @@ def format_data(ticker):
                 
                 debug = time_frames[u].ID[0:10]
                 
-                if int(time_frames[u].ID[11:13]) < 3 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
-                    
+               # if int(time_frames[u].ID[11:13]) < 3 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
+                if int(time_frames[u].ID[11:13]) < 3:
                     do = 'nothng'
                     
                 else:
@@ -216,10 +216,10 @@ class model_input():
         
         self.label = 0
         if Globals.label_mode == 'low':
-            if tf.low <= -0.06:
+            if tf.low <= -0.18:
                 self.label = 1
         if Globals.label_mode == 'high':
-            if tf.high >= 0.06:
+            if tf.high >= 0.18:
                 self.label = 1
             
     def build_linear_vector(self):

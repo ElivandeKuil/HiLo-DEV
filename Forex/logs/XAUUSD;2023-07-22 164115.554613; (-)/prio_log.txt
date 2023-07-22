@@ -1,0 +1,13 @@
+Program was terminated due to following error: [Errno 2] No such file or directory: 'C:\\Users\\eli_s\\Documents\\GitHub\\HiLo-DEV\\Forex\\Data/Pickled/XAUUSD.data'------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 1
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------

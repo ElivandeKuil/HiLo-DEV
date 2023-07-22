@@ -152,7 +152,7 @@ def activate_dwx(symbol, stop_percentage):
     debug = 0
 
 
-activate_dwx("USDCHF", .06)
+activate_dwx("XAGUSD", .18)
 
 
 

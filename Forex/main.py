@@ -42,7 +42,7 @@ def run():
                 
                 start_time= time.time()
                 
-                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 3"g5j89)
+                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 3")
                 
                 traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
                 
@@ -98,7 +98,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     print("##################" + Globals.ticker + "##################") 
     
     Globals.label_mode = 'high'
-    txt_path = "C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidates.txt"
+    txt_path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidates.txt"
     
     _, _, high_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
@@ -109,7 +109,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     
     
     Globals.label_mode = 'low'
-    txt_path = "C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidates.txt"
+    txt_path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidates.txt"
     
     _, _, low_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
@@ -135,7 +135,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
 
 def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation, low_comb_documentation,
                             high_ind_documentation, high_comb_documentation, low_models, high_models):
-    path = "C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/prod_test_tickerpredictors/"
+    path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/tickerpredictors/"
     
     new_ticker_predictor = TickerPredictor(
         ticker, 
@@ -154,22 +154,22 @@ def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation,
 
 def generate_ticket_predictors():
     
-    symbols = [ "USDJPY"]
-    folders = [ "USDJPY"]
-    spreads = [  0.013]
+    symbols = [ "XAGUSD"]
+    folders = [ "XAGUSD"]
+    spreads = [  0.04]
     
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-#generate_ticket_predictors()
-
-
-Globals.ticker = "XAGUSD"
-dual_label_mode_run()
-Globals.ticker = "XAGUSD"
-dual_label_mode_run()
+generate_ticket_predictors()
 
 """
+Globals.ticker = "XAGUSD"
+dual_label_mode_run()
+Globals.ticker = "XAGUSD"
+dual_label_mode_run()
+
+
 Globals.ticker = "USDCNH"
 dual_label_mode_run()
 Globals.ticker = "USDCHF"

@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import pickle
-
+from datetime import datetime
 
 class tp_df():
     
@@ -14,12 +14,12 @@ class tp_df():
                 self.df = pickle.load(fp)
             
         else:
-            columns = ['ID', 'Ticker', 'Name', 'Max_spread', 'Aim_precision', 'Aim_AR', 'Status', 'TP_percent', 'SL_percent', 'Comment', 'Interval']
+            columns = ['ID', 'GemaaktOP', 'Ticker', 'Name', 'Max_spread', 'Aim_precision', 'Aim_AR', 'Status', 'TP_percent', 'SL_percent', 'Comment', 'Interval']
             self.df = pd.DataFrame(columns=columns)
     
     
     def add_row(self, ID, ticker, name, max_spread, aim_precision, aim_ar, status, tp_percent, sl_percent, interval, comment=""):
-        new_row = {'ID':ID, 'Ticker':ticker, 'Name':name, 'Max_spread':max_spread, 'Aim_precision':aim_precision, 'Aim_AR':aim_ar,
+        new_row = {'ID':ID, 'GemaaktOP':datetime.now(), 'Ticker':ticker, 'Name':name, 'Max_spread':max_spread, 'Aim_precision':aim_precision, 'Aim_AR':aim_ar,
                    'Status':status, 'TP_percent':tp_percent, 'SL_percent':sl_percent, 'Comment':comment, 'Interval':interval}
         self.df = self.df.append(new_row, ignore_index=True)
         self.save_df()

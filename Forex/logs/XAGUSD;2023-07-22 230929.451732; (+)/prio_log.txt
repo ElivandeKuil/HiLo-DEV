@@ -1,0 +1,70 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 3', ' out of 30. modelID=XAGUSD;tsf810612; Train loss = 0.495 (f1: 0.353), Validation loss = 0.488 (f1: 0.298, Prec: 0.6, Rec: 0.2, AR: [8.255886]% => [533] predictions)')
+('Finished epoch 5', ' out of 30. modelID=XAGUSD;wdg420462; Train loss = 0.494 (f1: 0.36), Validation loss = 0.486 (f1: 0.232, Prec: 0.62, Rec: 0.14, AR: [5.83952912]% => [377] predictions)')
+('Finished epoch 28', ' out of 30. modelID=XAGUSD;yka469619; Train loss = 0.491 (f1: 0.372), Validation loss = 0.486 (f1: 0.327, Prec: 0.6, Rec: 0.22, AR: [9.40210657]% => [607] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 22', ' out of 30. modelID=XAGUSD;nql549087; Train loss = 0.492 (f1: 0.368), Validation loss = 0.489 (f1: 0.254, Prec: 0.61, Rec: 0.16, AR: [6.69144981]% => [432] predictions)')
+No profitable model was found this run
+('Finished epoch 5', ' out of 30. modelID=XAGUSD;muf555942; Train loss = 0.533 (f1: 0.057), Validation loss = 0.517 (f1: 0.205, Prec: 0.61, Rec: 0.12, AR: [5.08054523]% => [328] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 10', ' out of 30. modelID=XAGUSD;dma746262; Train loss = 0.493 (f1: 0.368), Validation loss = 0.488 (f1: 0.28, Prec: 0.61, Rec: 0.18, AR: [7.55885998]% => [488] predictions)')
+No profitable model was found this run

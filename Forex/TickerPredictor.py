@@ -303,4 +303,4 @@ class TickerPredictor():
         
         return order
         
-Globals.log_df.export_df("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs")
+#Globals.log_df.export_df("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs")

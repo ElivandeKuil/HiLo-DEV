@@ -118,6 +118,8 @@ class program():
             
                  if now.minute % 15 == 14 and now.second == 50:
                      
+                     print("Started cycle...")
+                     
                      open_market = False
                      
                      try:
@@ -181,6 +183,8 @@ class program():
                             
                          sleep(.5)
                          
+                         print("Ended cycle.")
+                         
                      if now.minute % 5 == 1 and now.second == 0:
                          
                          open_market = False
@@ -227,7 +231,7 @@ class program():
             
             if current_spread > datatable.loc[datatable['Ticker'] == key]['Max_spread'].tolist()[0]:
                 
-                if datatable.loc[datatable['Ticker'] == key, 'Max_spread'].tolist()[0] == 2:
+                if datatable.loc[datatable['Ticker'] == key, 'Status'].tolist()[0] == 2:
                     
                     do = "nothing"
                     
@@ -368,7 +372,6 @@ class program():
         self.processor.dwx.subscribe_symbols(open_symbols)
         
         for symbol in open_symbols:
-            print("Requesting " + symbol)
             self.processor.dwx.get_historic_data(symbol, 'M15', start_timestamp, end_timestamp)
             sleep(.5)
         

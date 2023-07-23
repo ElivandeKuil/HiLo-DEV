@@ -35,14 +35,14 @@ class Predictor():
                     
                     formatted_data = self.format_data(ticker_data)
                     
-                    """
-                    if Globals.sys_log_mode > 2:
-                        string = '\n'.join([str(item) for item in formatted_data])
-                        
-                        Globals.log_df.add_log(datetime.now(), "Predictor", "Predictor", "predict",
-                                           "formatted data: \n" + string, tickerpredictor.ticker)
-                    """
                     if len(formatted_data) > 0:
+                        
+                        input_log_string = self.convert_formatted_data_to_string(formatted_data)
+                        
+                        if Globals.sys_log_mode > 2:
+                            Globals.log_df.add_log(datetime.now(), "Predictor", "Predictor", "predict",
+                                               "formatted data: \n" + input_log_string, tickerpredictor.ticker)
+                        
                         formatted_data = formatted_data[0]
                         order = tickerpredictor.predict(time.time(), formatted_data)
                         if len(order) > 0:
@@ -81,6 +81,21 @@ class Predictor():
                 current_day = time_frames[u].ID[0:10]
             
         return processed_data
+
+    def convert_formatted_data_to_string(self, formatted_data):
+        sequence = formatted_data[0].sequence_input
+        linear = formatted_data[0].linear_input
+        
+        linear_string = ' '.join([str(item) for item in linear])
+        
+        output_string = "linear: " + linear_string + '\n' + "sequence: \n"
+        
+        for row in sequence:
+            
+            output_string += ' '.join([str(item) for item in row]) + "\n"
+            
+        return output_string
+                                 
 
 class time_frame():
     

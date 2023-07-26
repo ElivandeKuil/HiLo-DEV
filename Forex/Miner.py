@@ -99,7 +99,7 @@ def activate_dwx(symbol, stop_percentage):
     print("Result:")
     result = processor.dwx.historic_data
     
-    with open("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
+    with open("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
                 pickle.dump(result, fp)
     
     
@@ -152,7 +152,7 @@ def activate_dwx(symbol, stop_percentage):
     debug = 0
 
 
-activate_dwx("XAGUSD", .18)
+activate_dwx("EURSGD", .06)
 
 
 

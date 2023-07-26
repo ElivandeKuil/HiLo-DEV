@@ -38,11 +38,11 @@ def run():
             
             Globals.logger.log_globals()
             
-            for u in range(0, 3):
+            for u in range(0, 5):
                 
                 start_time= time.time()
                 
-                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 3")
+                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 5")
                 
                 traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
                 
@@ -154,9 +154,9 @@ def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation,
 
 def generate_ticket_predictors():
     
-    symbols = [ "XAGUSD"]
-    folders = [ "XAGUSD"]
-    spreads = [  0.04]
+    symbols = [ "XAUUSD"]
+    folders = [ "XAUUSD"]
+    spreads = [  0.015]
     
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
@@ -164,8 +164,9 @@ def generate_ticket_predictors():
 generate_ticket_predictors()
 
 """
-Globals.ticker = "XAGUSD"
+Globals.ticker = "XAUUSD"
 dual_label_mode_run()
+
 Globals.ticker = "XAGUSD"
 dual_label_mode_run()
 

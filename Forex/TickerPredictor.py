@@ -85,7 +85,6 @@ class TickerPredictor():
         order = []
         predicted_model = "None"
         
-        
         test_loader = DataLoader([data],
                                          batch_size=1,
                                          shuffle=False,
@@ -166,7 +165,7 @@ class TickerPredictor():
             
             if low_prediction > 0 and high_prediction > 0:
                 
-                if Globals.sys_log_mode > 2:
+                if Globals.sys_log_mode > 1:
                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                        "Double prediction found", self.ticker)
                 
@@ -181,7 +180,7 @@ class TickerPredictor():
                         ID = self.ticker + str(time)
                         order = [Order(ID, self, 'low', self.ticker, time, predicted_model, "double")]
                         
-                        if Globals.sys_log_mode > 2:
+                        if Globals.sys_log_mode > 1:
                             Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                "Difference in prediction output was > .05 in favour of low (" + str(diff) + ")", self.ticker)
                         
@@ -190,13 +189,13 @@ class TickerPredictor():
                             ID = self.ticker + str(time)
                             order = [Order(ID, self, 'high', self.ticker, time, predicted_model, "double")]
                             
-                            if Globals.sys_log_mode > 2:
+                            if Globals.sys_log_mode > 1:
                                 Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                    "Difference in prediction output was > .05 in favour of high (" + str(diff) + ")", self.ticker)
                             
                         else:
                             
-                            if Globals.sys_log_mode > 2:
+                            if Globals.sys_log_mode > 1:
                                 Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                    "No large difference in prediction output was found", self.ticker)
                             
@@ -205,64 +204,64 @@ class TickerPredictor():
                             high_predict_percentage = high_prediction / len(self.high_models)
                             
                             if low_predict_percentage == high_predict_percentage:
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "High and Low predict percentage where equal (h=" + str(high_predict_percentage) + " vs. l=" + str(low_predict_percentage) + ")", self.ticker)
                             else:
                                 if low_predict_percentage < high_predict_percentage:
                                     bias += 1
                                     
-                                    if Globals.sys_log_mode > 2:
+                                    if Globals.sys_log_mode > 1:
                                         Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                            "High models had higher predict percentage (h=" + str(high_predict_percentage) + " vs. l=" + str(low_predict_percentage) + ")", self.ticker)
                                 else:
                                     bias -= 1
                                     
-                                    if Globals.sys_log_mode > 2:
+                                    if Globals.sys_log_mode > 1:
                                         Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                            "low models had higher predict percentage (l=" + str(low_predict_percentage) + " vs. h=" + str(high_predict_percentage) + ")", self.ticker)
                                 
                             if lowest_predict < highest_predict:
                                 bias += 1
                                 
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "High models had highest prediction score (h=" + str(highest_predict) + " vs. l=" + str(lowest_predict) + ")", self.ticker)
                             else:
                                 bias -= 1
                                 
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "Low models had highest prediction score (l=" + str(lowest_predict) + " vs. h=" + str(highest_predict) + ")", self.ticker)
                             
                             if self.low_target_prec < self.high_target_prec:
                                 bias += 1
                                 
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "High models had highest target precision (h=" + str(self.high_target_prec) + " vs. l=" + str(self.low_target_prec) + ")", self.ticker)
                             else:
                                 bias -= 1
                                 
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "Low models had highest target precision (l=" + str(self.low_target_prec) + " vs. h=" + str(self.high_target_prec) + ")", self.ticker)
                             
                             if low_prediction == high_prediction:
-                                if Globals.sys_log_mode > 2:
+                                if Globals.sys_log_mode > 1:
                                     Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                        "High and low models had equal amount of predictions (h=" + str(high_prediction) + " vs. l=" + str(low_prediction) + ")", self.ticker)
                             else:
                                 if low_prediction < high_prediction:
                                     bias += 1
                                     
-                                    if Globals.sys_log_mode > 2:
+                                    if Globals.sys_log_mode > 1:
                                         Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                            "High models had most predictions (h=" + str(high_prediction) + " vs. l=" + str(low_prediction) + ")", self.ticker)
                                 else:
                                     bias -= 1
                                     
-                                    if Globals.sys_log_mode > 2:
+                                    if Globals.sys_log_mode > 1:
                                         Globals.log_df.add_log(datetime.now(), "TickerPredictor", "TickerPredictor", "predict",
                                                            "Low models had most predictions (l=" + str(low_prediction) + " vs. h=" + str(high_prediction) + ")", self.ticker)
                                     

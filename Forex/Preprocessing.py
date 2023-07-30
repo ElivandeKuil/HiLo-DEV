@@ -216,10 +216,10 @@ class model_input():
         
         self.label = 0
         if Globals.label_mode == 'low':
-            if tf.low <= -0.06:
+            if tf.low <= -0.07:
                 self.label = 1
         if Globals.label_mode == 'high':
-            if tf.high >= 0.06:
+            if tf.high >= 0.07:
                 self.label = 1
             
     def build_linear_vector(self):

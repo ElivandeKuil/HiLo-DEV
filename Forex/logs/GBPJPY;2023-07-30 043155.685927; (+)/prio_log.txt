@@ -1,0 +1,136 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 1', ' out of 30. modelID=GBPJPY;geo194995; Train loss = 0.462 (f1: 0.025), Validation loss = 0.399 (f1: 0.006, Prec: 0.8, Rec: 0.0, AR: [0.06898455]% => [5] predictions)')
+('Finished epoch 2', ' out of 30. modelID=GBPJPY;vst635147; Train loss = 0.42 (f1: 0.09), Validation loss = 0.393 (f1: 0.109, Prec: 0.65, Rec: 0.06, AR: [1.6004415]% => [116] predictions)')
+('Finished epoch 3', ' out of 30. modelID=GBPJPY;kgt358044; Train loss = 0.417 (f1: 0.143), Validation loss = 0.391 (f1: 0.077, Prec: 0.65, Rec: 0.04, AR: [1.07615894]% => [78] predictions)')
+('Finished epoch 4', ' out of 30. modelID=GBPJPY;wrm413391; Train loss = 0.415 (f1: 0.165), Validation loss = 0.395 (f1: 0.137, Prec: 0.63, Rec: 0.08, AR: [2.13852097]% => [155] predictions)')
+('Finished epoch 6', ' out of 30. modelID=GBPJPY;mhf883143; Train loss = 0.415 (f1: 0.178), Validation loss = 0.392 (f1: 0.132, Prec: 0.6, Rec: 0.07, AR: [2.12472406]% => [154] predictions)')
+('Finished epoch 8', ' out of 30. modelID=GBPJPY;sep231641; Train loss = 0.415 (f1: 0.18), Validation loss = 0.389 (f1: 0.162, Prec: 0.61, Rec: 0.09, AR: [2.63520971]% => [191] predictions)')
+('Finished epoch 13', ' out of 30. modelID=GBPJPY;nrs867674; Train loss = 0.414 (f1: 0.193), Validation loss = 0.389 (f1: 0.147, Prec: 0.62, Rec: 0.08, AR: [2.31788079]% => [168] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;yjh142948; Train loss = 0.413 (f1: 0.206), Validation loss = 0.39 (f1: 0.149, Prec: 0.61, Rec: 0.09, AR: [2.42825607]% => [176] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=GBPJPY;qcf39914; Train loss = 0.42 (f1: 0.053), Validation loss = 0.392 (f1: 0.011, Prec: 0.88, Rec: 0.01, AR: [0.11037528]% => [8] predictions)')
+('Finished epoch 3', ' out of 30. modelID=GBPJPY;rta933070; Train loss = 0.417 (f1: 0.116), Validation loss = 0.394 (f1: 0.022, Prec: 0.82, Rec: 0.01, AR: [0.23454746]% => [17] predictions)')
+('Finished epoch 12', ' out of 30. modelID=GBPJPY;ujv491733; Train loss = 0.415 (f1: 0.174), Validation loss = 0.391 (f1: 0.113, Prec: 0.66, Rec: 0.06, AR: [1.64183223]% => [119] predictions)')
+No profitable model was found this run
+('Finished epoch 5', ' out of 30. modelID=GBPJPY;jsp992998; Train loss = 0.416 (f1: 0.179), Validation loss = 0.389 (f1: 0.145, Prec: 0.62, Rec: 0.08, AR: [2.30408389]% => [167] predictions)')
+('Finished epoch 16', ' out of 30. modelID=GBPJPY;wot555931; Train loss = 0.414 (f1: 0.191), Validation loss = 0.39 (f1: 0.157, Prec: 0.61, Rec: 0.09, AR: [2.55242826]% => [185] predictions)')
+('Finished epoch 17', ' out of 30. modelID=GBPJPY;ede280530; Train loss = 0.414 (f1: 0.19), Validation loss = 0.391 (f1: 0.133, Prec: 0.63, Rec: 0.07, AR: [2.0419426]% => [148] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;qwu774137; Train loss = 0.413 (f1: 0.196), Validation loss = 0.388 (f1: 0.148, Prec: 0.6, Rec: 0.08, AR: [2.42825607]% => [176] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=GBPJPY;hxs972786; Train loss = 0.417 (f1: 0.152), Validation loss = 0.393 (f1: 0.123, Prec: 0.62, Rec: 0.07, AR: [1.91777042]% => [139] predictions)')
+('Finished epoch 4', ' out of 30. modelID=GBPJPY;udk850086; Train loss = 0.416 (f1: 0.169), Validation loss = 0.39 (f1: 0.121, Prec: 0.63, Rec: 0.07, AR: [1.83498896]% => [133] predictions)')
+('Finished epoch 15', ' out of 30. modelID=GBPJPY;ujg716539; Train loss = 0.414 (f1: 0.2), Validation loss = 0.391 (f1: 0.141, Prec: 0.65, Rec: 0.08, AR: [2.09713024]% => [152] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPJPY;duu837903; Train loss = 0.413 (f1: 0.196), Validation loss = 0.39 (f1: 0.138, Prec: 0.64, Rec: 0.08, AR: [2.08333333]% => [151] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;fiy585810; Train loss = 0.413 (f1: 0.2), Validation loss = 0.39 (f1: 0.126, Prec: 0.63, Rec: 0.07, AR: [1.93156733]% => [140] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 5', ' out of 30. modelID=GBPJPY;wit291090; Train loss = 0.417 (f1: 0.161), Validation loss = 0.405 (f1: 0.075, Prec: 0.66, Rec: 0.04, AR: [1.04856512]% => [76] predictions)')
+('Finished epoch 7', ' out of 30. modelID=GBPJPY;tre322558; Train loss = 0.416 (f1: 0.189), Validation loss = 0.391 (f1: 0.13, Prec: 0.61, Rec: 0.07, AR: [2.0419426]% => [148] predictions)')
+('Finished epoch 8', ' out of 30. modelID=GBPJPY;llg218233; Train loss = 0.416 (f1: 0.188), Validation loss = 0.391 (f1: 0.165, Prec: 0.61, Rec: 0.1, AR: [2.73178808]% => [198] predictions)')
+('Finished epoch 14', ' out of 30. modelID=GBPJPY;uai137070; Train loss = 0.414 (f1: 0.197), Validation loss = 0.392 (f1: 0.13, Prec: 0.62, Rec: 0.07, AR: [2.0281457]% => [147] predictions)')
+('Finished epoch 15', ' out of 30. modelID=GBPJPY;dww986483; Train loss = 0.414 (f1: 0.197), Validation loss = 0.392 (f1: 0.092, Prec: 0.65, Rec: 0.05, AR: [1.3107064]% => [95] predictions)')
+('Finished epoch 24', ' out of 30. modelID=GBPJPY;eie70063; Train loss = 0.413 (f1: 0.197), Validation loss = 0.389 (f1: 0.142, Prec: 0.64, Rec: 0.08, AR: [2.15231788]% => [156] predictions)')
+No profitable model was found this run
+('Finished epoch 1', ' out of 30. modelID=GBPJPY;wof443265; Train loss = 0.45 (f1: 0.005), Validation loss = 0.398 (f1: 0.011, Prec: 0.64, Rec: 0.01, AR: [0.151766]% => [11] predictions)')
+('Finished epoch 4', ' out of 30. modelID=GBPJPY;vzz937466; Train loss = 0.416 (f1: 0.182), Validation loss = 0.39 (f1: 0.132, Prec: 0.61, Rec: 0.07, AR: [2.09713024]% => [152] predictions)')
+('Finished epoch 7', ' out of 30. modelID=GBPJPY;cpv350657; Train loss = 0.415 (f1: 0.182), Validation loss = 0.39 (f1: 0.12, Prec: 0.66, Rec: 0.07, AR: [1.7384106]% => [126] predictions)')
+('Finished epoch 15', ' out of 30. modelID=GBPJPY;wac898133; Train loss = 0.413 (f1: 0.188), Validation loss = 0.391 (f1: 0.156, Prec: 0.61, Rec: 0.09, AR: [2.52483444]% => [183] predictions)')
+No profitable model was found this run
+('Finished epoch 1', ' out of 30. modelID=GBPJPY;lfy619930; Train loss = 0.438 (f1: 0.016), Validation loss = 0.396 (f1: 0.078, Prec: 0.61, Rec: 0.04, AR: [1.17273731]% => [85] predictions)')
+('Finished epoch 2', ' out of 30. modelID=GBPJPY;pze373765; Train loss = 0.419 (f1: 0.124), Validation loss = 0.408 (f1: 0.086, Prec: 0.62, Rec: 0.05, AR: [1.28311258]% => [93] predictions)')
+('Finished epoch 6', ' out of 30. modelID=GBPJPY;zgd907001; Train loss = 0.415 (f1: 0.185), Validation loss = 0.39 (f1: 0.136, Prec: 0.63, Rec: 0.08, AR: [2.11092715]% => [153] predictions)')
+('Finished epoch 20', ' out of 30. modelID=GBPJPY;rbk821388; Train loss = 0.413 (f1: 0.193), Validation loss = 0.389 (f1: 0.155, Prec: 0.61, Rec: 0.09, AR: [2.55242826]% => [185] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;wpf94380; Train loss = 0.413 (f1: 0.195), Validation loss = 0.389 (f1: 0.147, Prec: 0.61, Rec: 0.08, AR: [2.35927152]% => [171] predictions)')
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=GBPJPY;zgl342866; Train loss = 0.416 (f1: 0.159), Validation loss = 0.391 (f1: 0.089, Prec: 0.67, Rec: 0.05, AR: [1.24172185]% => [90] predictions)')
+('Finished epoch 5', ' out of 30. modelID=GBPJPY;xeq836919; Train loss = 0.415 (f1: 0.158), Validation loss = 0.389 (f1: 0.115, Prec: 0.61, Rec: 0.06, AR: [1.80739514]% => [131] predictions)')
+('Finished epoch 7', ' out of 30. modelID=GBPJPY;tve310395; Train loss = 0.415 (f1: 0.176), Validation loss = 0.389 (f1: 0.145, Prec: 0.62, Rec: 0.08, AR: [2.29028698]% => [166] predictions)')
+('Finished epoch 16', ' out of 30. modelID=GBPJPY;lwp479056; Train loss = 0.414 (f1: 0.191), Validation loss = 0.389 (f1: 0.139, Prec: 0.65, Rec: 0.08, AR: [2.06953642]% => [150] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPJPY;bdu527946; Train loss = 0.413 (f1: 0.194), Validation loss = 0.395 (f1: 0.151, Prec: 0.61, Rec: 0.09, AR: [2.42825607]% => [176] predictions)')
+('Finished epoch 23', ' out of 30. modelID=GBPJPY;iip396261; Train loss = 0.413 (f1: 0.187), Validation loss = 0.39 (f1: 0.135, Prec: 0.64, Rec: 0.08, AR: [2.0419426]% => [148] predictions)')
+('Finished epoch 29', ' out of 30. modelID=GBPJPY;see977259; Train loss = 0.413 (f1: 0.197), Validation loss = 0.389 (f1: 0.155, Prec: 0.62, Rec: 0.09, AR: [2.4696468]% => [179] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 13', ' out of 30. modelID=GBPJPY;cnt770165; Train loss = 0.415 (f1: 0.201), Validation loss = 0.39 (f1: 0.141, Prec: 0.62, Rec: 0.08, AR: [2.22130243]% => [161] predictions)')
+('Finished epoch 20', ' out of 30. modelID=GBPJPY;zqb397470; Train loss = 0.414 (f1: 0.208), Validation loss = 0.39 (f1: 0.136, Prec: 0.66, Rec: 0.08, AR: [1.98675497]% => [144] predictions)')
+('Finished epoch 22', ' out of 30. modelID=GBPJPY;hgz973378; Train loss = 0.414 (f1: 0.195), Validation loss = 0.39 (f1: 0.139, Prec: 0.64, Rec: 0.08, AR: [2.11092715]% => [153] predictions)')
+No profitable model was found this run
+('Finished epoch 10', ' out of 30. modelID=GBPJPY;zpq682943; Train loss = 0.414 (f1: 0.192), Validation loss = 0.397 (f1: 0.103, Prec: 0.64, Rec: 0.06, AR: [1.50386313]% => [109] predictions)')
+('Finished epoch 13', ' out of 30. modelID=GBPJPY;wip304174; Train loss = 0.414 (f1: 0.188), Validation loss = 0.392 (f1: 0.148, Prec: 0.6, Rec: 0.08, AR: [2.42825607]% => [176] predictions)')
+('Finished epoch 17', ' out of 30. modelID=GBPJPY;bcm292455; Train loss = 0.414 (f1: 0.187), Validation loss = 0.388 (f1: 0.157, Prec: 0.6, Rec: 0.09, AR: [2.58002208]% => [187] predictions)')
+('Finished epoch 20', ' out of 30. modelID=GBPJPY;ckz294229; Train loss = 0.414 (f1: 0.188), Validation loss = 0.389 (f1: 0.151, Prec: 0.62, Rec: 0.09, AR: [2.38686534]% => [173] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=GBPJPY;izg727674; Train loss = 0.42 (f1: 0.074), Validation loss = 0.393 (f1: 0.01, Prec: 0.86, Rec: 0.0, AR: [0.09657837]% => [7] predictions)')
+('Finished epoch 5', ' out of 30. modelID=GBPJPY;ahx574294; Train loss = 0.417 (f1: 0.163), Validation loss = 0.392 (f1: 0.142, Prec: 0.61, Rec: 0.08, AR: [2.29028698]% => [166] predictions)')
+('Finished epoch 7', ' out of 30. modelID=GBPJPY;osy580175; Train loss = 0.416 (f1: 0.163), Validation loss = 0.389 (f1: 0.157, Prec: 0.62, Rec: 0.09, AR: [2.51103753]% => [182] predictions)')
+('Finished epoch 8', ' out of 30. modelID=GBPJPY;uax582788; Train loss = 0.415 (f1: 0.172), Validation loss = 0.389 (f1: 0.15, Prec: 0.61, Rec: 0.09, AR: [2.40066225]% => [174] predictions)')
+('Finished epoch 16', ' out of 30. modelID=GBPJPY;uaz186133; Train loss = 0.414 (f1: 0.19), Validation loss = 0.392 (f1: 0.139, Prec: 0.62, Rec: 0.08, AR: [2.1799117]% => [158] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;cxj646274; Train loss = 0.413 (f1: 0.186), Validation loss = 0.389 (f1: 0.147, Prec: 0.61, Rec: 0.08, AR: [2.37306843]% => [172] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 9', ' out of 30. modelID=GBPJPY;pkd830698; Train loss = 0.414 (f1: 0.185), Validation loss = 0.389 (f1: 0.149, Prec: 0.63, Rec: 0.08, AR: [2.30408389]% => [167] predictions)')
+('Finished epoch 15', ' out of 30. modelID=GBPJPY;dwj298700; Train loss = 0.414 (f1: 0.192), Validation loss = 0.39 (f1: 0.143, Prec: 0.6, Rec: 0.08, AR: [2.3316777]% => [169] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPJPY;qfy210785; Train loss = 0.413 (f1: 0.194), Validation loss = 0.39 (f1: 0.138, Prec: 0.64, Rec: 0.08, AR: [2.09713024]% => [152] predictions)')
+('Finished epoch 20', ' out of 30. modelID=GBPJPY;gcy45938; Train loss = 0.413 (f1: 0.194), Validation loss = 0.39 (f1: 0.115, Prec: 0.65, Rec: 0.06, AR: [1.68322296]% => [122] predictions)')
+No profitable model was found this run
+('Finished epoch 13', ' out of 30. modelID=GBPJPY;ent318886; Train loss = 0.415 (f1: 0.187), Validation loss = 0.392 (f1: 0.121, Prec: 0.65, Rec: 0.07, AR: [1.79359823]% => [130] predictions)')
+('Finished epoch 23', ' out of 30. modelID=GBPJPY;ndp770301; Train loss = 0.414 (f1: 0.187), Validation loss = 0.395 (f1: 0.151, Prec: 0.6, Rec: 0.09, AR: [2.4696468]% => [179] predictions)')
+('Finished epoch 27', ' out of 30. modelID=GBPJPY;nrq110872; Train loss = 0.413 (f1: 0.194), Validation loss = 0.391 (f1: 0.11, Prec: 0.71, Rec: 0.06, AR: [1.4486755]% => [105] predictions)')
+('Finished epoch 30', ' out of 30. modelID=GBPJPY;jau514579; Train loss = 0.413 (f1: 0.191), Validation loss = 0.389 (f1: 0.144, Prec: 0.62, Rec: 0.08, AR: [2.26269316]% => [164] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 5', ' out of 30. modelID=GBPJPY;qzu328503; Train loss = 0.418 (f1: 0.142), Validation loss = 0.393 (f1: 0.083, Prec: 0.65, Rec: 0.04, AR: [1.18653422]% => [86] predictions)')
+('Finished epoch 14', ' out of 30. modelID=GBPJPY;xjd220703; Train loss = 0.414 (f1: 0.194), Validation loss = 0.393 (f1: 0.158, Prec: 0.61, Rec: 0.09, AR: [2.59381898]% => [188] predictions)')
+('Finished epoch 18', ' out of 30. modelID=GBPJPY;okd633521; Train loss = 0.414 (f1: 0.187), Validation loss = 0.389 (f1: 0.166, Prec: 0.6, Rec: 0.1, AR: [2.77317881]% => [201] predictions)')
+('Finished epoch 21', ' out of 30. modelID=GBPJPY;lxl291808; Train loss = 0.413 (f1: 0.192), Validation loss = 0.39 (f1: 0.12, Prec: 0.64, Rec: 0.07, AR: [1.77980132]% => [129] predictions)')
+('Finished epoch 23', ' out of 30. modelID=GBPJPY;zjy267865; Train loss = 0.413 (f1: 0.188), Validation loss = 0.39 (f1: 0.148, Prec: 0.61, Rec: 0.08, AR: [2.41445916]% => [175] predictions)')
+No profitable model was found this run

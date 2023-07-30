@@ -1,0 +1,87 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 6', ' out of 30. modelID=EURSGD;yqd971845; Train loss = 0.254 (f1: 0.019), Validation loss = 0.25 (f1: 0.018, Prec: 0.67, Rec: 0.01, AR: [0.12458472]% => [9] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURSGD;aid741880; Train loss = 0.253 (f1: 0.04), Validation loss = 0.253 (f1: 0.018, Prec: 0.75, Rec: 0.01, AR: [0.11074197]% => [8] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURSGD;kpl197527; Train loss = 0.252 (f1: 0.078), Validation loss = 0.254 (f1: 0.026, Prec: 0.69, Rec: 0.01, AR: [0.1799557]% => [13] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 4', ' out of 30. modelID=EURSGD;uqy184980; Train loss = 0.254 (f1: 0.003), Validation loss = 0.252 (f1: 0.012, Prec: 0.8, Rec: 0.01, AR: [0.06921373]% => [5] predictions)')
+No profitable model was found this run
+('Finished epoch 8', ' out of 30. modelID=EURSGD;ptn636812; Train loss = 0.253 (f1: 0.065), Validation loss = 0.253 (f1: 0.023, Prec: 0.73, Rec: 0.01, AR: [0.15227021]% => [11] predictions)')
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=EURSGD;fbo949916; Train loss = 0.254 (f1: 0.002), Validation loss = 0.255 (f1: 0.006, Prec: 1.0, Rec: 0.0, AR: [0.02768549]% => [2] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURSGD;ggt527281; Train loss = 0.254 (f1: 0.018), Validation loss = 0.251 (f1: 0.015, Prec: 0.71, Rec: 0.01, AR: [0.09689922]% => [7] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURSGD;wxr136177; Train loss = 0.252 (f1: 0.059), Validation loss = 0.253 (f1: 0.02, Prec: 0.64, Rec: 0.01, AR: [0.15227021]% => [11] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURSGD;yan232050; Train loss = 0.251 (f1: 0.082), Validation loss = 0.253 (f1: 0.032, Prec: 0.61, Rec: 0.02, AR: [0.24916944]% => [18] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 12', ' out of 30. modelID=EURSGD;ldq709187; Train loss = 0.253 (f1: 0.051), Validation loss = 0.251 (f1: 0.015, Prec: 0.62, Rec: 0.01, AR: [0.11074197]% => [8] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 6', ' out of 30. modelID=EURSGD;cgv927927; Train loss = 0.254 (f1: 0.014), Validation loss = 0.249 (f1: 0.018, Prec: 0.75, Rec: 0.01, AR: [0.11074197]% => [8] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURSGD;pji359312; Train loss = 0.253 (f1: 0.044), Validation loss = 0.25 (f1: 0.02, Prec: 0.7, Rec: 0.01, AR: [0.13842746]% => [10] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURSGD;tbl68738; Train loss = 0.252 (f1: 0.066), Validation loss = 0.252 (f1: 0.029, Prec: 0.62, Rec: 0.01, AR: [0.22148394]% => [16] predictions)')
+No profitable model was found this run
+('Finished epoch 9', ' out of 30. modelID=EURSGD;tdy575576; Train loss = 0.253 (f1: 0.018), Validation loss = 0.252 (f1: 0.009, Prec: 0.75, Rec: 0.0, AR: [0.05537099]% => [4] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURSGD;opd642880; Train loss = 0.253 (f1: 0.026), Validation loss = 0.256 (f1: 0.018, Prec: 0.67, Rec: 0.01, AR: [0.12458472]% => [9] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURSGD;anm418727; Train loss = 0.253 (f1: 0.028), Validation loss = 0.25 (f1: 0.006, Prec: 0.67, Rec: 0.0, AR: [0.04152824]% => [3] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURSGD;kni921540; Train loss = 0.252 (f1: 0.069), Validation loss = 0.25 (f1: 0.015, Prec: 0.83, Rec: 0.01, AR: [0.08305648]% => [6] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURSGD;kdy612479; Train loss = 0.252 (f1: 0.059), Validation loss = 0.252 (f1: 0.012, Prec: 0.8, Rec: 0.01, AR: [0.06921373]% => [5] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+('Finished epoch 8', ' out of 30. modelID=EURSGD;qyo875338; Train loss = 0.254 (f1: 0.054), Validation loss = 0.251 (f1: 0.009, Prec: 0.75, Rec: 0.0, AR: [0.05537099]% => [4] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run

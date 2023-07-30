@@ -1,0 +1,322 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 2', ' out of 30. modelID=EURJPY;psl23742; Train loss = 0.407 (f1: 0.082), Validation loss = 0.408 (f1: 0.099, Prec: 0.72, Rec: 0.05, AR: [1.37969095]% => [100] predictions)')
+('Finished epoch 3', ' out of 30. modelID=EURJPY;yzr683850; Train loss = 0.405 (f1: 0.178), Validation loss = 0.412 (f1: 0.128, Prec: 0.67, Rec: 0.07, AR: [1.94536424]% => [141] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;vac989688; Train loss = 0.404 (f1: 0.195), Validation loss = 0.407 (f1: 0.205, Prec: 0.61, Rec: 0.12, AR: [3.72516556]% => [270] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;tty414338; Train loss = 0.403 (f1: 0.22), Validation loss = 0.409 (f1: 0.147, Prec: 0.65, Rec: 0.08, AR: [2.37306843]% => [172] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;bdw491235; Train loss = 0.403 (f1: 0.226), Validation loss = 0.407 (f1: 0.157, Prec: 0.66, Rec: 0.09, AR: [2.49724062]% => [181] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;fnm147882; Train loss = 0.402 (f1: 0.224), Validation loss = 0.406 (f1: 0.224, Prec: 0.61, Rec: 0.14, AR: [4.18046358]% => [303] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;xbg571498; Train loss = 0.402 (f1: 0.228), Validation loss = 0.407 (f1: 0.164, Prec: 0.64, Rec: 0.09, AR: [2.74558499]% => [199] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;uce947365; Train loss = 0.402 (f1: 0.22), Validation loss = 0.412 (f1: 0.173, Prec: 0.66, Rec: 0.1, AR: [2.78697572]% => [202] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;ecp221977; Train loss = 0.402 (f1: 0.222), Validation loss = 0.412 (f1: 0.13, Prec: 0.67, Rec: 0.07, AR: [2.00055188]% => [145] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;dhh742384; Train loss = 0.401 (f1: 0.224), Validation loss = 0.405 (f1: 0.23, Prec: 0.62, Rec: 0.14, AR: [4.24944812]% => [308] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;vza100813; Train loss = 0.401 (f1: 0.224), Validation loss = 0.408 (f1: 0.234, Prec: 0.63, Rec: 0.14, AR: [4.2218543]% => [306] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;xba456395; Train loss = 0.402 (f1: 0.228), Validation loss = 0.406 (f1: 0.204, Prec: 0.65, Rec: 0.12, AR: [3.44922737]% => [250] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;yco694994; Train loss = 0.401 (f1: 0.219), Validation loss = 0.405 (f1: 0.231, Prec: 0.63, Rec: 0.14, AR: [4.2080574]% => [305] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;vka12336; Train loss = 0.401 (f1: 0.223), Validation loss = 0.405 (f1: 0.243, Prec: 0.62, Rec: 0.15, AR: [4.55298013]% => [330] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;tey592989; Train loss = 0.401 (f1: 0.226), Validation loss = 0.407 (f1: 0.16, Prec: 0.66, Rec: 0.09, AR: [2.56622517]% => [186] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;rzk15177; Train loss = 0.401 (f1: 0.223), Validation loss = 0.406 (f1: 0.175, Prec: 0.66, Rec: 0.1, AR: [2.85596026]% => [207] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;qei873451; Train loss = 0.401 (f1: 0.226), Validation loss = 0.406 (f1: 0.195, Prec: 0.64, Rec: 0.11, AR: [3.36644592]% => [244] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;ywi965461; Train loss = 0.401 (f1: 0.226), Validation loss = 0.407 (f1: 0.253, Prec: 0.6, Rec: 0.16, AR: [4.95309051]% => [359] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;nle490472; Train loss = 0.401 (f1: 0.218), Validation loss = 0.406 (f1: 0.208, Prec: 0.64, Rec: 0.12, AR: [3.58719647]% => [260] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;tso91253; Train loss = 0.4 (f1: 0.222), Validation loss = 0.408 (f1: 0.179, Prec: 0.65, Rec: 0.1, AR: [2.95253863]% => [214] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;eln698715; Train loss = 0.401 (f1: 0.224), Validation loss = 0.408 (f1: 0.132, Prec: 0.65, Rec: 0.07, AR: [2.11092715]% => [153] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;brl757003; Train loss = 0.403 (f1: 0.219), Validation loss = 0.407 (f1: 0.166, Prec: 0.67, Rec: 0.09, AR: [2.64900662]% => [192] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;jah226074; Train loss = 0.401 (f1: 0.205), Validation loss = 0.406 (f1: 0.159, Prec: 0.65, Rec: 0.09, AR: [2.59381898]% => [188] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;ufu474951; Train loss = 0.401 (f1: 0.22), Validation loss = 0.405 (f1: 0.229, Prec: 0.63, Rec: 0.14, AR: [4.09768212]% => [297] predictions)')
+No profitable model was found this run
+('Finished epoch 6', ' out of 30. modelID=EURJPY;qes184650; Train loss = 0.403 (f1: 0.225), Validation loss = 0.408 (f1: 0.141, Prec: 0.63, Rec: 0.08, AR: [2.34547461]% => [170] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;gwn994197; Train loss = 0.402 (f1: 0.228), Validation loss = 0.409 (f1: 0.152, Prec: 0.64, Rec: 0.09, AR: [2.49724062]% => [181] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;xsy684850; Train loss = 0.403 (f1: 0.228), Validation loss = 0.408 (f1: 0.18, Prec: 0.63, Rec: 0.1, AR: [3.07671082]% => [223] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;zvf83800; Train loss = 0.402 (f1: 0.227), Validation loss = 0.406 (f1: 0.148, Prec: 0.66, Rec: 0.08, AR: [2.34547461]% => [170] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;lud938934; Train loss = 0.402 (f1: 0.226), Validation loss = 0.405 (f1: 0.206, Prec: 0.62, Rec: 0.12, AR: [3.66997792]% => [266] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;dcf224084; Train loss = 0.402 (f1: 0.227), Validation loss = 0.408 (f1: 0.151, Prec: 0.7, Rec: 0.08, AR: [2.23509934]% => [162] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;fsu654876; Train loss = 0.401 (f1: 0.225), Validation loss = 0.405 (f1: 0.212, Prec: 0.63, Rec: 0.13, AR: [3.75275938]% => [272] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;ucg25338; Train loss = 0.401 (f1: 0.218), Validation loss = 0.414 (f1: 0.118, Prec: 0.69, Rec: 0.06, AR: [1.7384106]% => [126] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;inr734691; Train loss = 0.402 (f1: 0.223), Validation loss = 0.406 (f1: 0.157, Prec: 0.66, Rec: 0.09, AR: [2.49724062]% => [181] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;jbp335821; Train loss = 0.401 (f1: 0.217), Validation loss = 0.405 (f1: 0.218, Prec: 0.6, Rec: 0.13, AR: [4.08388521]% => [296] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;wjt803082; Train loss = 0.401 (f1: 0.226), Validation loss = 0.406 (f1: 0.18, Prec: 0.65, Rec: 0.1, AR: [2.99392936]% => [217] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;phu301887; Train loss = 0.401 (f1: 0.221), Validation loss = 0.407 (f1: 0.184, Prec: 0.66, Rec: 0.11, AR: [3.00772627]% => [218] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;vsh35799; Train loss = 0.401 (f1: 0.226), Validation loss = 0.405 (f1: 0.241, Prec: 0.61, Rec: 0.15, AR: [4.56677704]% => [331] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;bfb456127; Train loss = 0.401 (f1: 0.224), Validation loss = 0.415 (f1: 0.156, Prec: 0.68, Rec: 0.09, AR: [2.42825607]% => [176] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;psz939743; Train loss = 0.401 (f1: 0.224), Validation loss = 0.406 (f1: 0.151, Prec: 0.66, Rec: 0.09, AR: [2.40066225]% => [174] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;hfc647620; Train loss = 0.401 (f1: 0.22), Validation loss = 0.408 (f1: 0.139, Prec: 0.66, Rec: 0.08, AR: [2.1799117]% => [158] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;got529652; Train loss = 0.401 (f1: 0.224), Validation loss = 0.406 (f1: 0.242, Prec: 0.6, Rec: 0.15, AR: [4.66335541]% => [338] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;tnf983965; Train loss = 0.401 (f1: 0.221), Validation loss = 0.409 (f1: 0.143, Prec: 0.67, Rec: 0.08, AR: [2.23509934]% => [162] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;qej813435; Train loss = 0.4 (f1: 0.221), Validation loss = 0.409 (f1: 0.186, Prec: 0.65, Rec: 0.11, AR: [3.09050773]% => [224] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=EURJPY;gea209683; Train loss = 0.407 (f1: 0.119), Validation loss = 0.41 (f1: 0.156, Prec: 0.63, Rec: 0.09, AR: [2.6214128]% => [190] predictions)')
+('Finished epoch 3', ' out of 30. modelID=EURJPY;soy436586; Train loss = 0.405 (f1: 0.174), Validation loss = 0.407 (f1: 0.145, Prec: 0.66, Rec: 0.08, AR: [2.30408389]% => [167] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;zux74587; Train loss = 0.403 (f1: 0.186), Validation loss = 0.407 (f1: 0.144, Prec: 0.65, Rec: 0.08, AR: [2.31788079]% => [168] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;qjo470964; Train loss = 0.403 (f1: 0.199), Validation loss = 0.41 (f1: 0.208, Prec: 0.61, Rec: 0.13, AR: [3.84933775]% => [279] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;mlk947917; Train loss = 0.403 (f1: 0.214), Validation loss = 0.406 (f1: 0.178, Prec: 0.63, Rec: 0.1, AR: [3.07671082]% => [223] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;sfl265554; Train loss = 0.402 (f1: 0.208), Validation loss = 0.406 (f1: 0.204, Prec: 0.63, Rec: 0.12, AR: [3.57339956]% => [259] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;axl705063; Train loss = 0.402 (f1: 0.221), Validation loss = 0.409 (f1: 0.181, Prec: 0.65, Rec: 0.11, AR: [3.03532009]% => [220] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;bds322558; Train loss = 0.402 (f1: 0.216), Validation loss = 0.407 (f1: 0.213, Prec: 0.62, Rec: 0.13, AR: [3.89072848]% => [282] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;ken646686; Train loss = 0.401 (f1: 0.216), Validation loss = 0.411 (f1: 0.135, Prec: 0.66, Rec: 0.07, AR: [2.11092715]% => [153] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;amp107539; Train loss = 0.401 (f1: 0.223), Validation loss = 0.412 (f1: 0.16, Prec: 0.65, Rec: 0.09, AR: [2.60761589]% => [189] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;qvr227582; Train loss = 0.401 (f1: 0.228), Validation loss = 0.405 (f1: 0.247, Prec: 0.62, Rec: 0.15, AR: [4.66335541]% => [338] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;sjy178114; Train loss = 0.401 (f1: 0.217), Validation loss = 0.408 (f1: 0.201, Prec: 0.65, Rec: 0.12, AR: [3.39403974]% => [246] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;ixj328347; Train loss = 0.401 (f1: 0.223), Validation loss = 0.407 (f1: 0.226, Prec: 0.63, Rec: 0.14, AR: [4.09768212]% => [297] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;cgl902707; Train loss = 0.401 (f1: 0.224), Validation loss = 0.405 (f1: 0.22, Prec: 0.62, Rec: 0.13, AR: [3.98730684]% => [289] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;vka173508; Train loss = 0.401 (f1: 0.222), Validation loss = 0.405 (f1: 0.218, Prec: 0.62, Rec: 0.13, AR: [3.93211921]% => [285] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;bbg920596; Train loss = 0.401 (f1: 0.223), Validation loss = 0.409 (f1: 0.152, Prec: 0.66, Rec: 0.09, AR: [2.44205298]% => [177] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;gya147354; Train loss = 0.401 (f1: 0.228), Validation loss = 0.408 (f1: 0.161, Prec: 0.65, Rec: 0.09, AR: [2.6214128]% => [190] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;lfe465854; Train loss = 0.401 (f1: 0.221), Validation loss = 0.409 (f1: 0.233, Prec: 0.61, Rec: 0.14, AR: [4.41501104]% => [320] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;dqm664438; Train loss = 0.401 (f1: 0.225), Validation loss = 0.408 (f1: 0.186, Prec: 0.64, Rec: 0.11, AR: [3.17328918]% => [230] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;qhd236269; Train loss = 0.4 (f1: 0.226), Validation loss = 0.406 (f1: 0.206, Prec: 0.62, Rec: 0.12, AR: [3.72516556]% => [270] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;yai135701; Train loss = 0.4 (f1: 0.226), Validation loss = 0.417 (f1: 0.199, Prec: 0.63, Rec: 0.12, AR: [3.50441501]% => [254] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=EURJPY;viv394677; Train loss = 0.405 (f1: 0.172), Validation loss = 0.417 (f1: 0.042, Prec: 0.74, Rec: 0.02, AR: [0.53807947]% => [39] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;mkh348357; Train loss = 0.402 (f1: 0.213), Validation loss = 0.408 (f1: 0.149, Prec: 0.65, Rec: 0.08, AR: [2.38686534]% => [173] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;mmn911900; Train loss = 0.402 (f1: 0.227), Validation loss = 0.413 (f1: 0.144, Prec: 0.69, Rec: 0.08, AR: [2.16611479]% => [157] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;kdr39656; Train loss = 0.401 (f1: 0.221), Validation loss = 0.408 (f1: 0.17, Prec: 0.68, Rec: 0.1, AR: [2.67660044]% => [194] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;bvp702483; Train loss = 0.401 (f1: 0.228), Validation loss = 0.405 (f1: 0.183, Prec: 0.67, Rec: 0.11, AR: [2.92494481]% => [212] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;vot184867; Train loss = 0.401 (f1: 0.225), Validation loss = 0.407 (f1: 0.165, Prec: 0.67, Rec: 0.09, AR: [2.6214128]% => [190] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;lke890551; Train loss = 0.401 (f1: 0.224), Validation loss = 0.406 (f1: 0.192, Prec: 0.64, Rec: 0.11, AR: [3.28366446]% => [238] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;pmi71672; Train loss = 0.401 (f1: 0.232), Validation loss = 0.405 (f1: 0.211, Prec: 0.62, Rec: 0.13, AR: [3.80794702]% => [276] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;sdv183984; Train loss = 0.401 (f1: 0.224), Validation loss = 0.405 (f1: 0.206, Prec: 0.66, Rec: 0.12, AR: [3.42163355]% => [248] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;qzc445871; Train loss = 0.4 (f1: 0.226), Validation loss = 0.407 (f1: 0.184, Prec: 0.66, Rec: 0.11, AR: [3.02152318]% => [219] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 2', ' out of 30. modelID=EURJPY;jhm548939; Train loss = 0.407 (f1: 0.138), Validation loss = 0.409 (f1: 0.129, Prec: 0.66, Rec: 0.07, AR: [2.00055188]% => [145] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;pdv732771; Train loss = 0.403 (f1: 0.203), Validation loss = 0.41 (f1: 0.099, Prec: 0.7, Rec: 0.05, AR: [1.42108168]% => [103] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;hll311778; Train loss = 0.402 (f1: 0.209), Validation loss = 0.409 (f1: 0.132, Prec: 0.67, Rec: 0.07, AR: [2.0281457]% => [147] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;tmp779175; Train loss = 0.402 (f1: 0.219), Validation loss = 0.412 (f1: 0.127, Prec: 0.68, Rec: 0.07, AR: [1.90397351]% => [138] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;oxq669630; Train loss = 0.401 (f1: 0.216), Validation loss = 0.408 (f1: 0.123, Prec: 0.68, Rec: 0.07, AR: [1.83498896]% => [133] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;rqv539837; Train loss = 0.401 (f1: 0.218), Validation loss = 0.406 (f1: 0.195, Prec: 0.63, Rec: 0.12, AR: [3.38024283]% => [245] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;rrx242275; Train loss = 0.401 (f1: 0.224), Validation loss = 0.406 (f1: 0.197, Prec: 0.64, Rec: 0.12, AR: [3.39403974]% => [246] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;ycz402550; Train loss = 0.401 (f1: 0.224), Validation loss = 0.405 (f1: 0.231, Prec: 0.61, Rec: 0.14, AR: [4.33222958]% => [314] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;ghm42805; Train loss = 0.401 (f1: 0.224), Validation loss = 0.405 (f1: 0.208, Prec: 0.64, Rec: 0.12, AR: [3.58719647]% => [260] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;jlx704575; Train loss = 0.4 (f1: 0.222), Validation loss = 0.407 (f1: 0.162, Prec: 0.68, Rec: 0.09, AR: [2.52483444]% => [183] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;omc401788; Train loss = 0.401 (f1: 0.221), Validation loss = 0.408 (f1: 0.154, Prec: 0.66, Rec: 0.09, AR: [2.48344371]% => [180] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;uin914413; Train loss = 0.401 (f1: 0.211), Validation loss = 0.405 (f1: 0.23, Prec: 0.62, Rec: 0.14, AR: [4.2218543]% => [306] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;aws625311; Train loss = 0.4 (f1: 0.226), Validation loss = 0.406 (f1: 0.153, Prec: 0.67, Rec: 0.09, AR: [2.37306843]% => [172] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;dkd715901; Train loss = 0.401 (f1: 0.223), Validation loss = 0.406 (f1: 0.218, Prec: 0.62, Rec: 0.13, AR: [3.95971302]% => [287] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;sts874464; Train loss = 0.4 (f1: 0.228), Validation loss = 0.409 (f1: 0.128, Prec: 0.7, Rec: 0.07, AR: [1.87637969]% => [136] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;ijn345642; Train loss = 0.4 (f1: 0.228), Validation loss = 0.406 (f1: 0.194, Prec: 0.63, Rec: 0.11, AR: [3.40783664]% => [247] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;jpt635324; Train loss = 0.4 (f1: 0.228), Validation loss = 0.406 (f1: 0.185, Prec: 0.63, Rec: 0.11, AR: [3.200883]% => [232] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=EURJPY;wrf61766; Train loss = 0.435 (f1: 0.09), Validation loss = 0.428 (f1: 0.136, Prec: 0.6, Rec: 0.08, AR: [2.35927152]% => [171] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;rqh143229; Train loss = 0.406 (f1: 0.164), Validation loss = 0.413 (f1: 0.114, Prec: 0.68, Rec: 0.06, AR: [1.71081678]% => [124] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;pmv372781; Train loss = 0.404 (f1: 0.203), Validation loss = 0.406 (f1: 0.193, Prec: 0.61, Rec: 0.11, AR: [3.47682119]% => [252] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;egi101668; Train loss = 0.402 (f1: 0.221), Validation loss = 0.41 (f1: 0.144, Prec: 0.66, Rec: 0.08, AR: [2.27649007]% => [165] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;mgw572138; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.209, Prec: 0.64, Rec: 0.12, AR: [3.6285872]% => [263] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;kgt403937; Train loss = 0.402 (f1: 0.225), Validation loss = 0.407 (f1: 0.232, Prec: 0.62, Rec: 0.14, AR: [4.24944812]% => [308] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;cul956157; Train loss = 0.402 (f1: 0.221), Validation loss = 0.409 (f1: 0.237, Prec: 0.6, Rec: 0.15, AR: [4.53918322]% => [329] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;qsr457584; Train loss = 0.402 (f1: 0.225), Validation loss = 0.411 (f1: 0.106, Prec: 0.69, Rec: 0.06, AR: [1.53145695]% => [111] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;xkf239216; Train loss = 0.402 (f1: 0.213), Validation loss = 0.407 (f1: 0.201, Prec: 0.66, Rec: 0.12, AR: [3.3388521]% => [242] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;vye33121; Train loss = 0.401 (f1: 0.216), Validation loss = 0.405 (f1: 0.226, Prec: 0.64, Rec: 0.14, AR: [3.95971302]% => [287] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;ntf875303; Train loss = 0.401 (f1: 0.223), Validation loss = 0.409 (f1: 0.191, Prec: 0.65, Rec: 0.11, AR: [3.18708609]% => [231] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;uyi42319; Train loss = 0.401 (f1: 0.223), Validation loss = 0.406 (f1: 0.177, Prec: 0.66, Rec: 0.1, AR: [2.88355408]% => [209] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;afn591089; Train loss = 0.401 (f1: 0.22), Validation loss = 0.405 (f1: 0.236, Prec: 0.61, Rec: 0.15, AR: [4.45640177]% => [323] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;nmy651034; Train loss = 0.401 (f1: 0.223), Validation loss = 0.405 (f1: 0.197, Prec: 0.66, Rec: 0.12, AR: [3.26986755]% => [237] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;ehk968660; Train loss = 0.401 (f1: 0.222), Validation loss = 0.406 (f1: 0.202, Prec: 0.64, Rec: 0.12, AR: [3.50441501]% => [254] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;mau275481; Train loss = 0.401 (f1: 0.222), Validation loss = 0.406 (f1: 0.175, Prec: 0.66, Rec: 0.1, AR: [2.84216336]% => [206] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;xwu623195; Train loss = 0.401 (f1: 0.219), Validation loss = 0.406 (f1: 0.182, Prec: 0.67, Rec: 0.11, AR: [2.93874172]% => [213] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;hpu138286; Train loss = 0.4 (f1: 0.23), Validation loss = 0.409 (f1: 0.168, Prec: 0.68, Rec: 0.1, AR: [2.6214128]% => [190] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;lls942177; Train loss = 0.401 (f1: 0.225), Validation loss = 0.405 (f1: 0.184, Prec: 0.66, Rec: 0.11, AR: [3.00772627]% => [218] predictions)')
+No profitable model was found this run
+('Finished epoch 2', ' out of 30. modelID=EURJPY;tqv841071; Train loss = 0.41 (f1: 0.057), Validation loss = 0.41 (f1: 0.136, Prec: 0.68, Rec: 0.08, AR: [2.08333333]% => [151] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;kkh668497; Train loss = 0.404 (f1: 0.199), Validation loss = 0.411 (f1: 0.138, Prec: 0.65, Rec: 0.08, AR: [2.19370861]% => [159] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;unz355186; Train loss = 0.403 (f1: 0.218), Validation loss = 0.409 (f1: 0.188, Prec: 0.62, Rec: 0.11, AR: [3.31125828]% => [240] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;lfq139664; Train loss = 0.403 (f1: 0.213), Validation loss = 0.412 (f1: 0.18, Prec: 0.65, Rec: 0.1, AR: [2.98013245]% => [216] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;wvd668417; Train loss = 0.402 (f1: 0.224), Validation loss = 0.411 (f1: 0.126, Prec: 0.69, Rec: 0.07, AR: [1.84878587]% => [134] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;jlc608182; Train loss = 0.402 (f1: 0.216), Validation loss = 0.412 (f1: 0.217, Prec: 0.63, Rec: 0.13, AR: [3.90452539]% => [283] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;jbe897895; Train loss = 0.402 (f1: 0.228), Validation loss = 0.406 (f1: 0.219, Prec: 0.62, Rec: 0.13, AR: [3.97350993]% => [288] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;yow663115; Train loss = 0.402 (f1: 0.232), Validation loss = 0.407 (f1: 0.173, Prec: 0.66, Rec: 0.1, AR: [2.78697572]% => [202] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;bew826583; Train loss = 0.401 (f1: 0.227), Validation loss = 0.405 (f1: 0.21, Prec: 0.62, Rec: 0.13, AR: [3.75275938]% => [272] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;qpg616586; Train loss = 0.401 (f1: 0.229), Validation loss = 0.406 (f1: 0.213, Prec: 0.63, Rec: 0.13, AR: [3.79415011]% => [275] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;mno228866; Train loss = 0.401 (f1: 0.23), Validation loss = 0.406 (f1: 0.187, Prec: 0.65, Rec: 0.11, AR: [3.13189845]% => [227] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;efa897904; Train loss = 0.401 (f1: 0.227), Validation loss = 0.407 (f1: 0.203, Prec: 0.63, Rec: 0.12, AR: [3.57339956]% => [259] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;mpm434594; Train loss = 0.401 (f1: 0.226), Validation loss = 0.41 (f1: 0.222, Prec: 0.62, Rec: 0.14, AR: [4.04249448]% => [293] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;xon270935; Train loss = 0.401 (f1: 0.232), Validation loss = 0.406 (f1: 0.155, Prec: 0.67, Rec: 0.09, AR: [2.41445916]% => [175] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;lhy345503; Train loss = 0.401 (f1: 0.23), Validation loss = 0.406 (f1: 0.231, Prec: 0.62, Rec: 0.14, AR: [4.26324503]% => [309] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;usj950792; Train loss = 0.4 (f1: 0.231), Validation loss = 0.406 (f1: 0.185, Prec: 0.62, Rec: 0.11, AR: [3.22847682]% => [234] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;oic544687; Train loss = 0.401 (f1: 0.225), Validation loss = 0.406 (f1: 0.238, Prec: 0.61, Rec: 0.15, AR: [4.49779249]% => [326] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;owz116195; Train loss = 0.4 (f1: 0.23), Validation loss = 0.407 (f1: 0.195, Prec: 0.62, Rec: 0.12, AR: [3.47682119]% => [252] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;gpa667940; Train loss = 0.401 (f1: 0.233), Validation loss = 0.408 (f1: 0.182, Prec: 0.65, Rec: 0.11, AR: [3.03532009]% => [220] predictions)')
+No profitable model was found this run
+('Finished epoch 1', ' out of 30. modelID=EURJPY;xln871651; Train loss = 0.445 (f1: 0.005), Validation loss = 0.42 (f1: 0.015, Prec: 0.71, Rec: 0.01, AR: [0.19315673]% => [14] predictions)')
+('Finished epoch 3', ' out of 30. modelID=EURJPY;mcg76488; Train loss = 0.404 (f1: 0.17), Validation loss = 0.408 (f1: 0.165, Prec: 0.6, Rec: 0.1, AR: [2.95253863]% => [214] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;obh958330; Train loss = 0.403 (f1: 0.198), Validation loss = 0.412 (f1: 0.148, Prec: 0.63, Rec: 0.08, AR: [2.45584989]% => [178] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;dad211533; Train loss = 0.401 (f1: 0.217), Validation loss = 0.407 (f1: 0.216, Prec: 0.62, Rec: 0.13, AR: [3.90452539]% => [283] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;zmf440675; Train loss = 0.401 (f1: 0.217), Validation loss = 0.407 (f1: 0.233, Prec: 0.6, Rec: 0.14, AR: [4.42880795]% => [321] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;ylm768208; Train loss = 0.401 (f1: 0.221), Validation loss = 0.406 (f1: 0.163, Prec: 0.64, Rec: 0.09, AR: [2.70419426]% => [196] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;iga127965; Train loss = 0.401 (f1: 0.223), Validation loss = 0.41 (f1: 0.153, Prec: 0.64, Rec: 0.09, AR: [2.51103753]% => [182] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;lhg530469; Train loss = 0.401 (f1: 0.226), Validation loss = 0.415 (f1: 0.207, Prec: 0.63, Rec: 0.12, AR: [3.64238411]% => [264] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;oxt706922; Train loss = 0.401 (f1: 0.226), Validation loss = 0.41 (f1: 0.19, Prec: 0.63, Rec: 0.11, AR: [3.28366446]% => [238] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;hpc535109; Train loss = 0.4 (f1: 0.23), Validation loss = 0.406 (f1: 0.182, Prec: 0.65, Rec: 0.11, AR: [3.049117]% => [221] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;mlf445960; Train loss = 0.4 (f1: 0.227), Validation loss = 0.406 (f1: 0.219, Prec: 0.62, Rec: 0.13, AR: [3.95971302]% => [287] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;ovv976796; Train loss = 0.4 (f1: 0.22), Validation loss = 0.407 (f1: 0.158, Prec: 0.63, Rec: 0.09, AR: [2.66280353]% => [193] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 7', ' out of 30. modelID=EURJPY;vkq858157; Train loss = 0.403 (f1: 0.226), Validation loss = 0.407 (f1: 0.2, Prec: 0.61, Rec: 0.12, AR: [3.65618102]% => [265] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;orv784668; Train loss = 0.403 (f1: 0.226), Validation loss = 0.406 (f1: 0.183, Prec: 0.65, Rec: 0.11, AR: [3.02152318]% => [219] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;vpl911791; Train loss = 0.402 (f1: 0.223), Validation loss = 0.406 (f1: 0.222, Prec: 0.6, Rec: 0.14, AR: [4.2218543]% => [306] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;wpt113450; Train loss = 0.402 (f1: 0.228), Validation loss = 0.407 (f1: 0.215, Prec: 0.62, Rec: 0.13, AR: [3.90452539]% => [283] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;xwp284589; Train loss = 0.402 (f1: 0.218), Validation loss = 0.408 (f1: 0.17, Prec: 0.67, Rec: 0.1, AR: [2.70419426]% => [196] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;hqi212380; Train loss = 0.401 (f1: 0.23), Validation loss = 0.408 (f1: 0.118, Prec: 0.66, Rec: 0.06, AR: [1.82119205]% => [132] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;loa886393; Train loss = 0.401 (f1: 0.227), Validation loss = 0.408 (f1: 0.2, Prec: 0.63, Rec: 0.12, AR: [3.47682119]% => [252] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;jqw293119; Train loss = 0.402 (f1: 0.226), Validation loss = 0.406 (f1: 0.198, Prec: 0.63, Rec: 0.12, AR: [3.47682119]% => [252] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;piw8945; Train loss = 0.401 (f1: 0.228), Validation loss = 0.406 (f1: 0.216, Prec: 0.62, Rec: 0.13, AR: [3.93211921]% => [285] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;hnl306895; Train loss = 0.402 (f1: 0.224), Validation loss = 0.409 (f1: 0.174, Prec: 0.64, Rec: 0.1, AR: [2.92494481]% => [212] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;rlg495182; Train loss = 0.401 (f1: 0.232), Validation loss = 0.407 (f1: 0.171, Prec: 0.64, Rec: 0.1, AR: [2.85596026]% => [207] predictions)')
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=EURJPY;xwi797263; Train loss = 0.404 (f1: 0.204), Validation loss = 0.408 (f1: 0.142, Prec: 0.64, Rec: 0.08, AR: [2.31788079]% => [168] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;cnv572110; Train loss = 0.403 (f1: 0.209), Validation loss = 0.407 (f1: 0.147, Prec: 0.65, Rec: 0.08, AR: [2.37306843]% => [172] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;ljx590448; Train loss = 0.403 (f1: 0.213), Validation loss = 0.406 (f1: 0.217, Prec: 0.62, Rec: 0.13, AR: [3.94591611]% => [286] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;iqa314864; Train loss = 0.402 (f1: 0.215), Validation loss = 0.406 (f1: 0.206, Prec: 0.64, Rec: 0.12, AR: [3.60099338]% => [261] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;yrv931556; Train loss = 0.402 (f1: 0.214), Validation loss = 0.407 (f1: 0.237, Prec: 0.61, Rec: 0.15, AR: [4.49779249]% => [326] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;yor885265; Train loss = 0.402 (f1: 0.218), Validation loss = 0.407 (f1: 0.156, Prec: 0.66, Rec: 0.09, AR: [2.48344371]% => [180] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;cwt826106; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.179, Prec: 0.65, Rec: 0.1, AR: [2.95253863]% => [214] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;gca873416; Train loss = 0.402 (f1: 0.223), Validation loss = 0.406 (f1: 0.149, Prec: 0.66, Rec: 0.08, AR: [2.37306843]% => [172] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;lue470653; Train loss = 0.402 (f1: 0.22), Validation loss = 0.409 (f1: 0.21, Prec: 0.63, Rec: 0.13, AR: [3.69757174]% => [268] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;nur302682; Train loss = 0.401 (f1: 0.219), Validation loss = 0.406 (f1: 0.172, Prec: 0.65, Rec: 0.1, AR: [2.85596026]% => [207] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;tbq375349; Train loss = 0.402 (f1: 0.215), Validation loss = 0.406 (f1: 0.155, Prec: 0.66, Rec: 0.09, AR: [2.4696468]% => [179] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;yxh306624; Train loss = 0.401 (f1: 0.223), Validation loss = 0.412 (f1: 0.224, Prec: 0.61, Rec: 0.14, AR: [4.18046358]% => [303] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;xia23156; Train loss = 0.401 (f1: 0.22), Validation loss = 0.413 (f1: 0.117, Prec: 0.69, Rec: 0.06, AR: [1.71081678]% => [124] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;rra931188; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.238, Prec: 0.6, Rec: 0.15, AR: [4.56677704]% => [331] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;nbf779803; Train loss = 0.401 (f1: 0.226), Validation loss = 0.411 (f1: 0.223, Prec: 0.64, Rec: 0.14, AR: [3.94591611]% => [286] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;bdj728004; Train loss = 0.401 (f1: 0.224), Validation loss = 0.406 (f1: 0.153, Prec: 0.67, Rec: 0.09, AR: [2.37306843]% => [172] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;gbu888812; Train loss = 0.401 (f1: 0.222), Validation loss = 0.412 (f1: 0.195, Prec: 0.65, Rec: 0.11, AR: [3.31125828]% => [240] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;lgr710191; Train loss = 0.401 (f1: 0.222), Validation loss = 0.409 (f1: 0.196, Prec: 0.63, Rec: 0.12, AR: [3.46302428]% => [251] predictions)')
+('Finished epoch 26', ' out of 30. modelID=EURJPY;gej639054; Train loss = 0.401 (f1: 0.217), Validation loss = 0.406 (f1: 0.187, Prec: 0.65, Rec: 0.11, AR: [3.10430464]% => [225] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;dqc682859; Train loss = 0.401 (f1: 0.223), Validation loss = 0.408 (f1: 0.166, Prec: 0.67, Rec: 0.09, AR: [2.6214128]% => [190] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;ysr679362; Train loss = 0.401 (f1: 0.219), Validation loss = 0.408 (f1: 0.199, Prec: 0.62, Rec: 0.12, AR: [3.55960265]% => [258] predictions)')
+No profitable model was found this run
+('Finished epoch 1', ' out of 30. modelID=EURJPY;bnf195301; Train loss = 0.431 (f1: 0.001), Validation loss = 0.413 (f1: 0.057, Prec: 0.65, Rec: 0.03, AR: [0.85540839]% => [62] predictions)')
+('Finished epoch 2', ' out of 30. modelID=EURJPY;glw791133; Train loss = 0.407 (f1: 0.144), Validation loss = 0.41 (f1: 0.114, Prec: 0.67, Rec: 0.06, AR: [1.7384106]% => [126] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;mnz743395; Train loss = 0.403 (f1: 0.213), Validation loss = 0.408 (f1: 0.188, Prec: 0.63, Rec: 0.11, AR: [3.25607064]% => [236] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;gsi503412; Train loss = 0.403 (f1: 0.204), Validation loss = 0.406 (f1: 0.157, Prec: 0.66, Rec: 0.09, AR: [2.52483444]% => [183] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;wgr410233; Train loss = 0.403 (f1: 0.212), Validation loss = 0.407 (f1: 0.139, Prec: 0.66, Rec: 0.08, AR: [2.1799117]% => [158] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;gse53819; Train loss = 0.403 (f1: 0.209), Validation loss = 0.426 (f1: 0.191, Prec: 0.65, Rec: 0.11, AR: [3.18708609]% => [231] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;wdr951665; Train loss = 0.402 (f1: 0.214), Validation loss = 0.409 (f1: 0.172, Prec: 0.66, Rec: 0.1, AR: [2.7593819]% => [200] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;sbz791100; Train loss = 0.402 (f1: 0.21), Validation loss = 0.406 (f1: 0.147, Prec: 0.67, Rec: 0.08, AR: [2.27649007]% => [165] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;zjo933471; Train loss = 0.402 (f1: 0.216), Validation loss = 0.407 (f1: 0.212, Prec: 0.65, Rec: 0.13, AR: [3.64238411]% => [264] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;eed889332; Train loss = 0.402 (f1: 0.217), Validation loss = 0.406 (f1: 0.197, Prec: 0.65, Rec: 0.12, AR: [3.3388521]% => [242] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;pbi711751; Train loss = 0.402 (f1: 0.214), Validation loss = 0.408 (f1: 0.211, Prec: 0.61, Rec: 0.13, AR: [3.9183223]% => [284] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;iqx617757; Train loss = 0.402 (f1: 0.217), Validation loss = 0.411 (f1: 0.129, Prec: 0.65, Rec: 0.07, AR: [2.0281457]% => [147] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;phf448839; Train loss = 0.402 (f1: 0.214), Validation loss = 0.406 (f1: 0.239, Prec: 0.61, Rec: 0.15, AR: [4.58057395]% => [332] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;dhw988677; Train loss = 0.401 (f1: 0.223), Validation loss = 0.406 (f1: 0.222, Prec: 0.64, Rec: 0.13, AR: [3.90452539]% => [283] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;lwm984502; Train loss = 0.402 (f1: 0.214), Validation loss = 0.407 (f1: 0.209, Prec: 0.61, Rec: 0.13, AR: [3.82174393]% => [277] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;oof920876; Train loss = 0.401 (f1: 0.217), Validation loss = 0.406 (f1: 0.165, Prec: 0.68, Rec: 0.09, AR: [2.59381898]% => [188] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;qla673018; Train loss = 0.401 (f1: 0.215), Validation loss = 0.407 (f1: 0.187, Prec: 0.64, Rec: 0.11, AR: [3.21467991]% => [233] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;obd555610; Train loss = 0.401 (f1: 0.218), Validation loss = 0.411 (f1: 0.185, Prec: 0.67, Rec: 0.11, AR: [3.00772627]% => [218] predictions)')
+('Finished epoch 24', ' out of 30. modelID=EURJPY;xvv624445; Train loss = 0.401 (f1: 0.219), Validation loss = 0.41 (f1: 0.171, Prec: 0.67, Rec: 0.1, AR: [2.71799117]% => [197] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;dfb447872; Train loss = 0.401 (f1: 0.225), Validation loss = 0.406 (f1: 0.231, Prec: 0.63, Rec: 0.14, AR: [4.2080574]% => [305] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;wkm385273; Train loss = 0.4 (f1: 0.216), Validation loss = 0.408 (f1: 0.155, Prec: 0.67, Rec: 0.09, AR: [2.41445916]% => [175] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 6', ' out of 30. modelID=EURJPY;usw844789; Train loss = 0.407 (f1: 0.121), Validation loss = 0.411 (f1: 0.067, Prec: 0.75, Rec: 0.03, AR: [0.8692053]% => [63] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;dmn137285; Train loss = 0.404 (f1: 0.186), Validation loss = 0.407 (f1: 0.132, Prec: 0.64, Rec: 0.07, AR: [2.12472406]% => [154] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;csw385810; Train loss = 0.402 (f1: 0.206), Validation loss = 0.407 (f1: 0.21, Prec: 0.62, Rec: 0.13, AR: [3.76655629]% => [273] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;mmd218542; Train loss = 0.402 (f1: 0.214), Validation loss = 0.409 (f1: 0.201, Prec: 0.62, Rec: 0.12, AR: [3.6285872]% => [263] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;xjh978362; Train loss = 0.402 (f1: 0.224), Validation loss = 0.425 (f1: 0.118, Prec: 0.67, Rec: 0.06, AR: [1.79359823]% => [130] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;bdc843512; Train loss = 0.402 (f1: 0.217), Validation loss = 0.406 (f1: 0.221, Prec: 0.64, Rec: 0.13, AR: [3.87693157]% => [281] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;aaa598143; Train loss = 0.402 (f1: 0.23), Validation loss = 0.405 (f1: 0.217, Prec: 0.62, Rec: 0.13, AR: [3.93211921]% => [285] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;vky471614; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.178, Prec: 0.67, Rec: 0.1, AR: [2.84216336]% => [206] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;pjm619622; Train loss = 0.402 (f1: 0.225), Validation loss = 0.419 (f1: 0.205, Prec: 0.66, Rec: 0.12, AR: [3.44922737]% => [250] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;blz416101; Train loss = 0.401 (f1: 0.23), Validation loss = 0.407 (f1: 0.124, Prec: 0.69, Rec: 0.07, AR: [1.83498896]% => [133] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;kuu356289; Train loss = 0.401 (f1: 0.228), Validation loss = 0.406 (f1: 0.21, Prec: 0.62, Rec: 0.13, AR: [3.7803532]% => [274] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;mhd323632; Train loss = 0.401 (f1: 0.23), Validation loss = 0.406 (f1: 0.194, Prec: 0.62, Rec: 0.11, AR: [3.42163355]% => [248] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;ixp394562; Train loss = 0.401 (f1: 0.229), Validation loss = 0.409 (f1: 0.135, Prec: 0.68, Rec: 0.07, AR: [2.05573951]% => [149] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;vle252792; Train loss = 0.401 (f1: 0.219), Validation loss = 0.407 (f1: 0.185, Prec: 0.67, Rec: 0.11, AR: [3.00772627]% => [218] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;lwp119527; Train loss = 0.401 (f1: 0.231), Validation loss = 0.407 (f1: 0.168, Prec: 0.67, Rec: 0.1, AR: [2.64900662]% => [192] predictions)')
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=EURJPY;svk215027; Train loss = 0.425 (f1: 0.0), Validation loss = 0.412 (f1: 0.007, Prec: 0.62, Rec: 0.0, AR: [0.11037528]% => [8] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;wpa164811; Train loss = 0.405 (f1: 0.193), Validation loss = 0.407 (f1: 0.177, Prec: 0.6, Rec: 0.1, AR: [3.200883]% => [232] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURJPY;emb883113; Train loss = 0.404 (f1: 0.202), Validation loss = 0.409 (f1: 0.161, Prec: 0.6, Rec: 0.09, AR: [2.85596026]% => [207] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURJPY;peh415965; Train loss = 0.403 (f1: 0.219), Validation loss = 0.409 (f1: 0.206, Prec: 0.63, Rec: 0.12, AR: [3.64238411]% => [264] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;jzp141953; Train loss = 0.402 (f1: 0.227), Validation loss = 0.407 (f1: 0.204, Prec: 0.62, Rec: 0.12, AR: [3.6285872]% => [263] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;lpm760482; Train loss = 0.402 (f1: 0.23), Validation loss = 0.407 (f1: 0.15, Prec: 0.66, Rec: 0.08, AR: [2.40066225]% => [174] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;lkg312823; Train loss = 0.402 (f1: 0.225), Validation loss = 0.407 (f1: 0.234, Prec: 0.61, Rec: 0.14, AR: [4.44260486]% => [322] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;cji984281; Train loss = 0.402 (f1: 0.222), Validation loss = 0.406 (f1: 0.201, Prec: 0.63, Rec: 0.12, AR: [3.50441501]% => [254] predictions)')
+('Finished epoch 20', ' out of 30. modelID=EURJPY;ukz1127; Train loss = 0.402 (f1: 0.222), Validation loss = 0.41 (f1: 0.179, Prec: 0.66, Rec: 0.1, AR: [2.89735099]% => [210] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;ugl357673; Train loss = 0.402 (f1: 0.22), Validation loss = 0.411 (f1: 0.13, Prec: 0.69, Rec: 0.07, AR: [1.93156733]% => [140] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;hwn144706; Train loss = 0.401 (f1: 0.227), Validation loss = 0.405 (f1: 0.2, Prec: 0.61, Rec: 0.12, AR: [3.65618102]% => [265] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;plk998976; Train loss = 0.402 (f1: 0.229), Validation loss = 0.411 (f1: 0.151, Prec: 0.66, Rec: 0.09, AR: [2.40066225]% => [174] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;scb340809; Train loss = 0.401 (f1: 0.231), Validation loss = 0.408 (f1: 0.143, Prec: 0.65, Rec: 0.08, AR: [2.27649007]% => [165] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;bvg208372; Train loss = 0.401 (f1: 0.222), Validation loss = 0.411 (f1: 0.201, Prec: 0.62, Rec: 0.12, AR: [3.58719647]% => [260] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=EURJPY;utk335262; Train loss = 0.416 (f1: 0.02), Validation loss = 0.41 (f1: 0.066, Prec: 0.66, Rec: 0.03, AR: [0.97958057]% => [71] predictions)')
+('Finished epoch 5', ' out of 30. modelID=EURJPY;ckv61729; Train loss = 0.405 (f1: 0.195), Validation loss = 0.408 (f1: 0.152, Prec: 0.63, Rec: 0.09, AR: [2.52483444]% => [183] predictions)')
+('Finished epoch 8', ' out of 30. modelID=EURJPY;ghr662071; Train loss = 0.403 (f1: 0.218), Validation loss = 0.407 (f1: 0.133, Prec: 0.69, Rec: 0.07, AR: [1.97295806]% => [143] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;oap351551; Train loss = 0.402 (f1: 0.217), Validation loss = 0.409 (f1: 0.188, Prec: 0.65, Rec: 0.11, AR: [3.15949227]% => [229] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;zik963825; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.144, Prec: 0.67, Rec: 0.08, AR: [2.24889625]% => [163] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURJPY;lrj291696; Train loss = 0.402 (f1: 0.216), Validation loss = 0.409 (f1: 0.145, Prec: 0.68, Rec: 0.08, AR: [2.20750552]% => [160] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;jss725557; Train loss = 0.402 (f1: 0.224), Validation loss = 0.407 (f1: 0.183, Prec: 0.64, Rec: 0.11, AR: [3.09050773]% => [224] predictions)')
+('Finished epoch 14', ' out of 30. modelID=EURJPY;zyd530565; Train loss = 0.402 (f1: 0.225), Validation loss = 0.407 (f1: 0.153, Prec: 0.65, Rec: 0.09, AR: [2.4696468]% => [179] predictions)')
+('Finished epoch 18', ' out of 30. modelID=EURJPY;pdc153677; Train loss = 0.402 (f1: 0.227), Validation loss = 0.406 (f1: 0.208, Prec: 0.63, Rec: 0.12, AR: [3.69757174]% => [268] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;ovp682237; Train loss = 0.401 (f1: 0.224), Validation loss = 0.408 (f1: 0.164, Prec: 0.64, Rec: 0.09, AR: [2.71799117]% => [197] predictions)')
+('Finished epoch 21', ' out of 30. modelID=EURJPY;yeu279185; Train loss = 0.401 (f1: 0.235), Validation loss = 0.409 (f1: 0.168, Prec: 0.65, Rec: 0.1, AR: [2.74558499]% => [199] predictions)')
+('Finished epoch 23', ' out of 30. modelID=EURJPY;vys742326; Train loss = 0.401 (f1: 0.232), Validation loss = 0.406 (f1: 0.191, Prec: 0.64, Rec: 0.11, AR: [3.25607064]% => [236] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;inw560154; Train loss = 0.401 (f1: 0.224), Validation loss = 0.407 (f1: 0.207, Prec: 0.64, Rec: 0.12, AR: [3.57339956]% => [259] predictions)')
+('Finished epoch 28', ' out of 30. modelID=EURJPY;lpb175010; Train loss = 0.401 (f1: 0.23), Validation loss = 0.406 (f1: 0.23, Prec: 0.6, Rec: 0.14, AR: [4.38741722]% => [318] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;myi42284; Train loss = 0.4 (f1: 0.227), Validation loss = 0.407 (f1: 0.208, Prec: 0.61, Rec: 0.13, AR: [3.84933775]% => [279] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;iwy932211; Train loss = 0.4 (f1: 0.232), Validation loss = 0.416 (f1: 0.154, Prec: 0.66, Rec: 0.09, AR: [2.42825607]% => [176] predictions)')
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=EURJPY;tre391478; Train loss = 0.409 (f1: 0.062), Validation loss = 0.409 (f1: 0.156, Prec: 0.68, Rec: 0.09, AR: [2.42825607]% => [176] predictions)')
+('Finished epoch 4', ' out of 30. modelID=EURJPY;reu46345; Train loss = 0.405 (f1: 0.181), Validation loss = 0.408 (f1: 0.203, Prec: 0.62, Rec: 0.12, AR: [3.64238411]% => [264] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURJPY;fys974449; Train loss = 0.404 (f1: 0.207), Validation loss = 0.406 (f1: 0.198, Prec: 0.61, Rec: 0.12, AR: [3.58719647]% => [260] predictions)')
+('Finished epoch 9', ' out of 30. modelID=EURJPY;gap384366; Train loss = 0.403 (f1: 0.222), Validation loss = 0.41 (f1: 0.193, Prec: 0.63, Rec: 0.11, AR: [3.39403974]% => [246] predictions)')
+('Finished epoch 10', ' out of 30. modelID=EURJPY;hyr118326; Train loss = 0.403 (f1: 0.217), Validation loss = 0.411 (f1: 0.221, Prec: 0.62, Rec: 0.13, AR: [4.05629139]% => [294] predictions)')
+('Finished epoch 13', ' out of 30. modelID=EURJPY;lzd849901; Train loss = 0.402 (f1: 0.226), Validation loss = 0.405 (f1: 0.226, Prec: 0.62, Rec: 0.14, AR: [4.13907285]% => [300] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURJPY;dvb985185; Train loss = 0.402 (f1: 0.22), Validation loss = 0.406 (f1: 0.175, Prec: 0.65, Rec: 0.1, AR: [2.89735099]% => [210] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURJPY;hep949411; Train loss = 0.402 (f1: 0.221), Validation loss = 0.415 (f1: 0.177, Prec: 0.66, Rec: 0.1, AR: [2.89735099]% => [210] predictions)')
+('Finished epoch 17', ' out of 30. modelID=EURJPY;tby912413; Train loss = 0.402 (f1: 0.228), Validation loss = 0.406 (f1: 0.227, Prec: 0.63, Rec: 0.14, AR: [4.12527594]% => [299] predictions)')
+('Finished epoch 19', ' out of 30. modelID=EURJPY;zam112540; Train loss = 0.402 (f1: 0.219), Validation loss = 0.406 (f1: 0.228, Prec: 0.63, Rec: 0.14, AR: [4.11147903]% => [298] predictions)')
+('Finished epoch 22', ' out of 30. modelID=EURJPY;gmc768974; Train loss = 0.402 (f1: 0.227), Validation loss = 0.405 (f1: 0.23, Prec: 0.64, Rec: 0.14, AR: [4.09768212]% => [297] predictions)')
+('Finished epoch 25', ' out of 30. modelID=EURJPY;vhr275541; Train loss = 0.401 (f1: 0.23), Validation loss = 0.411 (f1: 0.159, Prec: 0.66, Rec: 0.09, AR: [2.55242826]% => [185] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURJPY;amd821932; Train loss = 0.401 (f1: 0.221), Validation loss = 0.408 (f1: 0.171, Prec: 0.64, Rec: 0.1, AR: [2.85596026]% => [207] predictions)')
+('Finished epoch 29', ' out of 30. modelID=EURJPY;rpd500947; Train loss = 0.401 (f1: 0.221), Validation loss = 0.406 (f1: 0.213, Prec: 0.62, Rec: 0.13, AR: [3.84933775]% => [279] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURJPY;tim437609; Train loss = 0.401 (f1: 0.233), Validation loss = 0.405 (f1: 0.22, Prec: 0.63, Rec: 0.13, AR: [3.95971302]% => [287] predictions)')
+No profitable model was found this run

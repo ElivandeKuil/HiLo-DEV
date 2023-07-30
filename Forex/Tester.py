@@ -138,7 +138,7 @@ class ModelTester():
         profitable_models = []
         profitable_predictions = []
         
-        threshold = 0.60
+        threshold = 0.628
         
         profitable_models_IDs = []
         

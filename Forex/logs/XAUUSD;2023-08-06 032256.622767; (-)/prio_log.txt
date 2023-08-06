@@ -1,0 +1,66 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 5
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+('Finished epoch 14', ' out of 30. modelID=XAUUSD;ked413582; Train loss = 0.487 (f1: 0.3), Validation loss = 0.491 (f1: 0.21, Prec: 0.61, Rec: 0.13, AR: [4.9845679]% => [323] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 11
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;nwq386781; Train loss = 0.489 (f1: 0.285), Validation loss = 0.49 (f1: 0.169, Prec: 0.64, Rec: 0.1, AR: [3.65740741]% => [237] predictions)')
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 5
+number layers: 3
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 11
+number layers: 3
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run

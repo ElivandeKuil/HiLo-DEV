@@ -1,0 +1,109 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 5
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 1', ' out of 30. modelID=GBPUSD;fsd3054; Train loss = 0.457 (f1: 0.17), Validation loss = 0.434 (f1: 0.217, Prec: 0.61, Rec: 0.13, AR: [4.58057395]% => [332] predictions)')
+('Finished epoch 17', ' out of 30. modelID=GBPUSD;tjk44462; Train loss = 0.437 (f1: 0.294), Validation loss = 0.432 (f1: 0.239, Prec: 0.61, Rec: 0.15, AR: [5.21523179]% => [378] predictions)')
+No profitable model was found this run
+('Finished epoch 30', ' out of 30. modelID=GBPUSD;feh818923; Train loss = 0.438 (f1: 0.307), Validation loss = 0.438 (f1: 0.195, Prec: 0.62, Rec: 0.12, AR: [3.98730684]% => [289] predictions)')
+('Finished epoch 3', ' out of 30. modelID=GBPUSD;tip558584; Train loss = 0.441 (f1: 0.279), Validation loss = 0.443 (f1: 0.201, Prec: 0.63, Rec: 0.12, AR: [4.05629139]% => [294] predictions)')
+('Finished epoch 7', ' out of 30. modelID=GBPUSD;ebr525801; Train loss = 0.439 (f1: 0.285), Validation loss = 0.43 (f1: 0.277, Prec: 0.6, Rec: 0.18, AR: [6.33278146]% => [459] predictions)')
+('Finished epoch 8', ' out of 30. modelID=GBPUSD;pkp705317; Train loss = 0.438 (f1: 0.284), Validation loss = 0.432 (f1: 0.253, Prec: 0.61, Rec: 0.16, AR: [5.56015453]% => [403] predictions)')
+('Finished epoch 10', ' out of 30. modelID=GBPUSD;rno89540; Train loss = 0.438 (f1: 0.287), Validation loss = 0.431 (f1: 0.216, Prec: 0.62, Rec: 0.13, AR: [4.44260486]% => [322] predictions)')
+('Finished epoch 12', ' out of 30. modelID=GBPUSD;umw720359; Train loss = 0.438 (f1: 0.287), Validation loss = 0.429 (f1: 0.241, Prec: 0.6, Rec: 0.15, AR: [5.32560706]% => [386] predictions)')
+('Finished epoch 14', ' out of 30. modelID=GBPUSD;rqu920826; Train loss = 0.437 (f1: 0.287), Validation loss = 0.432 (f1: 0.241, Prec: 0.62, Rec: 0.15, AR: [5.14624724]% => [373] predictions)')
+('Finished epoch 18', ' out of 30. modelID=GBPUSD;uec963970; Train loss = 0.437 (f1: 0.288), Validation loss = 0.43 (f1: 0.238, Prec: 0.62, Rec: 0.15, AR: [5.06346578]% => [367] predictions)')
+('Finished epoch 23', ' out of 30. modelID=GBPUSD;ktw626096; Train loss = 0.437 (f1: 0.291), Validation loss = 0.43 (f1: 0.221, Prec: 0.61, Rec: 0.13, AR: [4.6495585]% => [337] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 11
+number layers: 1
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 2', ' out of 30. modelID=GBPUSD;sro799653; Train loss = 0.475 (f1: 0.035), Validation loss = 0.444 (f1: 0.198, Prec: 0.6, Rec: 0.12, AR: [4.15286976]% => [301] predictions)')
+('Finished epoch 6', ' out of 30. modelID=GBPUSD;doh744883; Train loss = 0.439 (f1: 0.287), Validation loss = 0.432 (f1: 0.227, Prec: 0.6, Rec: 0.14, AR: [4.9392936]% => [358] predictions)')
+('Finished epoch 21', ' out of 30. modelID=GBPUSD;dzw62480; Train loss = 0.437 (f1: 0.287), Validation loss = 0.436 (f1: 0.201, Prec: 0.63, Rec: 0.12, AR: [4.04249448]% => [293] predictions)')
+('Finished epoch 26', ' out of 30. modelID=GBPUSD;kzv256834; Train loss = 0.438 (f1: 0.287), Validation loss = 0.433 (f1: 0.258, Prec: 0.6, Rec: 0.16, AR: [5.78090508]% => [419] predictions)')
+No profitable model was found this run
+('Finished epoch 1', ' out of 30. modelID=GBPUSD;wno503578; Train loss = 0.475 (f1: 0.04), Validation loss = 0.441 (f1: 0.058, Prec: 0.67, Rec: 0.03, AR: [0.96578366]% => [70] predictions)')
+('Finished epoch 2', ' out of 30. modelID=GBPUSD;lnl691229; Train loss = 0.443 (f1: 0.243), Validation loss = 0.432 (f1: 0.199, Prec: 0.63, Rec: 0.12, AR: [3.95971302]% => [287] predictions)')
+('Finished epoch 10', ' out of 30. modelID=GBPUSD;skj323030; Train loss = 0.438 (f1: 0.282), Validation loss = 0.431 (f1: 0.225, Prec: 0.62, Rec: 0.14, AR: [4.73233996]% => [343] predictions)')
+('Finished epoch 12', ' out of 30. modelID=GBPUSD;qvm201600; Train loss = 0.438 (f1: 0.278), Validation loss = 0.431 (f1: 0.233, Prec: 0.62, Rec: 0.14, AR: [4.87030905]% => [353] predictions)')
+('Finished epoch 14', ' out of 30. modelID=GBPUSD;veo122381; Train loss = 0.438 (f1: 0.276), Validation loss = 0.43 (f1: 0.272, Prec: 0.61, Rec: 0.18, AR: [6.12582781]% => [444] predictions)')
+('Finished epoch 18', ' out of 30. modelID=GBPUSD;npl308793; Train loss = 0.437 (f1: 0.283), Validation loss = 0.431 (f1: 0.273, Prec: 0.6, Rec: 0.18, AR: [6.22240618]% => [451] predictions)')
+('Finished epoch 28', ' out of 30. modelID=GBPUSD;vil842321; Train loss = 0.437 (f1: 0.284), Validation loss = 0.43 (f1: 0.247, Prec: 0.61, Rec: 0.16, AR: [5.44977925]% => [395] predictions)')
+No profitable model was found this run
+('Finished epoch 4', ' out of 30. modelID=GBPUSD;oeu512430; Train loss = 0.44 (f1: 0.295), Validation loss = 0.439 (f1: 0.144, Prec: 0.67, Rec: 0.08, AR: [2.55242826]% => [185] predictions)')
+('Finished epoch 8', ' out of 30. modelID=GBPUSD;afu649353; Train loss = 0.439 (f1: 0.293), Validation loss = 0.43 (f1: 0.239, Prec: 0.6, Rec: 0.15, AR: [5.25662252]% => [381] predictions)')
+('Finished epoch 13', ' out of 30. modelID=GBPUSD;ezr773359; Train loss = 0.438 (f1: 0.294), Validation loss = 0.431 (f1: 0.233, Prec: 0.62, Rec: 0.14, AR: [4.87030905]% => [353] predictions)')
+('Finished epoch 16', ' out of 30. modelID=GBPUSD;exo527521; Train loss = 0.438 (f1: 0.297), Validation loss = 0.43 (f1: 0.243, Prec: 0.62, Rec: 0.15, AR: [5.16004415]% => [374] predictions)')
+('Finished epoch 18', ' out of 30. modelID=GBPUSD;vjz95111; Train loss = 0.437 (f1: 0.294), Validation loss = 0.431 (f1: 0.258, Prec: 0.61, Rec: 0.16, AR: [5.71192053]% => [414] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPUSD;iwa368243; Train loss = 0.437 (f1: 0.298), Validation loss = 0.43 (f1: 0.243, Prec: 0.61, Rec: 0.15, AR: [5.28421634]% => [383] predictions)')
+('Finished epoch 22', ' out of 30. modelID=GBPUSD;hjs403977; Train loss = 0.437 (f1: 0.293), Validation loss = 0.43 (f1: 0.229, Prec: 0.61, Rec: 0.14, AR: [4.87030905]% => [353] predictions)')
+('Finished epoch 24', ' out of 30. modelID=GBPUSD;fke854755; Train loss = 0.437 (f1: 0.296), Validation loss = 0.429 (f1: 0.282, Prec: 0.61, Rec: 0.18, AR: [6.42935982]% => [466] predictions)')
+('Finished epoch 27', ' out of 30. modelID=GBPUSD;odf927978; Train loss = 0.437 (f1: 0.301), Validation loss = 0.429 (f1: 0.275, Prec: 0.61, Rec: 0.18, AR: [6.20860927]% => [450] predictions)')
+('Finished epoch 28', ' out of 30. modelID=GBPUSD;fji136012; Train loss = 0.436 (f1: 0.298), Validation loss = 0.43 (f1: 0.259, Prec: 0.6, Rec: 0.16, AR: [5.78090508]% => [419] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 5
+number layers: 3
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 8', ' out of 30. modelID=GBPUSD;nnc279280; Train loss = 0.458 (f1: 0.182), Validation loss = 0.435 (f1: 0.261, Prec: 0.61, Rec: 0.17, AR: [5.73951435]% => [416] predictions)')
+('Finished epoch 11', ' out of 30. modelID=GBPUSD;zwf911846; Train loss = 0.441 (f1: 0.288), Validation loss = 0.432 (f1: 0.223, Prec: 0.6, Rec: 0.14, AR: [4.8013245]% => [348] predictions)')
+('Finished epoch 13', ' out of 30. modelID=GBPUSD;iyr636559; Train loss = 0.44 (f1: 0.289), Validation loss = 0.431 (f1: 0.231, Prec: 0.6, Rec: 0.14, AR: [5.00827815]% => [363] predictions)')
+('Finished epoch 15', ' out of 30. modelID=GBPUSD;vfu297788; Train loss = 0.439 (f1: 0.289), Validation loss = 0.431 (f1: 0.217, Prec: 0.61, Rec: 0.13, AR: [4.59437086]% => [333] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPUSD;csk529729; Train loss = 0.439 (f1: 0.291), Validation loss = 0.432 (f1: 0.196, Prec: 0.64, Rec: 0.12, AR: [3.83554084]% => [278] predictions)')
+('Finished epoch 25', ' out of 30. modelID=GBPUSD;hbb370781; Train loss = 0.438 (f1: 0.287), Validation loss = 0.436 (f1: 0.137, Prec: 0.67, Rec: 0.08, AR: [2.40066225]% => [174] predictions)')
+('Finished epoch 29', ' out of 30. modelID=GBPUSD;yog515448; Train loss = 0.438 (f1: 0.291), Validation loss = 0.435 (f1: 0.166, Prec: 0.68, Rec: 0.09, AR: [2.93874172]% => [213] predictions)')
+No profitable model was found this run
+('Finished epoch 16', ' out of 30. modelID=GBPUSD;dty906052; Train loss = 0.44 (f1: 0.292), Validation loss = 0.436 (f1: 0.187, Prec: 0.63, Rec: 0.11, AR: [3.71136865]% => [269] predictions)')
+('Finished epoch 17', ' out of 30. modelID=GBPUSD;nqb195823; Train loss = 0.44 (f1: 0.29), Validation loss = 0.435 (f1: 0.205, Prec: 0.61, Rec: 0.12, AR: [4.24944812]% => [308] predictions)')
+('Finished epoch 27', ' out of 30. modelID=GBPUSD;neq802263; Train loss = 0.44 (f1: 0.292), Validation loss = 0.431 (f1: 0.228, Prec: 0.61, Rec: 0.14, AR: [4.87030905]% => [353] predictions)')
+No profitable model was found this run
+('Finished epoch 16', ' out of 30. modelID=GBPUSD;fxu789008; Train loss = 0.439 (f1: 0.29), Validation loss = 0.431 (f1: 0.245, Prec: 0.6, Rec: 0.15, AR: [5.42218543]% => [393] predictions)')
+('Finished epoch 19', ' out of 30. modelID=GBPUSD;kih692812; Train loss = 0.438 (f1: 0.29), Validation loss = 0.432 (f1: 0.236, Prec: 0.6, Rec: 0.15, AR: [5.16004415]% => [374] predictions)')
+('Finished epoch 21', ' out of 30. modelID=GBPUSD;exh225779; Train loss = 0.438 (f1: 0.289), Validation loss = 0.431 (f1: 0.194, Prec: 0.64, Rec: 0.11, AR: [3.79415011]% => [275] predictions)')
+('Finished epoch 29', ' out of 30. modelID=GBPUSD;tux119099; Train loss = 0.438 (f1: 0.286), Validation loss = 0.433 (f1: 0.215, Prec: 0.6, Rec: 0.13, AR: [4.59437086]% => [333] predictions)')
+No profitable model was found this run
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 11
+number layers: 3
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+No profitable model was found this run
+No profitable model was found this run
+No profitable model was found this run

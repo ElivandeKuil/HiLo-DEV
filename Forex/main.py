@@ -18,8 +18,8 @@ def run():
     
     counter = 0
     
-    for var_num_layers in [1, 2]:
-        for var_hidden_size in [4, 12]:
+    for var_num_layers in [1, 3]:
+        for var_hidden_size in [5, 11]:
             
             counter += 1
             
@@ -38,7 +38,7 @@ def run():
             
             Globals.logger.log_globals()
             
-            for u in range(0, 4):
+            for u in range(0, 3):
                 
                 start_time= time.time()
                 
@@ -161,13 +161,15 @@ def generate_ticket_predictors():
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-generate_ticket_predictors()
+#generate_ticket_predictors()
 
-"""
-Globals.ticker = "EURGBP"
+
+Globals.ticker = "EURUSD"
 dual_label_mode_run()
-Globals.ticker = "GBPJPY"
+Globals.ticker = "USDJPY"
 dual_label_mode_run()
-Globals.ticker = "EURJPY"
+Globals.ticker = "GBPUSD"
 dual_label_mode_run()
-"""
+Globals.ticker = "XAUUSD"
+dual_label_mode_run()
+

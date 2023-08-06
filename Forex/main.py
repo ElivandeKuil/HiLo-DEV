@@ -154,16 +154,16 @@ def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation,
 
 def generate_ticket_predictors():
     
-    symbols = [ "GBPJPY"]
-    folders = [ "GBPJPY"]
-    spreads = [  0.0006]
+    symbols = [ "XAUUSD"]
+    folders = [ "XAUUSD"]
+    spreads = [  0.0009]
     
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-#generate_ticket_predictors()
+generate_ticket_predictors()
 
-
+"""
 Globals.ticker = "EURUSD"
 dual_label_mode_run()
 Globals.ticker = "USDJPY"
@@ -172,4 +172,4 @@ Globals.ticker = "GBPUSD"
 dual_label_mode_run()
 Globals.ticker = "XAUUSD"
 dual_label_mode_run()
-
+"""

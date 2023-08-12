@@ -15,7 +15,7 @@ from api.dwx_client import dwx_client
 
 class tick_processor():
 
-    def __init__(self, symbol, MT4_directory_path, 
+    def __init__(self, symbol, interval, MT4_directory_path, 
                  sleep_delay=0.005,             # 5 ms for time.sleep()
                  max_retry_command_seconds=10,  # retry to send the commend for 10 seconds if not successful. 
                  verbose=True
@@ -51,7 +51,7 @@ class tick_processor():
         start_timestamp = start_dt_format.timestamp()
         end_timestamp = end_dt_format.timestamp()
         
-        self.dwx.get_historic_data(self.symbol, 'M15', start_timestamp, end_timestamp)
+        self.dwx.get_historic_data(self.symbol, interval, start_timestamp, end_timestamp)
         
         
 
@@ -67,9 +67,9 @@ class tick_processor():
         
         print('historic_data:', symbol, time_frame, f'{len(data)} bars')
 
-
+    
     def on_historic_trades(self):
-
+        
         print(f'historic_trades: {len(self.dwx.historic_trades)}')
     
 
@@ -87,9 +87,9 @@ class tick_processor():
         print(f'on_order_event. open_orders: {len(self.dwx.open_orders)} open orders')
 
 
-def activate_dwx(symbol, stop_percentage):
-    MT4_files_dir = 'C:/Users/eli_s/AppData/Roaming/MetaQuotes/Terminal/16D9C17040576AD13C62C316983027D5/MQL5/Files/'
-    processor = tick_processor(symbol, MT4_files_dir)
+def activate_dwx(symbol, interval, stop_percentage, save):
+    MT4_files_dir = 'C:/Users/eliva/AppData/Roaming/MetaQuotes/Terminal/16D9C17040576AD13C62C316983027D5/MQL5/Files'
+    processor = tick_processor(symbol, interval, MT4_files_dir)
 
     while (len(processor.dwx.historic_data) < 1):
         sleep(2)
@@ -99,10 +99,11 @@ def activate_dwx(symbol, stop_percentage):
     print("Result:")
     result = processor.dwx.historic_data
     
-    with open("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
-                pickle.dump(result, fp)
+    if save == True:
+        with open("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
+                    pickle.dump(result, fp)
     
-    
+
     dic = list(result.values())[0]
     dic_items = list(dic.items())
     
@@ -152,7 +153,7 @@ def activate_dwx(symbol, stop_percentage):
     debug = 0
 
 
-activate_dwx("EURSGD", .06)
+activate_dwx("USDJPY", 'M5', .05, False)
 
 
 

@@ -6,47 +6,10 @@ import time
 from alive_progress import alive_bar
 import random
 import os
-from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler
-from imblearn.pipeline import Pipeline
 import Globals
 from datetime import datetime, timedelta
 
-
 folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled")
-
-def balance_data(data, major_percent):
-    
-    data = data.tolist()
-    
-    x = []
-    y = []
-    
-    for item in data:
-        sequence_reshaped = np.array(item.sequence_input).reshape([72])
-        linear_reshaped = item.linear_input.reshape([140])
-        x.append(np.concatenate((sequence_reshaped, linear_reshaped)))
-        y.append(item.label)
-    
-        
-    over = SMOTE(sampling_strategy=0.2)
-    under = RandomUnderSampler(sampling_strategy=0.5)
-    steps = [('o', over), ('u', under)]
-    pipeline = Pipeline(steps=steps)
-    
-    X, Y = pipeline.fit_resample(x, y)
-    
-    balanced_data = []
-    for u in range(0, len(X)):
-        
-        x = np.array(X[u])
-        linear_data = x[72:]
-        sequence_data = x[:72].reshape([24,3])
-        
-        new_model_input = compact_input(sequence_data, linear_data, Y[u])
-        balanced_data.append(new_model_input)
-    return balanced_data
-    
 
 def analyse_data(data):
     
@@ -99,16 +62,7 @@ def get_split_data(ticker, val_size, test_size):
         
         traindata = all_data[:len(all_data) - val_count - test_count]
         
-        if Globals.balance_data == True: Globals.logger.log_and_print_line("Properties before balancing (training data):")
         
-        empty_percent = analyse_data(traindata)
-        
-        if Globals.balance_data == True: 
-            Globals.logger.log_and_print_line("Properties after balancing:")
-        
-            traindata = balance_data(traindata, empty_percent)
-        
-            analyse_data(traindata)
             
         valdata = all_data[len(all_data) - val_count - test_count: len(all_data) - test_count]
         testdata = all_data[len(all_data) - test_count:]

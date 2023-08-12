@@ -6,6 +6,7 @@ import warnings
 import Globals
 import Tester
 import time
+import numpy
 from TickerPredictor import TickerPredictor
 import pickle
 
@@ -161,9 +162,10 @@ def generate_ticket_predictors():
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-generate_ticket_predictors()
+#generate_ticket_predictors()
 
-"""
+print("hoi")
+
 Globals.ticker = "EURUSD"
 dual_label_mode_run()
 Globals.ticker = "USDJPY"
@@ -172,4 +174,4 @@ Globals.ticker = "GBPUSD"
 dual_label_mode_run()
 Globals.ticker = "XAUUSD"
 dual_label_mode_run()
-"""
+

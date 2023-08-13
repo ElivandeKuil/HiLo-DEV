@@ -1,0 +1,54 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 6
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 5', ' out of 30. modelID=EURUSD;veg973806; Train loss = 0.296 (f1: 0.081), Validation loss = 0.295 (f1: 0.031, Prec: 0.67, Rec: 0.02, AR: [0.27027027]% => [24] predictions)')
+('Finished epoch 6', ' out of 30. modelID=EURUSD;kqh705921; Train loss = 0.296 (f1: 0.112), Validation loss = 0.302 (f1: 0.049, Prec: 0.6, Rec: 0.03, AR: [0.48423423]% => [43] predictions)')
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 10
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------

@@ -92,7 +92,7 @@ def format_data(ticker):
             bar()
             if time_frames[u].ID[0:10] == current_day:
                 
-                if int(time_frames[u].ID[11:13]) < 2 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
+                if int(time_frames[u].ID[11:13]) < 1 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
                
                     do = 'nothng'
                     

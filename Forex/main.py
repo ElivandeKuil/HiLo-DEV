@@ -20,7 +20,7 @@ def run():
     counter = 0
     
     for var_num_layers in [2]:
-        for var_hidden_size in [4, 8, 16]:
+        for var_hidden_size in [6, 8, 10, 12]:
             
             counter += 1
             
@@ -79,10 +79,10 @@ def safe_run():
 def dual_label_mode_run():
     Globals.logger.reset()
     Globals.label_mode = "low"
-    safe_run()
+    run()
     Globals.logger.reset()
     Globals.label_mode = "high"
-    safe_run()
+    run()
     
 
 def test_models(ticker, txtfolder_name, spread, create_predictor=False):
@@ -164,7 +164,7 @@ def generate_ticket_predictors():
     spreads = [  0.00012, 0.00012,0.00012, 0.00012]
     
     for u in range (0, len(symbols)):
-        test_models(symbols[u], folders[u], spreads[u], create_predictor=False)
+        test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
 generate_ticket_predictors()
 

@@ -1,0 +1,21 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 24
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 2
+balance data: False
+val split: 0.1
+test split: 0.1
+------------------------------------------------------------------------------
+('Finished epoch 4', ' out of 30. modelID=EURUSD;edl245274; Train loss = 0.297 (f1: 0.087), Validation loss = 0.295 (f1: 0.07, Prec: 0.66, Rec: 0.04, AR: [0.65315315]% => [58] predictions)')
+('Finished epoch 7', ' out of 30. modelID=EURUSD;cfb544264; Train loss = 0.296 (f1: 0.123), Validation loss = 0.295 (f1: 0.079, Prec: 0.65, Rec: 0.04, AR: [0.74324324]% => [66] predictions)')
+('Finished epoch 11', ' out of 30. modelID=EURUSD;gqu207044; Train loss = 0.296 (f1: 0.137), Validation loss = 0.296 (f1: 0.084, Prec: 0.63, Rec: 0.04, AR: [0.82207207]% => [73] predictions)')
+('Finished epoch 12', ' out of 30. modelID=EURUSD;lxi797226; Train loss = 0.296 (f1: 0.138), Validation loss = 0.311 (f1: 0.073, Prec: 0.62, Rec: 0.04, AR: [0.73198198]% => [65] predictions)')
+('Finished epoch 15', ' out of 30. modelID=EURUSD;ewb700058; Train loss = 0.295 (f1: 0.141), Validation loss = 0.294 (f1: 0.124, Prec: 0.61, Rec: 0.07, AR: [1.30630631]% => [116] predictions)')
+('Finished epoch 16', ' out of 30. modelID=EURUSD;gce802881; Train loss = 0.295 (f1: 0.133), Validation loss = 0.294 (f1: 0.109, Prec: 0.62, Rec: 0.06, AR: [1.11486486]% => [99] predictions)')
+('Finished epoch 27', ' out of 30. modelID=EURUSD;wey144771; Train loss = 0.294 (f1: 0.139), Validation loss = 0.293 (f1: 0.127, Prec: 0.62, Rec: 0.07, AR: [1.31756757]% => [117] predictions)')
+('Finished epoch 30', ' out of 30. modelID=EURUSD;xrd573809; Train loss = 0.294 (f1: 0.145), Validation loss = 0.295 (f1: 0.085, Prec: 0.6, Rec: 0.05, AR: [0.87837838]% => [78] predictions)')

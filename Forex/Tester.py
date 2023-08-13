@@ -100,7 +100,7 @@ class ModelTester():
         
         self.folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Models")
         
-    def test_by_txtfile(self, txt_path, show_combined_result = True):
+    def test_by_txtfile(self, txt_path):
         
         models = []
         
@@ -117,74 +117,15 @@ class ModelTester():
                 model = pickle.load(fp)
                 models.append(model)
          
-        metric_results = []
-        all_predictions = []
+        metric_results = ['ID', 'f1', 'precision', 'recall', 'AR', 'hits']
         
-        with alive_bar(len(models)) as bar3:     
-            for model in models:
-                tester = SingleTester(model, self.TestData)
-                ID, f1, prec, rec, AR, hits, predictions, test_labels = tester.test()
-                result_line = [ID.replace('\n', ""), f1, prec, rec, AR, hits]
-                metric_results.append(result_line)
-                all_predictions.append(predictions)
-                bar3()
+        for model in models:
+            tester = SingleTester(model, self.TestData)
+            ID, f1, prec, rec, AR, hits, predictions, test_labels = tester.test()
+            result_line = [ID.replace('\n', ""), f1, prec, rec, AR, hits]
+            metric_results.append(result_line)
         
-        print("Individual results:")
-        ind_df = pd.DataFrame(metric_results, columns = ['ID','f1','precision', 'recall', 'AR', 'hits'])
-        print(ind_df)
-        
-        ind_df.to_excel(r'C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/Data/' + Globals.ticker + "_all_" + Globals.label_mode + ".xlsx", index = False)
-        
-        profitable_models = []
-        profitable_predictions = []
-        
-        threshold = 0.595
-        
-        profitable_models_IDs = []
-        
-        for u in (range(0, len(model_IDs))):
-            model_result = ind_df.iloc[[u]]
-            model_prec = model_result['precision'].values[0]
-            if model_prec >= threshold and model_result['hits'].values[0] > 1:
-                profitable_models.append(models[u])
-                profitable_predictions.append(all_predictions[u])
-                profitable_models_IDs.append(models[u].ID)
-        
-        selected_models_df = ind_df.loc[ind_df['ID'].isin(profitable_models_IDs)]
-        ind_df = selected_models_df
-        
-        print("Selected models:")
-        print(ind_df)
-            
-        if show_combined_result == True:
-            
-            combined_predictions = []
-            predictions = np.array(profitable_predictions)
-            
-            if len(predictions) < 1:
-                
-                print("WARNING; no predictions were made")
-                
-                return None, None, None
-            
-            for u in range(0, len(predictions[0])):
-                
-                column = predictions[:,u]
-                if np.sum(column) > 0:
-                    combined_predictions.append(1)
-                else:
-                    combined_predictions.append(0)
-            
-            _, _, _, _, _, comb_df = met.get_metrics(combined_predictions, test_labels)    
-            comb_df.to_excel(r'C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/Data/' + Globals.ticker + "_combined_" + Globals.label_mode + ".xlsx", index = False)
-            
-            for model in profitable_models:
-                
-                with open("C:/Users/eli_s/Documents/GitHub/Project S V6/Forex/Models/prio/" + model.ticker + ";" + str(model.ID) + "_" + Globals.label_mode, "wb") as fp: 
-                    pickle.dump(model, fp)
-            
-            return ind_df, comb_df, profitable_models
-        
+        return metric_results, models[0]
         
 class TestMetrics():
     

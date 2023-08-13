@@ -100,7 +100,7 @@ def activate_dwx(symbol, interval, stop_percentage, save):
     result = processor.dwx.historic_data
     
     if save == True:
-        with open("C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
+        with open("C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
                     pickle.dump(result, fp)
     
 
@@ -153,7 +153,7 @@ def activate_dwx(symbol, interval, stop_percentage, save):
     debug = 0
 
 
-activate_dwx("USDJPY", 'M5', .05, False)
+activate_dwx("XAUUSD", 'M5', .05, True)
 
 
 

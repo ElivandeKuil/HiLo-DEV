@@ -48,12 +48,9 @@ def get_split_data(ticker, val_size, test_size):
         
     except:
         
-        
-    
         Globals.logger.log_and_print_line("Loading and formatting data...")
         
         all_data = np.array(format_data(ticker))
-        
         
         val_count = int(len(all_data) * val_size)
         test_count = int(len(all_data) * test_size)
@@ -62,8 +59,6 @@ def get_split_data(ticker, val_size, test_size):
         
         traindata = all_data[:len(all_data) - val_count - test_count]
         
-        
-            
         valdata = all_data[len(all_data) - val_count - test_count: len(all_data) - test_count]
         testdata = all_data[len(all_data) - test_count:]
         
@@ -97,10 +92,8 @@ def format_data(ticker):
             bar()
             if time_frames[u].ID[0:10] == current_day:
                 
-                debug = time_frames[u].ID[0:10]
-                
-                if int(time_frames[u].ID[11:13]) < 3 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
-               # if int(time_frames[u].ID[11:13]) < 3:
+                if int(time_frames[u].ID[11:13]) < 2 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
+               
                     do = 'nothng'
                     
                 else:
@@ -170,15 +163,15 @@ class model_input():
         
         self.label = 0
         if Globals.label_mode == 'low':
-            if tf.low <= -0.07:
+            if tf.low <= -0.05:
                 self.label = 1
         if Globals.label_mode == 'high':
-            if tf.high >= 0.07:
+            if tf.high >= 0.05:
                 self.label = 1
             
     def build_linear_vector(self):
         
-        time_slot_vector = self.ohe_builder(self.time_slot, 92)
+        time_slot_vector = self.ohe_builder(self.time_slot, 276)
         month_vector = self.ohe_builder(int(self.month) - 1, 12)
         weekday_vector = self.ohe_builder(int(self.weekday) - 1, 7)
         day_vector = self.ohe_builder(int(self.day) - 1, 31)
@@ -228,7 +221,7 @@ class model_input():
         minutes= time[3:5]
         
         hourindex = int(hours)
-        minutes_index = int(minutes) / 15
+        minutes_index = int(minutes) / 5
         
         time_slot_index = hourindex + minutes_index
         

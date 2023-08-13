@@ -19,8 +19,8 @@ def run():
     
     counter = 0
     
-    for var_num_layers in [1, 3]:
-        for var_hidden_size in [5, 11]:
+    for var_num_layers in [2]:
+        for var_hidden_size in [4, 8, 16]:
             
             counter += 1
             
@@ -39,11 +39,11 @@ def run():
             
             Globals.logger.log_globals()
             
-            for u in range(0, 3):
+            for u in range(0, 1):
                 
                 start_time= time.time()
                 
-                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 4")
+                Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 1")
                 
                 traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
                 
@@ -54,10 +54,6 @@ def run():
                 trainer = ModelTrainer(model, traindata, valdata, testdata)
                 
                 test1, test2 = trainer.train_model(True)
-                
-                trainer.test_model(test1)
-                
-                
                 inter_time = time.time()
                 ellapsed_time = inter_time - start_time
                 
@@ -99,55 +95,63 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     print("##################" + Globals.ticker + "##################") 
     
     Globals.label_mode = 'high'
-    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidates.txt"
+    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidate.txt"
     
     _, _, high_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
     print("Started testing high models...")
     
     tester = Tester.ModelTester(high_testdata)
-    high_ind_doc, high_comb_doc, high_models = tester.test_by_txtfile(txt_path, True)
+    high_doc, high_model = tester.test_by_txtfile(txt_path)
     
     
     Globals.label_mode = 'low'
-    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidates.txt"
+    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidate.txt"
     
     _, _, low_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
     print("Started testing low models...")
     
     tester = Tester.ModelTester(low_testdata)
-    low_ind_doc, low_comb_doc, low_models = tester.test_by_txtfile(txt_path, True)
+    low_doc, low_model = tester.test_by_txtfile(txt_path)
     
-    
+    print("High model score:")
+    print(high_doc)
+    print("low modelscore:")
+    print(low_doc)
+
     if create_predictor == True:
-        
-        if low_models == None:
+        choice = input("You have to choose one of the two tested models, type 'h' for high model and l for low model")
+
+        if choice == 'h':
+
+            model = high_model
+            doc = high_doc
+            labelmode = '+'
+
+        if choice == 'l':
             
-            low_models = []
+            model = low_model
+            doc = low_doc
+            labelmode = '-'
+
+        if model != None:
         
-        if high_models == None:
-            
-            high_models = []
-        
-        create_ticker_predictor(ticker, ticker + "(1)", ticker + "(simple three feaute LSTM + Linear vector)", spread, 
-                                low_ind_doc, low_comb_doc, high_ind_doc, high_comb_doc, low_models, high_models)
+            create_ticker_predictor(ticker, ticker + "(1)", ticker + "(simple three feaute LSTM + Linear vector)", spread, 
+                                model, doc, labelmode)
         
 
-def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation, low_comb_documentation,
-                            high_ind_documentation, high_comb_documentation, low_models, high_models):
+def create_ticker_predictor(ticker, Id, name, max_spread, model, doc, labelmode):
     path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/tickerpredictors/"
     
     new_ticker_predictor = TickerPredictor(
         ticker, 
         Id, 
         name, 
-        max_spread)
+        max_spread,
+        labelmode)
     
-    new_ticker_predictor.load_models(low_models, high_models, low_ind_documentation, low_comb_documentation, 
-                              high_ind_documentation, high_comb_documentation, high_ind_documentation.iloc[0]['precision'],
-                              high_ind_documentation.iloc[0]['AR'], low_ind_documentation.iloc[0]['precision'],
-                              low_ind_documentation.iloc[0]['AR'])
+    new_ticker_predictor.load_models(model, doc)
     
     with open(path + ticker.replace('.', '_') + ".tp", "wb") as fp: 
         pickle.dump(new_ticker_predictor, fp)
@@ -155,17 +159,16 @@ def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation,
 
 def generate_ticket_predictors():
     
-    symbols = [ "XAUUSD"]
-    folders = [ "XAUUSD"]
-    spreads = [  0.0009]
+    symbols = [ "XAUUSD", "EURUSD", "USDJPY", "GBPUSD"]
+    folders = [ "XAUUSD", "EURUSD", "USDJPY", "GBPUSD"]
+    spreads = [  0.00012, 0.00012,0.00012, 0.00012]
     
     for u in range (0, len(symbols)):
-        test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
+        test_models(symbols[u], folders[u], spreads[u], create_predictor=False)
 
-#generate_ticket_predictors()
+generate_ticket_predictors()
 
-print("hoi")
-
+"""
 Globals.ticker = "EURUSD"
 dual_label_mode_run()
 Globals.ticker = "USDJPY"
@@ -174,4 +177,4 @@ Globals.ticker = "GBPUSD"
 dual_label_mode_run()
 Globals.ticker = "XAUUSD"
 dual_label_mode_run()
-
+"""

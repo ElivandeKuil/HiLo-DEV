@@ -210,6 +210,7 @@ class ModelTrainer:
         Globals.logger.log_plot(self.plot_x, self.plot_y_rec, "plot_" + self.model.ID + "_recall")
         Globals.logger.log_plot(self.plot_x, self.plot_y_AR, "plot_" + self.model.ID + "_action ratio")
         
+        """
         plt.plot(self.plot_x, self.plot_y_f1)
         plt.title("f1")
         plt.show()
@@ -226,7 +227,7 @@ class ModelTrainer:
         plt.title("Action ratio")
         plt.show()
         plt.clf()
-            
+        """
         
         return best_model, best_epoch
     

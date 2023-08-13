@@ -56,7 +56,7 @@ class NTDM_V0(torch.nn.Module):
         self.name = "First gen"
         self.description = "First attempt tackling Forex"
         
-        self.linear_encoder = LINEAR(142)
+        self.linear_encoder = LINEAR(326)
         
         self.sequence_encoder = LSTM()
         

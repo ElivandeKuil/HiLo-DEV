@@ -29,8 +29,8 @@ class Predictor():
         orders = []
         
         for tickerpredictor in self.predictors_list:
-            if tickerpredictor.ticker + "_M15" in data.keys():
-                ticker_data = data[tickerpredictor.ticker+ "_M15"]
+            if tickerpredictor.ticker + "_M5" in data.keys():
+                ticker_data = data[tickerpredictor.ticker+ "_M5"]
                 if len(ticker_data) == 8:
                     
                     formatted_data = self.format_data(ticker_data)
@@ -51,7 +51,7 @@ class Predictor():
                     print("retrieved data was not of the correct size for ticker: " + tickerpredictor.ticker + 
                           ", excpected 24, got: " + str(len(ticker_data)) )  
                     Globals.log_df.add_warning(datetime.now(), "Predictor", "Predictor", "predict", 
-                                               "Retrieved data was not of correct size, expected 24 but got " + str(len(ticker_data)), tickerpredictor.ticker, 1)
+                                               "Retrieved data was not of correct size, expected 8 but got " + str(len(ticker_data)), tickerpredictor.ticker, 1)
         
         return orders
 
@@ -68,8 +68,6 @@ class Predictor():
         
         for u in range(0, len(time_frames)):
             if time_frames[u].ID[0:10] == current_day:
-                
-                debug = time_frames[u].ID[0:10]
                 
                 if u == 7:
                     if int(time_frames[u].ID[11:13]) < 3 and datetime.strptime(time_frames[u].ID[0:10].replace('.', '/'), '%Y/%m/%d').isoweekday() == 1:
@@ -151,15 +149,15 @@ class model_input():
         
         self.label = 0
         if Globals.label_mode == 'low':
-            if tf.low <= -0.06:
+            if tf.low <= -0.05:
                 self.label = 1
         if Globals.label_mode == 'high':
-            if tf.high >= 0.06:
+            if tf.high >= 0.05:
                 self.label = 1
             
     def build_linear_vector(self):
         
-        time_slot_vector = self.ohe_builder(self.time_slot, 92)
+        time_slot_vector = self.ohe_builder(self.time_slot, 276)
         month_vector = self.ohe_builder(int(self.month) - 1, 12)
         weekday_vector = self.ohe_builder(int(self.weekday) - 1, 7)
         day_vector = self.ohe_builder(int(self.day) - 1, 31)
@@ -207,7 +205,7 @@ class model_input():
         minutes= time[3:5]
         
         hourindex = int(hours)
-        minutes_index = int(minutes) / 15
+        minutes_index = int(minutes) / 8
         
         time_slot_index = hourindex + minutes_index
         

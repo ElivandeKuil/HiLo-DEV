@@ -99,7 +99,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     print("##################" + Globals.ticker + "##################") 
     
     Globals.label_mode = 'high'
-    txt_path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidates.txt"
+    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/high_candidates.txt"
     
     _, _, high_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
@@ -110,7 +110,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     
     
     Globals.label_mode = 'low'
-    txt_path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidates.txt"
+    txt_path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/analysis docs/Candidates/" + txtfolder_name + "/low_candidates.txt"
     
     _, _, low_testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
     
@@ -136,7 +136,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
 
 def create_ticker_predictor(ticker, Id, name, max_spread, low_ind_documentation, low_comb_documentation,
                             high_ind_documentation, high_comb_documentation, low_models, high_models):
-    path = "C:/Users/eli_s/Documents/GitHub/HiLo-DEV/Forex/tickerpredictors/"
+    path = "C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/tickerpredictors/"
     
     new_ticker_predictor = TickerPredictor(
         ticker, 

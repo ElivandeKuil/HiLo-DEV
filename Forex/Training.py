@@ -10,7 +10,6 @@ import os
 import shutil
 from sklearn.metrics import f1_score
 from alive_progress import alive_bar
-import matplotlib.pyplot as plt
 import Globals
 import string
 import random
@@ -181,7 +180,7 @@ class ModelTrainer:
             self.model.ID = Globals.ticker + ";" + str(chars) + str(time)
             line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(epoch_train_total / len(train_loader), 3)) + " (f1: " + str(round(train_performance, 3)) + "), Validation loss = " + str(round(current_loss, 3)) + " (f1: " + str(round(val_performance, 3)) + ", Prec: "+ str(round(precision_score(val_labels, val_predictions), 2)) + ", Rec: " + str(round(recall_score(val_labels, val_predictions),2)) + ", AR: " + str(sum(val_predictions) / (len(val_loader) * self.batch_size) * 100) + "% => " + str(sum(val_predictions)) + " predictions)"
             Globals.logger.log_and_print_line(line)
-            if precision_score(val_labels, val_predictions) > 0.6:
+            if precision_score(val_labels, val_predictions) > 0.50:
                 Globals.logger.prio_log(line)
             
             self.plot_y_f1.append(val_performance)
@@ -204,13 +203,15 @@ class ModelTrainer:
                 best_model = pickle.load(fp)
         else:
              best_model = None
-            
+
+
+        """    
         Globals.logger.log_plot(self.plot_x, self.plot_y_f1, "plot_" + self.model.ID + "_f1")
         Globals.logger.log_plot(self.plot_x, self.plot_y_prec, "plot_" + self.model.ID + "_precision")
         Globals.logger.log_plot(self.plot_x, self.plot_y_rec, "plot_" + self.model.ID + "_recall")
         Globals.logger.log_plot(self.plot_x, self.plot_y_AR, "plot_" + self.model.ID + "_action ratio")
         
-        """
+        
         plt.plot(self.plot_x, self.plot_y_f1)
         plt.title("f1")
         plt.show()

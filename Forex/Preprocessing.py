@@ -3,13 +3,26 @@ import numpy as np
 import datetime
 from dateutil import parser
 import time
-from alive_progress import alive_bar
 import random
 import os
 import Globals
+from alive_progress import alive_bar
 from datetime import datetime, timedelta
 
-folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled")
+TP = ".04"
+SL = ".03"
+
+folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled/Raw/" + TP + "-" + SL)
+
+def balance_data(train_data, bal_factor):
+    balanced_data = []
+    for datum in train_data:
+        if datum.label == 0 and random.randint(0, 1000) < bal_factor * 1000:
+            do = 'nothing'
+        else:
+            balanced_data.append(datum)
+    return balanced_data
+
 
 def analyse_data(data):
     
@@ -25,7 +38,7 @@ def analyse_data(data):
     Globals.logger.log_and_print_line("number datapoints: " + str(len(data)))
     Globals.logger.log_and_print_line("label=1 perecentage: " + str(pos / len(data)))
     Globals.logger.log_and_print_line("Label=0 perecentage: " + str(empty / len(data)))
-        
+
     return empty / len(data)
 
 def get_split_data(ticker, val_size, test_size):
@@ -34,14 +47,13 @@ def get_split_data(ticker, val_size, test_size):
     Sizes are in percentage of the total (going from 0 to 1)
     """
     
-    
     try:
         
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TestData", "rb") as fp:   
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TestData.ProDa", "rb") as fp:   
             testdata = pickle.load(fp)
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_ValData", "rb") as fp:   
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_ValData.ProDa", "rb") as fp:   
             valdata = pickle.load(fp)
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TrainData", "rb") as fp:   
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TrainData.ProDa", "rb") as fp:   
             traindata = pickle.load(fp)
         
         Globals.logger.log_and_print_line("Found pickled data, loading...")
@@ -51,24 +63,30 @@ def get_split_data(ticker, val_size, test_size):
         Globals.logger.log_and_print_line("Loading and formatting data...")
         
         all_data = np.array(format_data(ticker))
-        
+        np.random.shuffle(all_data)
         val_count = int(len(all_data) * val_size)
         test_count = int(len(all_data) * test_size)
-        
-        np.random.shuffle(all_data)
         
         traindata = all_data[:len(all_data) - val_count - test_count]
         
         valdata = all_data[len(all_data) - val_count - test_count: len(all_data) - test_count]
         testdata = all_data[len(all_data) - test_count:]
-        
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TestData", "wb") as fp: 
+
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TestData.ProDa", "wb") as fp: 
             pickle.dump(testdata, fp)
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_ValData", "wb") as fp: 
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_ValData.ProDa", "wb") as fp: 
             pickle.dump(valdata, fp)
-        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TrainData", "wb") as fp: 
+        with open(folder_root + "/" + Globals.ticker + ";" + Globals.label_mode + "_TrainData.ProDa", "wb") as fp: 
             pickle.dump(traindata, fp)
-    
+
+    Globals.logger.prio_log("traindata properties before balancing:")
+    analyse_data(traindata)
+
+    if (Globals.balance_data == True):
+        traindata = balance_data(traindata, Globals.balance_percent)
+        
+    Globals.logger.prio_log("traindata properties after balancing:")
+    analyse_data(traindata)
     return traindata, valdata, testdata
 
 def format_data(ticker):
@@ -163,15 +181,15 @@ class model_input():
         
         self.label = 0
         if Globals.label_mode == 'low':
-            if tf.low <= -0.05:
+            if tf.low <= -1 * float(TP) and tf.high <= float(SL):
                 self.label = 1
         if Globals.label_mode == 'high':
-            if tf.high >= 0.05:
+            if tf.high >= float(TP) and tf.low >= -1 * float(SL):
                 self.label = 1
             
     def build_linear_vector(self):
         
-        time_slot_vector = self.ohe_builder(self.time_slot, 276)
+        time_slot_vector = self.ohe_builder(self.time_slot, 312)
         month_vector = self.ohe_builder(int(self.month) - 1, 12)
         weekday_vector = self.ohe_builder(int(self.weekday) - 1, 7)
         day_vector = self.ohe_builder(int(self.day) - 1, 31)
@@ -223,6 +241,6 @@ class model_input():
         hourindex = int(hours)
         minutes_index = int(minutes) / 5
         
-        time_slot_index = hourindex + minutes_index
+        time_slot_index = hourindex + ((hourindex + 1) * minutes_index)
         
         return time_slot_index

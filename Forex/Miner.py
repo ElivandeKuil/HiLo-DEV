@@ -42,7 +42,7 @@ class tick_processor():
         # Timezone Name.
         
         start = "22/Jun/2020:23:15:26 UTC +0900"
-        end = "26/Jun/2023:09:15:26 UTC +0900"
+        end = "8/Sep/2023:09:15:26 UTC +0900"
         
         start_dt_format = datetime.strptime(start, '%d/%b/%Y:%H:%M:%S %Z %z')
         end_dt_format = datetime.strptime(end, '%d/%b/%Y:%H:%M:%S %Z %z')
@@ -87,7 +87,7 @@ class tick_processor():
         print(f'on_order_event. open_orders: {len(self.dwx.open_orders)} open orders')
 
 
-def activate_dwx(symbol, interval, stop_percentage, save):
+def activate_dwx(symbol, interval, high_stop_percentage, low_stop_percentage, save):
     MT4_files_dir = 'C:/Users/eliva/AppData/Roaming/MetaQuotes/Terminal/16D9C17040576AD13C62C316983027D5/MQL5/Files'
     processor = tick_processor(symbol, interval, MT4_files_dir)
 
@@ -100,7 +100,7 @@ def activate_dwx(symbol, interval, stop_percentage, save):
     result = processor.dwx.historic_data
     
     if save == True:
-        with open("C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/" + symbol + ".data", "wb") as fp: 
+        with open("C:/Users/eliva/OneDrive/Documents/GitHub/HiLo-DEV/Forex/Data/Pickled/Raw/" + symbol + ".data", "wb") as fp: 
                     pickle.dump(result, fp)
     
 
@@ -125,16 +125,13 @@ def activate_dwx(symbol, interval, stop_percentage, save):
             high_percent = (tup[1]['high'] - open_price) / open_price * 100
             low_percent = (tup[1]['low'] - open_price) / open_price * 100
             
-            if high_percent >= stop_percentage and low_percent <= (-1 * stop_percentage):
-                double_count += 1
+            if high_percent >= high_stop_percentage and low_percent > (-1 * low_stop_percentage):
+                high_over_stop_percentage += 1
             else:
-                if high_percent >= stop_percentage:
-                    high_over_stop_percentage += 1
+                if low_percent <= (-1 * high_stop_percentage) and high_percent < low_stop_percentage:
+                    low_under_stop_percentage += 1
                 else:
-                    if low_percent <= (-1 * stop_percentage):
-                        low_under_stop_percentage += 1
-                    else:
-                        non_volatile_count += 1
+                    non_volatile_count += 1
                 
         else:
             
@@ -146,14 +143,96 @@ def activate_dwx(symbol, interval, stop_percentage, save):
     
     total_intervals = double_count + high_over_stop_percentage + low_under_stop_percentage + non_volatile_count
     
-    print("double percentage: " + str(double_count / total_intervals) )
     print("high hit percentage: " + str(high_over_stop_percentage / total_intervals) )
     print("low hit percentage: " + str(low_under_stop_percentage / total_intervals) )
     print("no hit percentage: " + str(non_volatile_count / total_intervals) )
-    debug = 0
+
+    print("Starting cross validation...")
+    analyse_data(result, high_stop_percentage)
 
 
-activate_dwx("XAUUSD", 'M5', .05, True)
+def analyse_data(result, high_stop_percentage):
+    dic = list(result.values())[0]
+    dic_items = list(dic.items())
+
+    high_over_stop_percentage = 0
+    low_under_stop_percentage = 0
+    non_volatile_count = 0
+    
+    current_day = dic_items[0][0][0:10]
+    open_price = dic_items[0][1]['open']
+    
+    total_days = 0
+    low_stop_percentage = 50
+
+    for tup in dic_items:
+            
+        if tup[0][:10] == current_day:
+            open_price = (tup[1]['open'])
+            high_percent = (tup[1]['high'] - open_price) / open_price * 100
+            low_percent = (tup[1]['low'] - open_price) / open_price * 100
+            
+            if high_percent >= high_stop_percentage and low_percent > (-1 * low_stop_percentage):
+                high_over_stop_percentage += 1
+            else:
+                if low_percent <= (-1 * high_stop_percentage) and high_percent < low_stop_percentage:
+                    low_under_stop_percentage += 1
+                else:
+                    non_volatile_count += 1
+                
+        else:
+            
+            total_days += 1
+            
+            current_day = tup[0][:10]
+            open_price = tup[1]['open']
+        
+        
+        total_intervals = high_over_stop_percentage + low_under_stop_percentage + non_volatile_count
+        
+    print("high hit percentage: " + str(high_over_stop_percentage / total_intervals) + " for low_stop_percentage: " + str(low_stop_percentage))
+
+    low_stop_percentage = 0.05
+
+    for u in range(0, 50):
+        low_stop_percentage = low_stop_percentage - 0.001
+        high_over_stop_percentage = 0
+        low_under_stop_percentage = 0
+        non_volatile_count = 0
+        
+        current_day = dic_items[0][0][0:10]
+        open_price = dic_items[0][1]['open']
+        
+        total_days = 0
+    
+        for tup in dic_items:
+            
+            if tup[0][:10] == current_day:
+                open_price = (tup[1]['open'])
+                high_percent = (tup[1]['high'] - open_price) / open_price * 100
+                low_percent = (tup[1]['low'] - open_price) / open_price * 100
+                
+                if high_percent >= high_stop_percentage and low_percent > (-1 * low_stop_percentage):
+                    high_over_stop_percentage += 1
+                else:
+                    if low_percent <= (-1 * high_stop_percentage) and high_percent < low_stop_percentage:
+                        low_under_stop_percentage += 1
+                    else:
+                        non_volatile_count += 1
+                    
+            else:
+                
+                total_days += 1
+                
+                current_day = tup[0][:10]
+                open_price = tup[1]['open']
+            
+        
+        total_intervals = high_over_stop_percentage + low_under_stop_percentage + non_volatile_count
+        
+        print("high hit percentage: " + str(high_over_stop_percentage / total_intervals) + " for low_stop_percentage: " + str(low_stop_percentage) )
+
+activate_dwx("XAUUSD", 'M5', .05, .02, True)
 
 
 

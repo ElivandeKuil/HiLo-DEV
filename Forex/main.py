@@ -9,6 +9,8 @@ import time
 import numpy
 from TickerPredictor import TickerPredictor
 import pickle
+import tkinter as tk
+from tkinter import filedialog
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -18,24 +20,21 @@ def run():
     program_start_time = time.time()
     
     counter = 0
-    
-    for var_num_layers in [2]:
-        for var_hidden_size in [6, 8, 10, 12]:
+
+    if Globals.fine_tuning == True:
+        num_layers_set = [0]
+        hidden_sizes_set = [0]
+    else:
+        num_layers_set = [2]
+        hidden_sizes_set = [10]
+
+    for var_num_layers in num_layers_set:
+        for var_hidden_size in hidden_sizes_set:
             
             counter += 1
             
-            Globals.device = device
-            Globals.batch_size = 24
-            Globals.learning_rate = 0.01
-            Globals.weight_decay = 1e-8
-            Globals.num_epochs = 30
-            
             Globals.hidden_layer_size = var_hidden_size
             Globals.number_layers = var_num_layers
-            Globals.balance_data = False
-            
-            Globals.val_split = .1
-            Globals.test_split = .1
             
             Globals.logger.log_globals()
             
@@ -47,9 +46,25 @@ def run():
                 
                 traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
                 
-                model = NTDM_V0(Globals.device)
-                
-                model.ticker = Globals.ticker
+                if Globals.fine_tuning == False:
+
+                    model = NTDM_V0(Globals.device)
+                    model.ticker = Globals.ticker
+
+                else:
+                    root = tk.Tk()
+                    root.withdraw()
+
+                    file_path = filedialog.askopenfilename()
+                    with open(file_path, "rb") as fp:   
+                        ticker_predictor = pickle.load(fp)
+                        model = ticker_predictor.model
+
+                    model.sequence_encoder.device = Globals.device
+                    model.sequence_encoder.to(Globals.device)
+                    model.linear_encoder.to(Globals.device)
+                    
+                    model = model.to(Globals.device)
                 
                 trainer = ModelTrainer(model, traindata, valdata, testdata)
                 
@@ -117,7 +132,7 @@ def test_models(ticker, txtfolder_name, spread, create_predictor=False):
     
     print("High model score:")
     print(high_doc)
-    print("low modelscore:")
+    print("low model score:")
     print(low_doc)
 
     if create_predictor == True:
@@ -161,20 +176,33 @@ def generate_ticket_predictors():
     
     symbols = [ "XAUUSD", "EURUSD", "USDJPY", "GBPUSD"]
     folders = [ "XAUUSD", "EURUSD", "USDJPY", "GBPUSD"]
-    spreads = [  0.00012, 0.00012,0.00012, 0.00012]
+    spreads = [  0.00015, 0.00015,0.00015, 0.00015]
     
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-generate_ticket_predictors()
+#generate_ticket_predictors()
+
+Globals.ticker = "XAUUSD"
+Globals.fine_tuning = False
+Globals.logger.reset()
+Globals.label_mode = "high"
+Globals.balance_data = True
+Globals.balance_percent = .3
+Globals.device = device
+Globals.batch_size = 24
+Globals.learning_rate = 0.01
+Globals.weight_decay = 1e-8
+Globals.num_epochs = 30            
+Globals.val_split = .1
+Globals.test_split = .1
+run()
 
 """
-Globals.ticker = "EURUSD"
-dual_label_mode_run()
 Globals.ticker = "USDJPY"
 dual_label_mode_run()
 Globals.ticker = "GBPUSD"
 dual_label_mode_run()
-Globals.ticker = "XAUUSD"
+Globals.ticker = "EURUSD"
 dual_label_mode_run()
 """

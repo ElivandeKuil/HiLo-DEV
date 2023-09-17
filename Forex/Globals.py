@@ -13,9 +13,11 @@ num_epochs = 0
 hidden_layer_size = 0
 number_layers = 0
 balance_data = False
+balance_percent = 0
 val_split = 0
 test_split = 0
 sys_log_mode = 3  # 3 = all
+fine_tuning = False
 
 label_mode = 'high' # or 'low'
 

@@ -49,6 +49,8 @@ class Logger:
         self.log_line("balance data: " + str(Globals.balance_data))
         self.log_line("val split: " + str(Globals.val_split))
         self.log_line("test split: " + str(Globals.test_split))
+        self.log_line("label_mode: " + str(Globals.label_mode))
+        self.log_line("fine_tuning: " + str(Globals.fine_tuning))
         
         self.log_line("------------------------------------------------------------------------------")
         
@@ -64,6 +66,8 @@ class Logger:
         self.prio_log("balance data: " + str(Globals.balance_data))
         self.prio_log("val split: " + str(Globals.val_split))
         self.prio_log("test split: " + str(Globals.test_split))
+        self.prio_log("label_mode: " + str(Globals.label_mode))
+        self.prio_log("fine_tuning: " + str(Globals.fine_tuning))
         
         self.prio_log("------------------------------------------------------------------------------")
         
@@ -85,6 +89,7 @@ class Logger:
         
     def prio_log(self, line):
         
+        print(line)
         self.prioQueue.append(line)
     
     def Dump(self):

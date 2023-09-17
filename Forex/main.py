@@ -183,10 +183,9 @@ def generate_ticket_predictors():
 
 #generate_ticket_predictors()
 
-Globals.ticker = "XAUUSD"
+
 Globals.fine_tuning = False
 Globals.logger.reset()
-Globals.label_mode = "high"
 Globals.balance_data = True
 Globals.balance_percent = .3
 Globals.device = device
@@ -196,6 +195,9 @@ Globals.weight_decay = 1e-8
 Globals.num_epochs = 30            
 Globals.val_split = .1
 Globals.test_split = .1
+
+Globals.ticker = "XAUUSD"
+Globals.label_mode = "high"
 run()
 
 """

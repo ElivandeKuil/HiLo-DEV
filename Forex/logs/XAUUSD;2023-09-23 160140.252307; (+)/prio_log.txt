@@ -1,0 +1,90 @@
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 2
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 16
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 32
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+------------------------------------------------------------------------------

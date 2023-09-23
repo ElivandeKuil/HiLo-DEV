@@ -33,18 +33,16 @@ class SingleTester():
         
     def format_batch(self, batch): 
         
-        linear_data = []
         sequence_data = []
         labels = []
         
         for sample in batch:
             
-            linear_data.append(sample.linear_input)
-            sequence_data.append(sample.sequence_input)
+            sequence_data.append(sample.sequence_input.astype(float))
             
             labels.append(sample.label)
                 
-        return linear_data, sequence_data, labels
+        return sequence_data, labels
     
     def test(self):
     
@@ -69,16 +67,15 @@ class SingleTester():
               
             for v in range(0, len(test_iter)):
                 
-                test_batch_linear_data, test_batch_sequence_data, test_batch_labels = next(test_iter)
+                test_batch_sequence_data, test_batch_labels = next(test_iter)
                 
                 for sample in test_batch_labels:
                     test_labels.append(sample)
                 
-                test_batch_linear_data = torch.FloatTensor(np.array(test_batch_linear_data)).to(self.device).to(dtype=torch.float)
                 test_batch_sequence_data = torch.FloatTensor(np.array(test_batch_sequence_data)).to(self.device).to(dtype=torch.float)
                 test_batch_labels = torch.FloatTensor(test_batch_labels).reshape([len(test_batch_labels),1]).to(self.device).to(dtype=torch.float)
                 
-                output = self.model(test_batch_linear_data, test_batch_sequence_data)
+                output = self.model(test_batch_sequence_data)
                 
                 for sample in output.cpu().detach().numpy():
                     test_predictions.append(sample.round()[0])

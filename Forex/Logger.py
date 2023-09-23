@@ -1,7 +1,5 @@
 import os
 from datetime import datetime
-import csv
-import matplotlib.pyplot as plt
 import Globals
 
 class Logger:
@@ -51,6 +49,7 @@ class Logger:
         self.log_line("test split: " + str(Globals.test_split))
         self.log_line("label_mode: " + str(Globals.label_mode))
         self.log_line("fine_tuning: " + str(Globals.fine_tuning))
+        self.log_line("normalization: " + str(Globals.normalization))
         
         self.log_line("------------------------------------------------------------------------------")
         
@@ -68,6 +67,7 @@ class Logger:
         self.prio_log("test split: " + str(Globals.test_split))
         self.prio_log("label_mode: " + str(Globals.label_mode))
         self.prio_log("fine_tuning: " + str(Globals.fine_tuning))
+        self.log_line("normalization: " + str(Globals.normalization))
         
         self.prio_log("------------------------------------------------------------------------------")
         
@@ -122,20 +122,7 @@ class Logger:
             
             for line in self.prioQueue:
                 file.write(str(line) + "\n")
-        if self.save_plots == True:       
-            for u in range(0, len(self.plot_x)):
-                
-                
-                plt.plot(self.plot_x[u], self.plot_y[u])
-                
-                if len(self.legends[u]) != 0:
-                    plt.legend(labels=self.legends[u], loc='upper center', bbox_to_anchor=(0.5, -0.05),
-                      fancybox=True, shadow=True, ncol=5)
-                plt.savefig(self.log_folder_root + "/" + self.plot_names[u].replace(' ', '_') + ".png")
-                plt.clf()
-            
-    
-    
+        
     def log_plot(self, x_values, y_values, name, legend=[]):
         self.plot_x.append(x_values)
         self.plot_y.append(y_values)

@@ -11,9 +11,9 @@ class LSTM(torch.nn.Module):
         self.device = Globals.device
         self.num_classes = 1
         self.num_layers = Globals.number_layers
-        self.input_size = 3 
+        self.input_size = Globals.sequence_input_size
         self.hidden_size = Globals.hidden_layer_size
-        self.seq_length = 8
+        self.seq_length = Globals.sequence_length
         self.label_mode = Globals.label_mode
         
         self.lstm = torch.nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=True)
@@ -80,3 +80,21 @@ class NTDM_V0(torch.nn.Module):
         return final_output
     
 
+class NTDM_V1(torch.nn.Module):
+    
+    def __init__(self, dev):
+        super(NTDM_V1, self).__init__()
+        self.ID = None
+        self.ticker = "None"
+        self.name = "LSTM_only"
+        self.description = "100th attempt at Forexx, this time LSTM only"
+        
+        self.sequence_encoder = LSTM()
+        
+        self.sigmoid = torch.nn.Sigmoid()
+        
+    def forward(self, sequence):
+        
+        sequence_output = self.sequence_encoder(sequence)
+        
+        return sequence_output

@@ -49,18 +49,16 @@ class ModelTrainer:
     
     def format_batch(self, batch): 
         
-        linear_data = []
         sequence_data = []
         labels = []
         
         for sample in batch:
             
-            linear_data.append(sample.linear_input)
-            sequence_data.append(sample.sequence_input)
+            sequence_data.append(np.array(sample.sequence_input).astype(float))
             
             labels.append(sample.label)
                 
-        return linear_data, sequence_data, labels
+        return sequence_data, labels
     
     def train_model(self, verbose=False):
         
@@ -71,6 +69,7 @@ class ModelTrainer:
         highest_val_performance = -10
         best_epoch = 0   
         best_epoch_model = None
+        train_losses = []
         
         train_loader = DataLoader(self.TrainData,
                                          batch_size=self.batch_size,
@@ -106,12 +105,10 @@ class ModelTrainer:
                                
                 for u in range(0, len(train_iter)):
                     
-                    list_batch_linear_data, list_batch_sequence_data, list_batch_labels = next(train_iter)
+                    list_batch_sequence_data, list_batch_labels = next(train_iter)
                     
                     for sample in list_batch_labels:
                         train_labels.append(sample)
-                    
-                    batch_linear_data = torch.FloatTensor(np.array(list_batch_linear_data)).to(self.device).to(dtype=torch.float)
                     
                     batch_sequence_data = torch.FloatTensor(np.array(list_batch_sequence_data)).to(self.device).to(dtype=torch.float)
                     
@@ -119,13 +116,13 @@ class ModelTrainer:
                     
                     bar2()
                     
-                    prediction = self.model(batch_linear_data, batch_sequence_data)
+                    prediction = self.model(batch_sequence_data)
                     
                     for sample in prediction.cpu().detach().numpy():
                         train_predictions.append(sample.round().astype(int))
                     
                     loss = self.loss_function(prediction, batch_labels)
-                        
+                    
                     epoch_train_total += loss.item()
                     
                     optimizer.zero_grad()
@@ -146,18 +143,17 @@ class ModelTrainer:
                                         
                     for v in range(0, len(val_iter)):
                         
-                        val_batch_linear_data, val_batch_sequence_data, val_batch_labels = next(val_iter)
+                        val_batch_sequence_data, val_batch_labels = next(val_iter)
                         
                         for sample in val_batch_labels:
                             val_labels.append(sample)
                         
                         bar2()
-                        
-                        val_batch_linear_data = torch.FloatTensor(np.array(val_batch_linear_data)).to(self.device).to(dtype=torch.float)
+
                         val_batch_sequence_data = torch.FloatTensor(np.array(val_batch_sequence_data)).to(self.device).to(dtype=torch.float)
                         val_batch_labels = torch.FloatTensor(val_batch_labels).reshape([len(val_batch_labels),1]).to(self.device).to(dtype=torch.float)
                         
-                        output = self.model(val_batch_linear_data, val_batch_sequence_data)
+                        output = self.model(val_batch_sequence_data)
                         
                         for sample in output.cpu().detach().numpy():
                             val_predictions.append(sample.round().astype(int))
@@ -176,17 +172,17 @@ class ModelTrainer:
             
             time = str(dt.microsecond)
             chars = ''.join(random.choices(string.ascii_lowercase, k=3))
+
+            if epoch > 3 and round(epoch_train_total / len(train_loader), 6) > train_losses[-2]:
+                print('Training got stuck, aborting...')
+                break
+            train_losses.append(round(epoch_train_total / len(train_loader), 6))
             
             self.model.ID = Globals.ticker + ";" + str(chars) + str(time)
-            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(epoch_train_total / len(train_loader), 3)) + " (f1: " + str(round(train_performance, 3)) + "), Validation loss = " + str(round(current_loss, 3)) + " (f1: " + str(round(val_performance, 3)) + ", Prec: "+ str(round(precision_score(val_labels, val_predictions), 2)) + ", Rec: " + str(round(recall_score(val_labels, val_predictions),2)) + ", AR: " + str(sum(val_predictions) / (len(val_loader) * self.batch_size) * 100) + "% => " + str(sum(val_predictions)) + " predictions)"
+            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(epoch_train_total / len(train_loader), 6)) + " (f1: " + str(round(train_performance, 3)) + "), Validation loss = " + str(round(current_loss, 3)) + " (f1: " + str(round(val_performance, 3)) + ", Prec: "+ str(round(precision_score(val_labels, val_predictions), 2)) + ", Rec: " + str(round(recall_score(val_labels, val_predictions),2)) + ", AR: " + str(sum(val_predictions) / (len(val_loader) * self.batch_size) * 100) + "% => " + str(sum(val_predictions)) + " predictions)"
             Globals.logger.log_and_print_line(line)
             if precision_score(val_labels, val_predictions) > 0.50:
                 Globals.logger.prio_log(line)
-            
-            self.plot_y_f1.append(val_performance)
-            self.plot_y_prec.append(precision_score(val_labels, val_predictions))
-            self.plot_y_rec.append(recall_score(val_labels, val_predictions))
-            self.plot_y_AR.append(sum(val_predictions) / (len(val_loader) * self.batch_size))
             
             with open(self.folder_root + "/temp/" + self.model.ticker + ";" + str(self.model.ID) + self.label_mode, "wb") as fp: 
                 pickle.dump(self.model, fp)
@@ -198,38 +194,13 @@ class ModelTrainer:
                 highest_val_performance = val_performance
                 best_epoch_model = self.model.ID 
                 best_epoch = epoch + 1
+
         if len(best_epoch_model) > 0:       
             with open(self.folder_root + "/temp/" + self.model.ticker + ";" + str(best_epoch_model) + self.label_mode, "rb") as fp:   
                 best_model = pickle.load(fp)
         else:
              best_model = None
 
-
-        """    
-        Globals.logger.log_plot(self.plot_x, self.plot_y_f1, "plot_" + self.model.ID + "_f1")
-        Globals.logger.log_plot(self.plot_x, self.plot_y_prec, "plot_" + self.model.ID + "_precision")
-        Globals.logger.log_plot(self.plot_x, self.plot_y_rec, "plot_" + self.model.ID + "_recall")
-        Globals.logger.log_plot(self.plot_x, self.plot_y_AR, "plot_" + self.model.ID + "_action ratio")
-        
-        
-        plt.plot(self.plot_x, self.plot_y_f1)
-        plt.title("f1")
-        plt.show()
-        plt.clf()
-        plt.plot(self.plot_x, self.plot_y_prec)
-        plt.title("precision")
-        plt.show()
-        plt.clf()
-        plt.plot(self.plot_x, self.plot_y_rec)
-        plt.title("recall")
-        plt.show()
-        plt.clf()
-        plt.plot(self.plot_x, self.plot_y_AR)
-        plt.title("Action ratio")
-        plt.show()
-        plt.clf()
-        """
-        
         return best_model, best_epoch
     
     def test_model(self, model):
@@ -264,16 +235,15 @@ class ModelTrainer:
                         
                         bar3()
                         
-                        test_batch_linear_data, test_batch_sequence_data, test_batch_labels = next(test_iter)
+                        test_batch_sequence_data, test_batch_labels = next(test_iter)
                         
                         for sample in test_batch_labels:
                             test_labels.append(sample)
                         
-                        test_batch_linear_data = torch.FloatTensor(np.array(test_batch_linear_data)).to(self.device).to(dtype=torch.float)
                         test_batch_sequence_data = torch.FloatTensor(np.array(test_batch_sequence_data)).to(self.device).to(dtype=torch.float)
                         test_batch_labels = torch.FloatTensor(test_batch_labels).reshape([len(test_batch_labels),1]).to(self.device).to(dtype=torch.float)
                         
-                        output = model(test_batch_linear_data, test_batch_sequence_data)
+                        output = model(test_batch_sequence_data)
                         
                         for sample in output.cpu().detach().numpy():
                             test_predictions.append(sample.round())

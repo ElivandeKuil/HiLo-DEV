@@ -1,0 +1,199 @@
+Found pickled data, loading...
+Label 1 percentage = 0.221
+Label 1 percentage = 0.222
+Label 1 percentage = 0.213
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 2
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(1); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;npt9982; Train loss = 0.529473 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;yjs313030; Train loss = 0.528841 (f1: 0.0), Validation loss = 0.528 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;efc729097; Train loss = 0.528083 (f1: 0.0), Validation loss = 0.528 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;vaa922740; Train loss = 0.505992 (f1: 0.0), Validation loss = 0.506 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+('Finished epoch 5', ' out of 30. modelID=XAUUSD;hoc373239; Train loss = 0.499175 (f1: 0.0), Validation loss = 0.485 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 6...
+('Finished epoch 6', ' out of 30. modelID=XAUUSD;soq764052; Train loss = 0.492994 (f1: 0.0), Validation loss = 0.482 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 7...
+('Finished epoch 7', ' out of 30. modelID=XAUUSD;pgl212535; Train loss = 0.488871 (f1: 0.0), Validation loss = 0.48 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 8...
+('Finished epoch 8', ' out of 30. modelID=XAUUSD;lvj632932; Train loss = 0.487356 (f1: 0.0), Validation loss = 0.481 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 9...
+('Finished epoch 9', ' out of 30. modelID=XAUUSD;qhc377768; Train loss = 0.48619 (f1: 0.0), Validation loss = 0.48 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 10...
+('Finished epoch 10', ' out of 30. modelID=XAUUSD;ouf738335; Train loss = 0.485072 (f1: 0.0), Validation loss = 0.478 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 11...
+('Finished epoch 11', ' out of 30. modelID=XAUUSD;qpp372885; Train loss = 0.484742 (f1: 0.0), Validation loss = 0.481 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 12...
+Run took 271.09s
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 4
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(2); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;aap131062; Train loss = 0.529781 (f1: 0.0), Validation loss = 0.53 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;aun178322; Train loss = 0.528452 (f1: 0.0), Validation loss = 0.528 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;sni245267; Train loss = 0.528843 (f1: 0.0), Validation loss = 0.528 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;lpx354096; Train loss = 0.528249 (f1: 0.0), Validation loss = 0.53 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+Run took 111.16s
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 8
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(3); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;jrg52944; Train loss = 0.529424 (f1: 0.0), Validation loss = 0.53 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;ezs364530; Train loss = 0.528993 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;don653613; Train loss = 0.52909 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;ozp964092; Train loss = 0.528956 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+Run took 110.99s
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 12
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(4); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;mpy467608; Train loss = 0.530173 (f1: 0.001), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;kzk767910; Train loss = 0.529308 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;emm213902; Train loss = 0.529093 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;pml781912; Train loss = 0.529056 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+('Finished epoch 5', ' out of 30. modelID=XAUUSD;xfu45366; Train loss = 0.529004 (f1: 0.0), Validation loss = 0.53 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 6...
+Run took 134.4s
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 16
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(5); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;dcx443966; Train loss = 0.530133 (f1: 0.003), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;tia625000; Train loss = 0.529277 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;oyi858344; Train loss = 0.52958 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;pqo979027; Train loss = 0.529548 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+('Finished epoch 5', ' out of 30. modelID=XAUUSD;ezj468826; Train loss = 0.529559 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 6...
+('Finished epoch 6', ' out of 30. modelID=XAUUSD;anc780170; Train loss = 0.529493 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 7...
+Run took 155.75s
+------------------------------------------------------------------------------
+device: cuda
+flush_temp: False
+batch_size: 50
+learning rate: 0.01
+weight decay: 1e-08
+num_epochs: 30
+hdden layer size: 32
+number layers: 3
+balance data: True
+val split: 0.1
+test split: 0.1
+label_mode: high
+fine_tuning: False
+normalization: True
+------------------------------------------------------------------------------
+normalization: True
+(6); Parameters run 1 out of 1
+Started training
+Training epoch 1...
+('Finished epoch 1', ' out of 30. modelID=XAUUSD;fwp774908; Train loss = 0.530401 (f1: 0.001), Validation loss = 0.53 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 2...
+('Finished epoch 2', ' out of 30. modelID=XAUUSD;nni359623; Train loss = 0.529861 (f1: 0.0), Validation loss = 0.533 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 3...
+('Finished epoch 3', ' out of 30. modelID=XAUUSD;mgn431; Train loss = 0.529696 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 4...
+('Finished epoch 4', ' out of 30. modelID=XAUUSD;kmo617064; Train loss = 0.529736 (f1: 0.0), Validation loss = 0.529 (f1: 0.0, Prec: 0.0, Rec: 0.0, AR: [0.]% => [0] predictions)')
+Training epoch 5...
+Run took 113.0s
+Total program took 896.4s

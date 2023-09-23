@@ -4,14 +4,20 @@ import os
 
 logger = Logger(True)
 
+ticker = ""
 flush_temp = False
 device = ''
 batch_size = 0
 learning_rate = 0
 weight_decay = 0
 num_epochs = 0
+normalization = False
+
 hidden_layer_size = 0
 number_layers = 0
+sequence_length = 0
+sequence_input_size = 3
+
 balance_data = False
 balance_percent = 0
 val_split = 0

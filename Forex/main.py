@@ -1,5 +1,5 @@
 import Preprocessing
-from Model import NTDM_V0, LSTM
+from Model import NTDM_V0, NTDM_V1, LSTM
 from Training import ModelTrainer
 import torch
 import warnings 
@@ -11,10 +11,14 @@ from TickerPredictor import TickerPredictor
 import pickle
 import tkinter as tk
 from tkinter import filedialog
+import os
+import numpy as np
+from Miner import Dataset
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled")
 
-def run():
+def run(traindata, valdata, testdata):
     warnings.filterwarnings("ignore")
     
     program_start_time = time.time()
@@ -25,8 +29,8 @@ def run():
         num_layers_set = [0]
         hidden_sizes_set = [0]
     else:
-        num_layers_set = [2]
-        hidden_sizes_set = [10]
+        num_layers_set = [3]
+        hidden_sizes_set = [2, 4, 8, 12, 16, 32]
 
     for var_num_layers in num_layers_set:
         for var_hidden_size in hidden_sizes_set:
@@ -44,11 +48,9 @@ def run():
                 
                 Globals.logger.log_and_print_line("(" + str(counter) + "); Parameters run "  + str(u + 1) + " out of 1")
                 
-                traindata, valdata, testdata = Preprocessing.get_split_data(Globals.ticker, Globals.val_split, Globals.test_split)
-                
                 if Globals.fine_tuning == False:
 
-                    model = NTDM_V0(Globals.device)
+                    model = NTDM_V1(Globals.device)
                     model.ticker = Globals.ticker
 
                 else:
@@ -181,30 +183,21 @@ def generate_ticket_predictors():
     for u in range (0, len(symbols)):
         test_models(symbols[u], folders[u], spreads[u], create_predictor=True)
 
-#generate_ticket_predictors()
-
-
 Globals.fine_tuning = False
 Globals.logger.reset()
 Globals.balance_data = True
 Globals.balance_percent = .3
 Globals.device = device
-Globals.batch_size = 24
+Globals.batch_size = 50
 Globals.learning_rate = 0.01
 Globals.weight_decay = 1e-8
 Globals.num_epochs = 30            
 Globals.val_split = .1
 Globals.test_split = .1
+Globals.normalization = True
 
-Globals.ticker = "XAUUSD"
-Globals.label_mode = "high"
-run()
+ds = Dataset()
+traindata, valdata, testdata = ds.get_data('XAUUSD', 'high', 120, 120, TP=0.03, SL=10)
 
-"""
-Globals.ticker = "USDJPY"
-dual_label_mode_run()
-Globals.ticker = "GBPUSD"
-dual_label_mode_run()
-Globals.ticker = "EURUSD"
-dual_label_mode_run()
-"""
+run(traindata, valdata, testdata)
+

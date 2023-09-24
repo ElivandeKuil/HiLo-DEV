@@ -9,6 +9,7 @@ import os
 import Globals
 from alive_progress import alive_bar
 from datetime import datetime, timedelta
+import math
 
 print("MetaTrader5 package author: ",mt5.__author__)
 print("MetaTrader5 package version: ",mt5.__version__)
@@ -20,8 +21,6 @@ if not mt5.initialize():
     print("initialize() failed, error code =",mt5.last_error())
     quit()
  
-folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled")
-
 class Dataset:
     def get_raw_data(self, symbol):
         Globals.ticker = symbol
@@ -30,7 +29,7 @@ class Dataset:
         timezone = pytz.timezone("Etc/UTC")
         # create 'datetime' object in UTC time zone to avoid the implementation of a local time zone offset
         utc_from = datetime(2020, 1, 10, tzinfo=timezone)
-        ticks = mt5.copy_ticks_from(symbol, utc_from, 300000, mt5.COPY_TICKS_ALL)
+        ticks = mt5.copy_ticks_from(symbol, utc_from, 100000000, mt5.COPY_TICKS_ALL)
         print("Ticks received:",len(ticks))
         
         mt5.shutdown()
@@ -100,12 +99,7 @@ class Dataset:
         Globals.logger.log_and_print_line("high label >= 0.03 perecentage: " + str(pos / len(data)))
         Globals.logger.log_and_print_line("low label <= 0.03 perecentage: " + str(neg / len(data)))
 
-    def save_data(self, all_data, look_back, look_ahead):
-
-        with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + ".Data", "wb") as fp: 
-            pickle.dump(all_data, fp)
-
-    def save_split_data(self, all_data, val_size, test_size, look_back, look_ahead):
+    def save_split_data(self, all_data, val_size, test_size, look_back, look_ahead, index, folder_root):
         np.random.shuffle(all_data)
         val_count = int(len(all_data) * val_size)
         test_count = int(len(all_data) * test_size)
@@ -115,11 +109,11 @@ class Dataset:
         valdata = all_data[len(all_data) - val_count - test_count: len(all_data) - test_count]
         testdata = all_data[len(all_data) - test_count:]
 
-        with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "wb") as fp: 
+        with open(folder_root + "/" + Globals.ticker + str(index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "wb") as fp: 
             pickle.dump(testdata, fp)
-        with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "wb") as fp: 
+        with open(folder_root + "/" + Globals.ticker + str(index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "wb") as fp: 
             pickle.dump(valdata, fp)
-        with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "wb") as fp: 
+        with open(folder_root + "/" + Globals.ticker + str(index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "wb") as fp: 
             pickle.dump(traindata, fp)
 
         return traindata, valdata, testdata
@@ -144,43 +138,72 @@ class Dataset:
         Globals.logger.log_and_print_line("Label 1 percentage = " + str(round(counter/len(data) ,3)))
 
         return data
-        
-    def get_data(self, symbol, label_mode, look_back, look_ahead, TP=0.05, SL=0.05, val_size = .1, test_size = .1): 
-        
-        Globals.ticker = symbol 
-        Globals.sequence_length = look_back
-        
+      
+    def get_data_chunk_by_index(self, look_back, look_ahead, TP, SL, data_index):
+        folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data")
+        folder_root = folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)
+           
         try:
+
             Globals.logger.log_and_print_line("Found pickled data, loading...")
 
-            with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "rb") as fp:   
+            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "rb") as fp:   
                 testdata = pickle.load(fp)
-            with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "rb") as fp:   
+            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "rb") as fp:   
                 valdata = pickle.load(fp)
-            with open(folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "rb") as fp:   
+            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "rb") as fp:   
                 traindata = pickle.load(fp)
             
-        except:   
+            traindata = self.label_gun(traindata, Globals.label_mode, TP, SL)
+            valdata = self.label_gun(valdata, Globals.label_mode, TP, SL)
+            testdata = self.label_gun(testdata, Globals.label_mode, TP, SL)
 
-            Globals.logger.log_and_print_line("Mining and processing data...")
-            raw_data = self.get_raw_data(symbol)
+            return traindata, valdata, testdata
+        except:
+            return False, False, False
+
+    def load_data_chunks(self, num_chunks, look_back, look_ahead, val_size=0.1, test_size=0.1): 
+        folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data")
+        if os.path.isdir(folder_root+ "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)):
+            count = 0
+            folder_root = folder_root+ "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)
+            for path in os.listdir(folder_root):
+                
+                if os.path.isfile(os.path.join(folder_root, path)):
+                    count += 1
+            count = math.ceil(count/3)
+            if count != num_chunks:
+                raw_data = self.get_raw_data(Globals.ticker)
+                unique_dates_data = self.remove_duplicate_dates(raw_data)
+                del(raw_data)
+                print("Found " + str(count) + " data chunks. Started mining " + str(num_chunks - count) + " more (100.000 items each)...")
+                for i in range(count, math.ceil(len(unique_dates_data)/100000)):
+                    if i + 1 <= num_chunks:
+                        print("Processing chunk " + str(i))
+                        processed_data = self.process_data(unique_dates_data[(i * 100000): (i+1) * 100000], look_ahead)
+                        self.save_split_data(processed_data, val_size, test_size, look_back, look_ahead, i, folder_root)
+                        del(processed_data)
+                print("Finished loading all chunks")
+            else:
+                print("All requested datachunks were already present")
+        else:
+            os.mkdir(folder_root+ "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization))
+            folder_root = folder_root+ "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)
+            raw_data = self.get_raw_data(Globals.ticker)
             unique_dates_data = self.remove_duplicate_dates(raw_data)
             del(raw_data)
-            processed_data = self.process_data(unique_dates_data, look_ahead)
-            del(unique_dates_data)
-            self.analyse_data(processed_data, TP, SL)
-            self.save_data(processed_data, look_back, look_ahead)
-            traindata, valdata, testdata = self.save_split_data(processed_data, val_size, test_size, look_back, look_ahead)
-            del(processed_data)
-        
-        traindata = self.label_gun(traindata, label_mode, TP, SL)
-        valdata = self.label_gun(valdata, label_mode, TP, SL)
-        testdata = self.label_gun(testdata, label_mode, TP, SL)
-
-        return traindata, valdata, testdata
+            print("Started mining " + str(num_chunks) + " datachunks (100.000 items each)...")
+            for i in range(0, math.ceil(len(unique_dates_data)/100000)):
+                if i + 1 <= num_chunks:
+                    print("Processing chunk " + str(i))
+                    processed_data = self.process_data(unique_dates_data[(i * 100000): (i+1) * 100000], look_ahead)
+                    self.save_split_data(processed_data, val_size, test_size, look_back, look_ahead, i, folder_root)
+                    del(processed_data)
+            print("Finished loading all chunks")
 
         
-            
+
+
 def build_sequence_data(prequel_ticks):
         
     sequence = []
@@ -246,29 +269,3 @@ class model_input():
         self.ID = current_tick.ID
         self.sequence_input = build_sequence_data(prequel_ticks)
             
-
-
-
-
-
-
-
-
-"""
-
-import tkinter as tk
-from tkinter import filedialog
-import pickle
-
-root = tk.Tk()
-root.withdraw()
-
-file_path = filedialog.askopenfilename()
-
-with open(file_path, "rb") as fp:   
-                best_model = pickle.load(fp)
-
-debug1 = best_model[0]
-debug2 = best_model[1]
-de = 0
-"""

@@ -86,9 +86,8 @@ Globals.normalization = True
 
 Globals.label_mode = "high"
 Globals.ticker = "XAUUSD"
-
 ds = Dataset()
-ds.load_data_chunks(5, 120, 60)
+ds.load_data_chunks(120, 120, 60)
 traindata, valdata, testdata = ds.get_data_chunk_by_index(120, 60, 0.03, 0.01, 0)
 
 run(traindata, valdata, testdata)

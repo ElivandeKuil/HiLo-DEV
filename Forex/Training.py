@@ -13,23 +13,23 @@ from alive_progress import alive_bar
 import Globals
 import string
 import random
+from DataLoader import AE_train_dataloader, AE_test_dataloader
 
 
 class ModelTrainer:
     
-    def __init__(self, model, traindata, valdata, testdata, verb = True):
+    def __init__(self, model, num_chunks, total_chunks, look_back, look_ahead, verb = True):
         self.model = model
         self.device = Globals.device
         self.model.to(self.device)
-        self.TrainData = traindata
-        self.ValData = valdata
-        self.TestData = testdata
         self.batch_size = Globals.batch_size
         self.learning_rate = Globals.learning_rate
         self.weight_decay = Globals.weight_decay
         self.n_epochs = Globals.num_epochs
+        self.num_chunks = num_chunks
         self.verbose = verb
         self.folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Models")
+        self.data_loader = AE_train_dataloader(Globals.batch_size, num_chunks, total_chunks, look_back, look_ahead)
         
         if Globals.flush_temp == True:
             shutil.rmtree(os.path.join(self.folder_root, "temp"))
@@ -40,16 +40,6 @@ class ModelTrainer:
         if Globals.label_mode == "high": self.label_mode = "(+)"
         
         self.loss_function = torch.nn.MSELoss()
-       
-    def format_batch(self, batch): 
-        
-        sequence_data = []
-        
-        for sample in batch:
-            
-            sequence_data.append(np.array(sample.sequence_input).astype(float))
-                
-        return sequence_data
     
     def train_model(self, verbose=False):
         
@@ -61,37 +51,26 @@ class ModelTrainer:
         best_epoch = 0   
         train_losses = []
         
-        train_loader = DataLoader(self.TrainData,
-                                         batch_size=self.batch_size,
-                                         shuffle=True,
-                                         num_workers=0,
-                                         drop_last=True,
-                                         collate_fn=lambda batch: self.format_batch(batch))
-        val_loader = DataLoader(self.ValData,
-                                         batch_size=self.batch_size,
-                                         shuffle=True,
-                                         num_workers=0,
-                                         drop_last=True,
-                                         collate_fn=lambda batch: self.format_batch(batch))
-        
         for epoch in range(0,self.n_epochs):
             
-            with alive_bar(int((len(self.TrainData) + len(self.ValData))/self.batch_size)) as bar2:
+            with alive_bar(self.num_chunks * 90000) as bar2:
             
                 Globals.logger.log_and_print_line("Training epoch " + str(epoch + 1) + "...")
                 
                 ################################TRAINING################################
                 
                 self.model = self.model.train()
-                train_iter = iter(train_loader)
                 
                 epoch_train_total = 0
                 epoch_val_total = 0
-                
-                for u in range(0, len(train_iter)):
+                term = False
+                while term != True:
                     
-                    list_batch_sequence_data = next(train_iter)
-                    
+                    list_batch_sequence_data = self.data_loader.get_train_batch()
+                    if len(list_batch_sequence_data == 0):
+                        term = True
+                        break
+
                     batch_sequence_data = torch.FloatTensor(np.array(list_batch_sequence_data)).to(self.device).to(dtype=torch.float)
                     
                     bar2()
@@ -112,13 +91,14 @@ class ModelTrainer:
                 with torch.no_grad():
                     
                     self.model = self.model.eval()
-                    
-                    val_iter = iter(val_loader)
-                    
-                    for v in range(0, len(val_iter)):
+                    term2 = False
+                    while term2 != True:
                         
-                        val_batch_sequence_data = next(val_iter)
-                        
+                        val_batch_sequence_data = self.data_loader.get_val_batch(self.batch_size)
+                        if len(val_batch_sequence_data) == 0:
+                            term2 = True
+                            break
+
                         bar2()
 
                         val_batch_sequence_data = torch.FloatTensor(np.array(val_batch_sequence_data)).to(self.device).to(dtype=torch.float)
@@ -129,20 +109,20 @@ class ModelTrainer:
                         
                         epoch_val_total += val_loss.item()
                    
-            current_loss = epoch_val_total / len(val_loader)
+            current_loss = epoch_val_total / self.data_loader.num_val_batches
             
             dt = datetime.now()
             
             time = str(dt.microsecond)
             chars = ''.join(random.choices(string.ascii_lowercase, k=3))
 
-            if epoch > 3 and round(epoch_train_total / len(train_loader), 6) > train_losses[-4]:
+            if epoch > 3 and round(epoch_train_total / self.data_loader.num_train_batches, 6) > train_losses[-4]:
                 print('Training got stuck, aborting...')
                 break
-            train_losses.append(round(epoch_train_total / len(train_loader), 6))
+            train_losses.append(round(epoch_train_total / self.data_loader.num_train_batches, 6))
             
             self.model.ID = Globals.ticker + ";" + str(chars) + str(time)
-            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round((epoch_train_total / len(train_loader)) * 1000, 6)) + ", Validation loss = " + str(round(current_loss * 1000, 6)) 
+            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(self.data_loader.num_train_batches * 1000, 6)) + ", Validation loss = " + str(round(current_loss * 1000, 6)) 
             Globals.logger.log_and_print_line(line)
             
             with open(self.folder_root + "/temp/" + self.model.ticker + ";" + str(self.model.ID) + self.label_mode, "wb") as fp: 

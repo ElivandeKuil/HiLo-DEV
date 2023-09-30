@@ -1,9 +1,9 @@
 from Model import NTDM_V0, NTDM_V1, LSTM, ST_AutoEncoder
 from Training import ModelTrainer
+from Tester import ModelTester
 import torch
 import warnings 
 import Globals
-import Tester
 import time
 import numpy
 from TickerPredictor import TickerPredictor
@@ -15,9 +15,10 @@ import numpy as np
 from Miner import Dataset
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(device)
 folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data/Pickled")
 
-def run(traindata, valdata, testdata):
+def run(num_chunks):
     warnings.filterwarnings("ignore")
     
     program_start_time = time.time()
@@ -44,10 +45,14 @@ def run(traindata, valdata, testdata):
         
         model = model.to(Globals.device)
     
-    trainer = ModelTrainer(model, traindata, valdata, testdata)
+    trainer = ModelTrainer(model, num_chunks)
     
-    test1, test2 = trainer.train_model(True)
+    best_model, _ = trainer.train_model(True)
     
+    MT = ModelTester(1)
+
+    MT.cross_validate(best_model)
+
     program_end_time = time.time()
     total_time = program_end_time - program_start_time
     
@@ -76,19 +81,21 @@ Globals.logger.reset()
 Globals.balance_data = True
 Globals.balance_percent = .3
 Globals.device = device
-Globals.batch_size = 50
+Globals.batch_size = 1024
 Globals.learning_rate = 0.01
 Globals.weight_decay = 1e-8
-Globals.num_epochs = 30            
+Globals.num_epochs = 1          
 Globals.val_split = .1
 Globals.test_split = .1
 Globals.normalization = True
+Globals.total_chunks = 38
 
+Globals.look_ahead = 60
+Globals.look_back = 120
+Globals.TP = 0.03
+Globals.SL = 0.01
 Globals.label_mode = "high"
 Globals.ticker = "XAUUSD"
-ds = Dataset()
-ds.load_data_chunks(120, 120, 60)
-traindata, valdata, testdata = ds.get_data_chunk_by_index(120, 60, 0.03, 0.01, 0)
 
-run(traindata, valdata, testdata)
+run(1)
 

@@ -2,6 +2,7 @@ import torch
 from torch.autograd import Variable
 import Globals
 import numpy as np
+import time as tim
 
 
 class LSTM(torch.nn.Module):
@@ -129,7 +130,6 @@ class GRUCell(torch.nn.Module):
         x_t = self.x2h(input)
         h_t = self.h2h(hx)
 
-
         x_reset, x_upd, x_new = x_t.chunk(3, 1)
         h_reset, h_upd, h_new = h_t.chunk(3, 1)
 
@@ -188,20 +188,11 @@ class GRU(torch.nn.Module):
 
         for t in range(input.size(1)):
 
-            for layer in range(self.num_layers):
-
-                if layer == 0:
-                    hidden_l = self.rnn_cell_list[layer](input[:, t, :], hidden[layer])
-                else:
-                    hidden_l = self.rnn_cell_list[layer](hidden[layer - 1],hidden[layer])
-                hidden[layer] = hidden_l
-
-                hidden[layer] = hidden_l
+            hidden_l = self.rnn_cell_list[0](input[:, t, :], hidden[0])
+            hidden[0] = hidden_l
 
             outs.append(hidden_l)
             last_state_list.append(hidden_l)
-
-            # Take only last time step. Modify for seq to seq
         
         last_state_list = last_state_list[-1].squeeze()
         out = torch.stack(outs)
@@ -214,6 +205,7 @@ class ST_AutoEncoder(torch.nn.Module):
         super(ST_AutoEncoder, self).__init__()
         
         self.name = "GRU AE"
+        self.ID = 0
         self.description = "G8 from master thesis"
         self.bottle_neck_size = bottle_neck_size
         
@@ -235,23 +227,27 @@ class Temporal_EncDec(torch.nn.Module):
         self.gru1 = GRU(input_size=3, hidden_size=16, output_size=3, num_layers=1, bias=True)
         self.gru2 = GRU(input_size=3, hidden_size=16, output_size=3, num_layers=1, bias=True)
 
-        self.flat = torch.nn.Flatten()
+        self.flat = torch.nn.Flatten(start_dim=1)
         
-        self.fc1 = torch.nn.Linear(in_features=800,out_features=bottle_neck_size)
+        self.fc1 = torch.nn.Linear(in_features=16,out_features=bottle_neck_size)
         
-        self.fc2 =  torch.nn.Linear(in_features=bottle_neck_size, out_features=800)
+        self.fc2 =  torch.nn.Linear(in_features=bottle_neck_size, out_features=16)
         
         self.unflat = torch.nn.Unflatten(1, unflattened_size=(0,0))
         
         self.relu = torch.nn.ReLU()
         
     def forward(self, x):
+
         layer_output_list, hidden_state_1 = self.gru1(x)
         
+        if Globals.phase == 'test':
+            hidden_state_1 = hidden_state_1.unsqueeze(0)
+
         unflat_shape_h = hidden_state_1.shape
         
-        flat_h = hidden_state_1.reshape(-1)
-        
+        flat_h = self.flat(hidden_state_1)
+
         encoded = self.fc1(flat_h)
         
         decoded = torch.tanh(self.fc2(encoded))

@@ -17,6 +17,11 @@ hidden_layer_size = 0
 number_layers = 0
 sequence_length = 0
 sequence_input_size = 3
+look_ahead = 0
+look_back = 0
+total_chunks = 0
+TP = 0
+SL = 0
 
 balance_data = False
 balance_percent = 0
@@ -24,6 +29,7 @@ val_split = 0
 test_split = 0
 sys_log_mode = 3  # 3 = all
 fine_tuning = False
+phase = 'train'
 
 label_mode = 'high' # or 'low'
 

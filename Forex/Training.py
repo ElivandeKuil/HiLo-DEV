@@ -12,13 +12,15 @@ from sklearn.metrics import f1_score
 from alive_progress import alive_bar
 import Globals
 import string
+import math
+import copy
 import random
 from DataLoader import AE_train_dataloader, AE_test_dataloader
 
 
 class ModelTrainer:
     
-    def __init__(self, model, num_chunks, total_chunks, look_back, look_ahead, verb = True):
+    def __init__(self, model, num_chunks, verb = True):
         self.model = model
         self.device = Globals.device
         self.model.to(self.device)
@@ -29,7 +31,11 @@ class ModelTrainer:
         self.num_chunks = num_chunks
         self.verbose = verb
         self.folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Models")
-        self.data_loader = AE_train_dataloader(Globals.batch_size, num_chunks, total_chunks, look_back, look_ahead)
+        self.num_train_batches = (80000 / Globals.batch_size) * num_chunks
+        self.num_val_batches = (10000 / Globals.batch_size) * num_chunks
+        indices = self.get_random_indices(num_chunks, Globals.total_chunks)
+        self.train_indeces = copy.deepcopy(indices)
+        self.val_indices = copy.deepcopy(indices)
         
         if Globals.flush_temp == True:
             shutil.rmtree(os.path.join(self.folder_root, "temp"))
@@ -41,6 +47,18 @@ class ModelTrainer:
         
         self.loss_function = torch.nn.MSELoss()
     
+    def get_random_indices(self, num_chunks, total_chunks):
+
+        random_indices = []
+        while len(random_indices) < num_chunks:
+            random_int = random.randint(0, total_chunks)
+            if random_int in random_indices:
+                do = 'nothing'
+            else:
+                random_indices.append(random_int)
+
+        return random_indices
+
     def train_model(self, verbose=False):
         
         Globals.logger.log_and_print_line("Started training")
@@ -52,8 +70,11 @@ class ModelTrainer:
         train_losses = []
         
         for epoch in range(0,self.n_epochs):
+
+            train_loader = AE_train_dataloader(Globals.batch_size, self.num_chunks, Globals.total_chunks, Globals.look_back, Globals.look_ahead, 0, copy.deepcopy(self.train_indeces))
+            val_loader = AE_train_dataloader(Globals.batch_size, self.num_chunks, Globals.total_chunks, Globals.look_back, Globals.look_ahead, 1, copy.deepcopy(self.val_indices))
             
-            with alive_bar(self.num_chunks * 90000) as bar2:
+            with alive_bar(math.floor(self.num_train_batches + self.num_val_batches)) as bar2:
             
                 Globals.logger.log_and_print_line("Training epoch " + str(epoch + 1) + "...")
                 
@@ -66,8 +87,8 @@ class ModelTrainer:
                 term = False
                 while term != True:
                     
-                    list_batch_sequence_data = self.data_loader.get_train_batch()
-                    if len(list_batch_sequence_data == 0):
+                    list_batch_sequence_data = train_loader.get_batch()
+                    if len(list_batch_sequence_data) == 0:
                         term = True
                         break
 
@@ -94,7 +115,7 @@ class ModelTrainer:
                     term2 = False
                     while term2 != True:
                         
-                        val_batch_sequence_data = self.data_loader.get_val_batch(self.batch_size)
+                        val_batch_sequence_data = val_loader.get_batch()
                         if len(val_batch_sequence_data) == 0:
                             term2 = True
                             break
@@ -109,20 +130,20 @@ class ModelTrainer:
                         
                         epoch_val_total += val_loss.item()
                    
-            current_loss = epoch_val_total / self.data_loader.num_val_batches
+            current_loss = epoch_val_total / self.num_val_batches
             
             dt = datetime.now()
             
             time = str(dt.microsecond)
             chars = ''.join(random.choices(string.ascii_lowercase, k=3))
 
-            if epoch > 3 and round(epoch_train_total / self.data_loader.num_train_batches, 6) > train_losses[-4]:
+            if epoch > 3 and round(epoch_train_total / self.num_train_batches, 6) > train_losses[-4]:
                 print('Training got stuck, aborting...')
                 break
-            train_losses.append(round(epoch_train_total / self.data_loader.num_train_batches, 6))
+            train_losses.append(round(epoch_train_total / self.num_train_batches, 6))
             
             self.model.ID = Globals.ticker + ";" + str(chars) + str(time)
-            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(self.data_loader.num_train_batches * 1000, 6)) + ", Validation loss = " + str(round(current_loss * 1000, 6)) 
+            line = "Finished epoch " + str(epoch + 1), " out of " + str(self.n_epochs) + ". modelID=" + str(self.model.ID) + "; Train loss = " + str(round(epoch_train_total / self.num_train_batches * 1000, 6)) + ", Validation loss = " + str(round(current_loss * 1000, 6)) 
             Globals.logger.log_and_print_line(line)
             
             with open(self.folder_root + "/temp/" + self.model.ticker + ";" + str(self.model.ID) + self.label_mode, "wb") as fp: 

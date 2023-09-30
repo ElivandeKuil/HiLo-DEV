@@ -121,11 +121,11 @@ class Dataset:
     
     def label_gun(self, data, label_mode, TP, SL):
         
-        counter = 0
-        with alive_bar(len(data)) as bar:
+        if data != None: 
+
+            counter = 0
             print("Labeling...")
             for datum in data:
-                bar()
                 if label_mode == 'high':
                     if datum.high_label >= TP and datum.low_label > (-1 * SL):
                         datum.label = 1
@@ -135,11 +135,12 @@ class Dataset:
                         datum.label = 1
                         counter += 1
 
-        Globals.logger.log_and_print_line("Label 1 percentage = " + str(round(counter/len(data) ,3)))
+            Globals.logger.log_and_print_line("Label 1 percentage = " + str(round(counter/len(data) ,3)))
 
-        return data
+            return data
+        return False
       
-    def get_data_chunk_by_index(self, look_back, look_ahead, TP, SL, data_index):
+    def get_data_chunk_by_index(self, look_back, look_ahead, TP, SL, data_index, specifier = 'all'):
         folder_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Data")
         folder_root = folder_root + "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)
            
@@ -147,12 +148,23 @@ class Dataset:
 
             Globals.logger.log_and_print_line("Found pickled data, loading...")
 
-            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "rb") as fp:   
-                testdata = pickle.load(fp)
-            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "rb") as fp:   
-                valdata = pickle.load(fp)
-            with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "rb") as fp:   
-                traindata = pickle.load(fp)
+            if specifier == 'all' or specifier == 'test':
+                with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TrainData.ProDa", "rb") as fp:   
+                    testdata = pickle.load(fp)
+            else:
+                testdata = None
+
+            if specifier == 'all' or specifier == 'val':
+                with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_ValData.ProDa", "rb") as fp:   
+                    valdata = pickle.load(fp)
+            else:
+                valdata = None
+
+            if specifier == 'all' or specifier == 'train':
+                with open(folder_root + "/" + Globals.ticker + str(data_index) + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization) + "_TestData.ProDa", "rb") as fp:   
+                    traindata = pickle.load(fp)
+            else:
+                traindata = None
             
             traindata = self.label_gun(traindata, Globals.label_mode, TP, SL)
             valdata = self.label_gun(valdata, Globals.label_mode, TP, SL)
@@ -168,11 +180,10 @@ class Dataset:
             count = 0
             folder_root = folder_root+ "/" + Globals.ticker + "_" + Globals.label_mode + ",lb=" + str(look_back) + "s,la=" + str(look_ahead) + "f,norm=" + str(Globals.normalization)
             for path in os.listdir(folder_root):
-                
                 if os.path.isfile(os.path.join(folder_root, path)):
                     count += 1
             count = math.ceil(count/3)
-            if count != num_chunks:
+            if count < num_chunks:
                 raw_data = self.get_raw_data(Globals.ticker)
                 unique_dates_data = self.remove_duplicate_dates(raw_data)
                 del(raw_data)
